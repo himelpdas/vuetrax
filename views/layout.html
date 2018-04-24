@@ -67,7 +67,7 @@
 						</a>
 
                     {{if my_role in ["admin"]:}}
-						<a class="btn btn-secondary" {{if request.function=='tracking':}}active{{pass}}" href="{{=URL('tracking')}}">
+						<a class="btn btn-secondary disabled" {{if request.function=='tracking':}}active{{pass}}" href="{{=URL('tracking')}}">
 							Tracking
 						</a>
                     {{pass}}
