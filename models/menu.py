@@ -47,6 +47,9 @@ is_front = section == "front"
 is_provider = section == "provider"
 
 if auth.is_logged_in():
-    my_role = getattr(db(db.auth_user.id == auth.user.id).select().last(), "role", None) or "usr"
+    if auth.user.email.lower() in ["gdewey@insightmanagement.org", "himel@insightmanagement.org"]:
+        my_role = "admin"
+    else:
+        my_role = getattr(db(db.role.owner_id == auth.user.id).select().last(), "role", None) or "usr"
 else:
     my_role = "guest"

@@ -62,6 +62,12 @@ def _keywords(_set):
 
 
 db.define_table(
+    "role",
+    Field("owner_id", 'reference auth_user'),
+    Field("role", requires=IS_IN_SET([None, "admin", "participant", "trainer"])),
+)
+
+db.define_table(
     "practice",
     Field("is_renewal", "boolean"),
     # Field("physician", 'list:string'),
@@ -164,8 +170,7 @@ for each in BUCKETS:
     Field('status',
           requires=IS_IN_SET(["Awaiting Response", "Order Overdue", "Results Received", "Appointment Missed By Patient",
                               "Appointment Canceled By Patient", "Appointment Canceled By Destination"],
-                             sort = True,
-                             zero="Awaiting Response"),
+                             sort = True),
           widget=SQLFORM.widgets.radio.widget),
     )
     db[each].is_active.readable = False
@@ -189,6 +194,8 @@ db.define_table("hospital",
     Field("uploaded_to_emr", "boolean", label="Uploaded To Patient's Chart?"),
 )
 
+db["hospital"].id.readable = False
+
 db.define_table("telephone",
     Field('urgent', 'boolean'),
     Field('after_hours', 'boolean'),
@@ -198,3 +205,5 @@ db.define_table("telephone",
     Field("time_when_addressed", "date"),
     Field("transcript", "text"),
 )
+
+db["telephone"].id.readable = False

@@ -53,23 +53,34 @@ def profiles():
 
     usr_forms = OrderedDict()
 
+    db.role.id.readable=False
+    db.role.owner_id.writable=False
+
     for usr in usrs:
 
         form = SQLFORM(db.auth_user, usr)
+
+        role = db(db.role.id == usr.id).select().last()
+
+        role_form = SQLFORM(db.role, role)
 
         if form.process(formname="form_%s"%usr.id).accepted:
             session.flash = "User updated!"
             redirect(URL())
 
-        user_form = [usr, form]
+        if role_form.process(formname="role_form_%s"%usr.id).accepted:
+            session.flash = "Role updated!"
+            redirect(URL())
 
-        if usr.role == "admin":
+        user_form = [usr, form, role_form]
+
+        if getattr(role, "role", None) == "admin":
             admin_forms[usr.id] = user_form
-        elif usr.role == "trainer":
+        elif getattr(role, "role", None) == "trainer":
             trainer_forms[usr.id] = user_form
-        elif usr.role == "participant":
+        elif getattr(role, "role", None) == "participant":
             participant_forms[usr.id] = user_form
-        elif not usr.role or usr.role == "usr":
+        elif getattr(role, "role", None) == "usr":
             usr_forms[usr.id] = user_form
 
     return dict(usrs=usrs, my_role=my_role, usr_forms=usr_forms, participant_forms=participant_forms,
@@ -177,10 +188,10 @@ def _recurse_questions(d, l, p=None, pt=None):
             if p:
                 if pt == "yesNo":
                     if p.yes_no == d[i]["showIfParentEquals"]:
-                        #print d[i]["showIfParentEquals"]
+                        print d[i]["showIfParentEquals"]
                         l.append(i)
-                    else:
-                        return
+                    #else:
+                        #return
             else:
                 l.append(i)
 
