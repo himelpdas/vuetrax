@@ -85,11 +85,6 @@ from gluon.tools import Auth, Service, PluginManager
 # host names must be a list of allowed host names (glob syntax allowed)
 auth = Auth(db, host_names=myconf.get('host.names'))
 
-if not request.function == "index":
-    auth.settings.extra_fields['auth_user'] = [
-      Field('role', requires=IS_IN_SET(["admin", "participant", "trainer"])),
-    ]
-
 service = Service()
 plugins = PluginManager()
 
