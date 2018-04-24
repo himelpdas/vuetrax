@@ -1,0 +1,690 @@
+{{extend 'layout.html'}}
+
+<div class="container">
+    <h2> &nbsp; </h2>
+    <div class="card" class="dropdown dropright" style="text-align: center;">
+
+        <b>
+
+            <h4>{{=practice.practice_name}}</h4>
+            <h6>{{=practice.address}}</h6>
+            <h6>{{=practice.phone}} | {{=practice.fax}}</h6>
+
+
+        </b>
+    </div>
+    <h2> &nbsp; </h2>
+
+    <div class="row">
+
+        <div class="col-lg-4">
+
+            <div class="card text-center" style="width: 22rem;">
+                <div class="card-header"><h5 class="card-title" style="text-align: center;">Overview</h5>
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">TC</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">KM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">AC</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">CM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">CC</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">QI</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+                <div class="card">
+
+                    <div class="list-group" style="max-height: 640px; overflow-y: scroll; position: relative;">
+
+                        <li class="list-group-item list-group-item-action">
+
+                            <div class="row">
+                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal">TC-01 PCMH Transformation Leads
+                                </button>
+
+
+                            </div>
+                            <hr>
+                            <div class="row" style="position: relative; left: -11px;">
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: purple;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: red;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: black;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: green;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: pink;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: blue;"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action" style="background-color: #F3FCFF">
+
+                            <div class="row">
+                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal">TC-02 Structure and Staff Responsibilities
+                                </button>
+
+
+                            </div>
+                            <hr>
+                            <div class="row" style="position: relative; left: -11px;">
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: purple;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: red;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: black;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: green;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: pink;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: blue;"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action">
+
+                            <div class="row">
+                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal">TC-03 External PCMH Collaborations
+                                </button>
+
+
+                            </div>
+                            <hr>
+                            <div class="row" style="position: relative; left: -11px;">
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: purple;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: red;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: black;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: green;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: pink;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: blue;"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action" style="background-color: #F3FCFF">
+
+                            <div class="row">
+                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal">TC-04 P/F/C Involvement in Governance
+                                </button>
+
+
+                            </div>
+                            <hr>
+                            <div class="row" style="position: relative; left: -11px;">
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: purple;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: red;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: black;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: green;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: pink;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: blue;"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action">
+
+                            <div class="row">
+                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal">TC-05 Certified EHR System
+                                </button>
+
+
+                            </div>
+                            <hr>
+                            <div class="row" style="position: relative; left: -11px;">
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: purple;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: red;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: black;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: green;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: pink;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: blue;"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action" style="background-color: #F3FCFF">
+
+                            <div class="row">
+                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal">TC-06 Idiv Patient Care Meetings/Comm
+                                </button>
+
+
+                            </div>
+                            <hr>
+                            <div class="row" style="position: relative; left: -11px;">
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: purple;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: red;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: black;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: green;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: pink;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: blue;"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action" style="background-color: #F3FCFF">
+
+                            <div class="row">
+                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal">TC-07 Staff Involvement in QI
+                                </button>
+
+
+                            </div>
+                            <hr>
+                            <div class="row" style="position: relative; left: -11px;">
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: purple;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: red;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: black;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: green;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: pink;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: blue;"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action" style="background-color: #F3FCFF">
+
+                            <div class="row">
+                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal">TC-08 Behavioral Health Care Manager
+                                </button>
+
+
+                            </div>
+                            <hr>
+                            <div class="row" style="position: relative; left: -11px;">
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: purple;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: red;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: black;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: green;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: pink;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: blue;"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action" style="background-color: #F3FCFF">
+
+                            <div class="row">
+                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal">TC-09 Medical Home Information
+                                </button>
+
+
+                            </div>
+                            <hr>
+                            <div class="row" style="position: relative; left: -11px;">
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: purple;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: red;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: black;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: green;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: pink;"></i>
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-sm btn-light"><i class="fa fa-fw fa-square-o"
+                                                                                          style="color: blue;"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </li>
+
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="card-link"><i class="fa fa-fw fa-copy"></i> Copy Board</a>
+                        <a href="#" class="card-link"><i class="fa fa-fw fa-paper-plane-o"></i> Share Board</a>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+
+        <div class="col-lg-8 col-md-4 col-sm-6 portfolio-item">
+
+            <div class="card h-60" style="box-shadow: 5px 5px 5px grey;">
+                <a href="#"
+                <button class="btn btn-large btn-primary" data-toggle="modal" data-target="#send"
+                <a href="#"><h5><i class="fa  fa-fw fa-envelope"></i> Send Comment Card</h5>
+                    </button></a>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a style="text-align: center;">TC-01 PCMH Transformation Leads - Comment Card</a>
+                        <hr>
+                        <h6> Designates a clinician lead of the medical home and a staff person to manage the PCMH
+                            transformation and medical home activities.</h6>
+                    </h5>
+                    <hr>
+                    <div class="form-group">
+                        <label for="comment"><i class="fa fa-comment-o" aria-hidden="true"></i> Add a Comment:</label>
+                        <textarea class="form-control" rows="5" id="comment">Write Comment Here... </textarea>
+                        <div class="row">
+                            <div class="col-lg-6" style="padding: 15px; ">
+                                <button type="button" class="btn btn-sm btn-primary"><i
+                                        class="fa fa-fw fa-floppy-o"></i> Save
+                                </button>
+                            </div>
+
+                            <div class="col-lg-6" style="padding: 15px;">
+                                <button type="button" class="btn btn-sm btn-danger pull-right" data-toggle="modal"
+                                        data-target="#tag"
+                                <a href="#"><i class="fa fa-fw fa-user"></i> Tag Profile </a></button> </div>
+
+                        </div>
+
+
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-6">
+
+                            Recent Comments:
+                            <hr>
+                        </div>
+
+
+                        <hr>
+                        <div class="col-lg-6">Members:
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/george.png">George Dewey</a>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/sabrena.png">Sabrena Durgapasad</a>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/allison.png">Allison Spencer</a>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/jason.png">Jason Tejada</a>
+                        </div>
+                    </div>
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- /.container -->
+
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; George Dewey & Himel Das 2018</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Modal -->
+<div class="modal fade" id="send" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+     style="min-height:700px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Share Comment Card</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table>
+
+                    <tr>
+                        <td><p><i class='fa fa-fw fa-envelope-o'></i> Email </p></td>
+                        <td><input style='position: relative; bottom: 5px;'> </input> </td>
+                    </tr>
+
+
+                    <textarea placeholder=" Write message here.." class="form-control" rows="5" id="comment"></textarea>
+                    <p>
+
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="tag" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+     style="min-height:900px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Add Profile To Board</h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <table><input type="text" placeholder=" Search Profile..">
+                    <div class="dropdown pull-left dropright" style="position: relative; right: 5px; bottom: 5px;">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Select From List
+                        </button>
+                        <div style="position: relative;" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">All</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/ebony.png">Ebony</a>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/sabrena.png">Sabrena</a>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/jazzmyn.png">Jazzmyn</a>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/jason.png">Jason</a>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/luis.png">Luis</a>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/himel.png">Himel</a>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/george.png">George</a>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/allison.png">Allison</a>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/rosa.png">Rosa</a>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/neal.png">Neal</a>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/olga.png">Olga</a>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/linda.png">Linda</a>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/stacy.png">Stacy</a>
+                            <a class="dropdown-item" href="#"> <img
+                                    style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                    src="./images/cynthia.png">Cynthia</a>
+                        </div>
+                    </div>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Comment Board</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <textarea placeholder=" Comment here..." class="form-control" rows="5" id="comment"></textarea>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

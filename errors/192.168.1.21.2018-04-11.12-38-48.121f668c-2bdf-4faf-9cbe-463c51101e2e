@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.ValueError'> Expecting , delimiter: line 55 column 5 (char 2001)"
+p3
+sS'layer'
+p4
+S'C:\\Users\\George Dewey\\Desktop\\viewtrax_server\\web2py\\applications\\viewtrax\\controllers/default.py'
+p5
+sS'code'
+p6
+S'<code object <module> at 087841D0, file "C:\\Users\\George Dewey\\Desktop\\viewtrax_server\\web2py\\applications\\viewtrax\\controllers/default.py", line 13>'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "C:\\Users\\George Dewey\\Desktop\\viewtrax_server\\web2py\\gluon\\restricted.py", line 219, in restricted\n    exec(ccode, environment)\n  File "C:\\Users\\George Dewey\\Desktop\\viewtrax_server\\web2py\\applications\\viewtrax\\controllers/default.py", line 596, in <module>\n  File "C:\\Users\\George Dewey\\Desktop\\viewtrax_server\\web2py\\gluon\\globals.py", line 419, in <lambda>\n    self._caller = lambda f: f()\n  File "C:\\Users\\George Dewey\\Desktop\\viewtrax_server\\web2py\\applications\\viewtrax\\controllers/default.py", line 262, in questions\n    slides = json.loads(_get_private_file(\'slides_provider.json\'), object_pairs_hook=collections.OrderedDict)\n  File "C:\\Python27\\lib\\json\\__init__.py", line 352, in loads\n    return cls(encoding=encoding, **kw).decode(s)\n  File "C:\\Python27\\lib\\json\\decoder.py", line 364, in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n  File "C:\\Python27\\lib\\json\\decoder.py", line 380, in raw_decode\n    obj, end = self.scan_once(s, idx)\nValueError: Expecting , delimiter: line 55 column 5 (char 2001)\n'
+p11
+s.

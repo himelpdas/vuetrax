@@ -1,0 +1,22 @@
+{
+  "tc1a1": {
+    "type": "yesNo",
+    "inquire": "Who will be the clinician lead?",
+    "branches": {
+      "tc1a2": {
+        "type": "input",
+        "inquire": "How are you?",
+        "showIfParentEquals": true
+      },
+      "tc1a3": {
+        "type": "input",
+        "inquire": "Where are you?",
+        "showIfParentEquals": false
+      }
+    }
+  },
+  "tc1a4": {
+    "type": "input",
+    "inquire": "Who will be the clinician lead?"
+  }
+}

@@ -1,0 +1,223 @@
+{
+ 
+  "2": {
+    "km1": [
+      null,
+      "How does the practice track referrals?",
+      "input"
+    ],
+    "km8": [
+      null,
+      "EMR Database Analysis - Patient Demographics",
+      "upload"
+    ],
+    "km9": [
+      null,
+      "EMR Database Analysis - Patient Diversity",
+      "upload"
+    ],
+    "km10": [
+      null,
+      "EMR Database Analysis - Patient Language Needs",
+      "upload"
+    ],
+    "km11a": [
+      null,
+      "Patient Call Back for Preventive and Chronic Services",
+      "policy",
+      "telephone_encounter.doc",
+      "http://viewtrax.us"
+    ],
+    "km11b": [
+      null,
+      "Patient Call Back for Preventive and Chronic Services",
+      "policy",
+      "quarr_hedis_guide.doc",
+      "http://viewtrax.us"
+    ]
+  },
+   "3": {
+    "ac1a": [
+      null,
+      "Do You Use a Patient Survey?",
+      "yes-no"
+    ],
+    "ac1b": [
+      ["ac1a", true],
+      "Great! Please upload survey tool examples",
+      "upload"
+    ],
+    "ac1c": [
+      ["ac1a", false],
+      "That's alright, please download all survey tool templates",
+      "policy",
+      "family_survey.doc",
+	  "policy/1-TC-C/QI-04A_2017_Survey_Family_Medicine_English.docx",
+      "pediatric_survey.doc",
+      "policy/1-TC-C/QI-04A_2017_Survey_Pediatric_Medicine_English.docx",
+	  "internal_survey.doc",
+      "policy/1-TC-C/QI-04A_2017_Survey_Internal_Medicine_English.docx"
+    ],
+    "ac1d": [
+      null,
+      "Do You Use a Suggestion Box?",
+      "yes-no"
+    ],
+    "ac1e": [
+     ["ac1d", true],
+      "Great! Please upload suggestion box results",
+      "upload"
+    ],
+    "ac1f": [
+      ["ac1d", false],
+      "That's alright, Please download suggestion box template",
+      "policy",
+      "suggestion_box_procedure_template.xls",
+      "http://viewtrax.us"
+    ],
+    "ac2a": [
+      null,
+      "Does your practice use Same-Day Appointments?",
+      "yes-no"
+    ],
+	"ac1b": [
+      ["ac2a", true],
+      "Great! Please upload screenshot of Same-Day Schedule.",
+      "upload"
+    ],
+    "ac2c": [
+      ["ac2a", false],
+      " No Same-Day Appointments?",
+      "policy",
+      "same_day_appt_policy.doc",
+      "http://viewtrax.us"
+    ],
+    "ac4": [
+      null,
+      "Telephone Encounters",
+      "policy",
+      "telephone_encounter_policy.doc",
+      "http://viewtrax.us"
+    ],
+    "ac73": [
+      null,
+      "Patient Portal Training",
+      "policy",
+      "patient_portal_guide.doc",
+      "http://viewtrax.us"
+    ],
+    "ac81": [
+      null,
+      "Secure Electronic Messaging",
+      "policy",
+      "secure_electronic_messaging_guide.doc",
+      "http://viewtrax.us"
+    ],
+    "ac84": [
+      null,
+      "Please download Clinician Selection Policy",
+      "policy",
+      "clinician_selection_policy.doc",
+      "http://viewtrax.us"
+    ],
+    "ac85": [
+      null,
+      "Since you have multiple providers, please download PCP Selection Report",
+      "policy",
+      "pcp_selection_policy.doc",
+      "http://viewtrax.us"
+    ]
+  },
+  "5": {
+    "cc1a": [
+      null,
+      "Referral and Orders Tracking",
+      "policy",
+      "specific_tracking_guide_packet.doc",
+      "http://viewtrax.us"
+    ],
+    "cc1b": [
+      null,
+      "Do you track referral orders in your EMR?",
+      "yes-no"
+    ],
+    "cc1c": [
+      ["cc1b", true],
+      "Great! Please  upload a screen shot of your EMR Tracking",
+      "upload"
+    ],
+    "cc1d": [
+      ["cc1b", false],
+      "Since you don't use EMR for Tracking, Please upload cam scan of a sample external tracking",
+      "upload"
+    ],
+    "cc1e": [
+      null,
+      "Do you send referrals electronically, fax or with patient",
+      "input"
+    ],
+    "cc1aa": [
+      null,
+      "Do you include the following: Specific Clinical Question? Required Timing and Type of Referral (Emergent, Urgent or Routine)? Pertinent Patient Demographics, Clinical Data, and Test Results?",
+      "yes-no"
+    ],
+    "cc1bb": [
+      null,
+      "Do you follow-up on all referrals, especially ones that are overdue, until a specialist report is received?",
+      "yes-no"
+    ],
+    "cc1cc": [
+      null,
+      "Do you scan all specialist reports in patient record?",
+      "yes-no"
+    ],
+    "cc6dd": [
+      null,
+      "EMR Database Analysis - Specialists Referrals",
+      "upload"
+    ],
+    "cc6ee": [
+      null,
+      "Please List 3 Specialists to whom you refer",
+      "input"
+    ],
+    "cc7": [
+      null,
+      "Specialists Online Reviews Research",
+      "upload"
+    ],
+    "cc11": [
+      null,
+      "Referral Response Analysis",
+      "upload"
+    ],
+    "cc14": [
+      null,
+      "Hospitalization/ER Visit Tracking",
+      "policy",
+      "hospitalization_template_guide_policy.doc",
+      "http://viewtrax.us"
+    ],
+    "cc16": [
+      null,
+      "Contacting Patients after Hospitalization/ER Visit",
+      "policy",
+      "office_policy.doc",
+      "http://viewtrax.us"
+    ]
+  },
+  "6": {
+    "qi1": [
+      null,
+      "EMR Database Analysis - Quality Measures Reports",
+      "upload"
+    ],
+    "qi1a": [
+      null,
+      "Appointment Availability Analysis",
+      "policy",
+      "appointment_availability_template.doc",
+      "http://viewtrax.us"
+    ]
+  }
+}

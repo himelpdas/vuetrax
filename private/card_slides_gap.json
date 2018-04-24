@@ -1,0 +1,163 @@
+{
+
+"1": {
+    "tc1a1": [
+      null,
+      "Who will be the clinician lead for the PCMH Project.",
+      "input"
+    ],
+    "tc1a2": [
+      null,
+      "What is the Clinician Lead Credentials?",
+      "input"
+    ],
+    "tc1a3": [
+      null,
+      "Roles and Responsibilities - To Support Implementation of PCMH NYS Model and Ensure All Providers and Staff are Trained and Continuously Provide Patient Centered Care. - Please Sign Below:",
+      "input"
+    ],
+    "tc1b1": [
+      null,
+      "Who will be the staff lead for the PCMH Project?",
+      "input"
+    ],
+    "tc1b2": [
+      null,
+      "What is the staff Credentials?",
+      "input"
+    ],
+    "tc1b3": [
+      null,
+      "Roles and Responsibilities - To Support Implementation of PCMH NYS Model and Ensure All Providers and Staff are Trained and Continuously Provide Patient Centered Care.",
+      "input"
+    ],
+    "tc1c": [
+      null,
+      "Transformation Team Policy",
+      "policy",
+      "team_policy.doc",
+      "http://viewtrax.us"
+    ],
+    "tc2a": [
+      null,
+      "What Jobs Does Your Practice Have?",
+      "input"
+    ],
+    "tc2a1": [
+      null,
+      "What is the Team Structure",
+      "input"
+    ],
+    "tc2a2": [
+      null,
+      "Job Description Policy",
+	  "policy",
+      "job_descriptions_policy.doc",
+      "policy/1-TC-A/TC-02_Job_Descriptions_Policy.docx"
+    ],
+    "tc3a": [
+      null,
+      "Does the practice participate in a PPS?",
+      "yes-no"
+    ],
+    "tc3b": [
+      ["tc3a", true],
+      "You've selected Yes, Please Input PPS.",
+      "input"
+    ],
+    "tc3c": [
+      null,
+      "DSRIP Participation Policy.",
+	  "policy",
+      "policy_needs_update.doc",
+      "policy/1-TC-C/TC-09_Policy_on_distribution_of_materials_regarding_practice_role_as_a_medical_home.docx"
+    ],
+    "tc5a1": [
+      null,
+      "Please input Name and Version of Practice's EMR",
+      "input"
+    ],
+    "tc5a2": [
+      null,
+      "Has the practice ever performed a Security Risk Analysis?",
+      "yes-no"
+    ],
+    "tc5b": [
+      ["tc5a2", true],
+      "You've selected Yes",
+      "upload"
+    ],
+    "tc5c": [
+      ["tc5a2", false],
+      "You've selected No",
+      "policy",
+      "security_risk_assessment.doc",
+      "http://viewtrax.us"
+    ],
+    "tc7a": [
+      null,
+      "Does the practice have Quarterly Staff/Provider Meetings?",
+      "yes-no"
+    ],
+    "tc7b": [
+      ["tc7a", true],
+      "You've selected yes, are your performance and quality measurements reviewed?",
+      "yes-no"
+    ],
+    "tc7c": [
+      ["tc7a", false],
+      "You've selected no, please download the following links",
+      "download quarterly staff meeting policy/staff involvement in QI/meeting template"
+    ],
+    "tc8": [
+      null,
+      "Does the practice currently have a Medical Home Brochure?",
+      "yes-no"
+    ],
+    "tc8a": [
+      ["tc8", true],
+      "You've selected yes, please upload brochure",
+      "upload"
+    ],
+    "tc8b": [
+      ["tc8", false],
+      "You've selected no, please download brochure template",
+      "policy",
+      "medical_home_brochure.doc",
+      "policy/1-TC-C/TC-09_Medical_Home_Brochure.pub"
+    ]
+  },
+  "3": {
+        
+    "ac71": [
+      null,
+      "Do you have a Patient Portal?",
+      "ac71",
+      "yes-no"
+    ],
+    "ac72": [
+      null,
+      "What is the web address?",
+      "input"
+    ],
+    "ac82": [
+      null,
+      "Do you have more than ONE provider in your practice?",
+      "yes-no"
+    ],
+    "ac83": [
+      ["ac83", true],
+      "Please enter all Provider's Names",
+      "input"
+    ],
+    "ac12": [
+      null,
+      "After Hours EMR Access",
+      "policy",
+      "after_hours_emr_access_policy.doc",
+      "policy/3-AC-A/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx"
+    ]
+  }
+  
+  
+  }

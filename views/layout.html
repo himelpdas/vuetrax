@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ViewTrax {{=request.function.capitalize()}}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{=URL('static','css/bootstrap.css')}}"/>
+    <link rel="stylesheet" href="{{=URL('static','css/web2py-bootstrap4.css')}}"/>
+    <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{=URL('static','images/favicon.png')}}">
+    <link href="{{=URL('static', 'css/custom.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{=URL('static', 'css/font-awesome.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{=URL('static', 'css/font-awesome-animation.min.css')}}">  <!--http://l-lin.github.io/font-awesome-animation/-->
+    <link href="{{=URL('static', 'css/4-col-portfolio.css')}}" rel="stylesheet">
+    <!-- All JavaScript at the bottom, except for Modernizr which enables
+         HTML5 elements & feature detects -->
+    <script src="{{=URL('static','js/modernizr-2.8.3.min.js')}}"></script>
+    <!-- Favicons -->
+    {{include 'web2py_ajax.html'}} <!-- this includes jquery.js, calendar.js/.css and web2py.js -->
+    {{block page_head}}
+    {{end}}
+
+</head>
+
+<body>
+{{if request.controller=="default" and request.function!="index":}}
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top d-print-none">
+    <div class="container">
+			<div class="col-lg-6">
+			<a class="navbar-brand" href="#"><h2><img src="{{=URL('static', 'images/vuetrax_new2.png')}}"
+                                                  style="height: 46px;"></h2></a>
+			<div class="btn-group">
+				<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false">
+					Welcome {{if auth.is_logged_in():}}{{=auth.user.last_name}}, {{=auth.user.first_name}}{{else:}}Guest{{pass}}
+				</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="{{=URL('default', 'user', args=[ 'profile'])}}">Profile</a>
+					<a class="dropdown-item" href="{{=URL('default', 'user', args=[ 'change_password'])}}">Password</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="{{=URL('default', 'user', args=[ 'logout']) }}">Log Out</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+					aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+            <form action="{{=URL()}}">
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+
+						<a class="btn btn-secondary {{if request.function in ['home', "dashboard"]:}}active{{pass}}" href="{{=URL('router')}}">
+							Home
+						</a>
+
+                    {{if my_role in ["admin"]:}}
+						<a class="btn btn-secondary" {{if request.function=='tracking':}}active{{pass}}" href="{{=URL('tracking')}}">
+							Tracking
+						</a>
+                    {{pass}}
+                    {{if my_role in ["admin", "trainer"]:}}
+						<a class="btn btn-secondary {{if request.function=='profiles':}}active{{pass}}" href="{{=URL('profiles')}}">
+							Profiles
+						</a>
+                    {{pass}}
+						<a class="btn btn-secondary {{if request.function=='template_library':}}active{{pass}}" href="{{=URL('template_library')}}">
+							Template Library
+						</a>
+                    <input type="text" value="{{=request.vars["search"] or ''}}" name="search" class="search" placeholder=" Search {{if request.function=="home":}}Practice{{elif request.function=="tracking":}}Trainer{{elif request.function=="profiles":}}User{{elif request.function=="template_library":}}Template{{pass}}...">
+			   </ul>
+			</div>
+            </form>
+		</div>
+    </div>
+</nav>
+
+<h1>&nbsp;</h1>
+
+{{pass}}
+{{if response.flash or session.flash:}}
+<div id="alert_banner" class="alert alert-warning"
+     style='width:500px; position: fixed; right:50px; top:50px; z-index:9999;'>
+{{=response.flash or session.flash}}
+    <span id="close_flash_icon" class="pull-right"><i class="fa fa-window-close-o"></i></span>
+</div>
+{{pass}}
+{{include}}
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+<!-- Footer -->
+
+<footer class="py-5 bg-dark fixed-bottom d-print-none">
+    <div class="container">
+        <div class="text-center text-white">&copy; 2018 George Dewey & Himel Das</div>
+    </div>
+    <!-- /.container -->
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="{{=URL('static', 'js/bootstrap.bundle.js')}}"></script>
+{{if response.flash or session.flash:}}
+<script>
+    $(document).ready(function () {
+        //$("#alert_banner").delay(10000).hide();
+        $("#close_flash_icon").on("click", function () {
+            $("#alert_banner").hide();
+        });
+    });
+</script>
+{{pass}}
+
+{{block scripts}}
+<script>
+    $(function () {
+        $('[title]').tooltip();
+    })
+</script>
+{{end}}
+
+</html>

@@ -1,0 +1,798 @@
+{{extend 'layout.html'}}
+<!--todo -add padding to progress bar -->
+
+<!-- Page Content -->
+<div class="container" id="practice_cards">
+
+    <!-- Page Heading -->
+
+    <h1 style="position: relative; color:white" class="my-4">
+        <div class="card" style="background-color: #0A698C;">
+            <b>
+                <img style="right: 10px; width:60px; height:60px;" class="rounded"
+                     src="{{=get_gravatar(tagout.email)}}">&nbsp;{{if auth.is_logged_in():}}{{=tagout.first_name}} {{=tagout.last_name}}{{else:}}
+                Guest{{pass}}
+                <div class="dropdown pull-right dropright" style="position: relative; right: 5px; bottom: 5px;">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Switch Profile
+                    </button>
+                {{usrs = db(db.auth_user.id>0).select()}}
+
+                    <div style="position: relative;" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">All</a>
+                        <div class="dropdown-divider"></div>
+                    {{for usr in usrs:}}
+                        <a class="dropdown-item" href="{{=URL(vars=dict(tagout=usr.id))}}"> <img
+                                style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
+                                src="{{=get_gravatar(usr.email)}}">{{=usr.last_name}}, {{=usr.first_name}}</a>
+                    {{pass}}
+                    </div>
+                </div>
+            </b>
+        </div>
+
+        <div style="text-align: right;"><a href="#" class="btn btn-sm btn-danger" data-toggle="modal"
+                                           data-target="#exampleModal">ADD PRACTICE <i
+                class="fa faa-pulse animated fa-plus-circle"
+                aria-hidden="true"></i> </a>
+        </div>
+
+    </h1>
+    <!-- Modal Headers -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true" style="min-height:800px;">
+        <div class="modal-dialog" role="document">
+
+        {{=practice_form.custom.begin}}
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New Practice</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            Renewal?
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                        {{=practice_form.custom.widget.is_renewal}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            Practice
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                        {{=practice_form.custom.widget.practice_name}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            Providers
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                        {{=practice_form.custom.widget.providers}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            IM Client?
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                            <input type="checkbox" class="form-check-input"
+                                   id="imclientcheck">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row imclientinfo hidden">
+                        <div class="col-md-5 col-sm-12">
+                            <i class='fa fa-fw fa-user'></i> App Tool Username
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                        {{=practice_form.custom.widget.app_tool_username}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row imclientinfo hidden">
+                        <div class="col-md-5 col-sm-12">
+                            <i class='fa fa-fw fa-unlock-alt'></i> App Tool Password
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                        {{=practice_form.custom.widget.app_tool_password}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row imclientinfo hidden">
+                        <div class="col-md-5 col-sm-12">
+                            <i class='fa fa-fw fa-id-card'></i> Survey Tool Username
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                        {{=practice_form.custom.widget.survey_tool_password}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row imclientinfo hidden">
+                        <div class="col-md-5 col-sm-12">
+                            <i class='fa fa-fw fa-id-card-o'></i> Survey Tool Password
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                        {{=practice_form.custom.widget.survey_tool_password}}
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                {{=practice_form.custom.submit}}
+                </div>
+            </div>
+        {{=practice_form.custom.end}}
+        </div>
+    </div>
+{{for admin_form_id in admin_forms:}}
+{{admin_form = admin_forms[admin_form_id]}}
+    <div class="modal fade" id="trainer_assign{{=admin_form_id}}" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true"
+         style="min-height:700px;">
+        <div class="modal-dialog modal-lg" role="document">
+        {{=admin_form.custom.begin}}
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <h5>Select Practice Member:</h5>
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                        {{=admin_form.custom.widget.trainer}}
+                        </div>
+                        <br>
+                    </div>
+                    <hr>
+                    <div class="col-md-12 col-sm-12 center">
+                        <h5>Insight Management Client:</h5>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <i class='fa fa-fw fa-user'></i> App Tool Username
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                        {{=admin_form.custom.widget.app_tool_username}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <i class='fa fa-fw fa-unlock-alt'></i> App Tool Password
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                        {{=admin_form.custom.widget.app_tool_password}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <i class='fa fa-fw fa-id-card'></i> Survey Tool Username
+                        </div>
+                        <div class="col-md-5 col-sm-12">
+                        {{=admin_form.custom.widget.survey_tool_password}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <i class='fa fa-fw fa-id-card-o'></i> Survey Tool Password
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                        {{=admin_form.custom.widget.survey_tool_password}}
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                {{=admin_form.custom.submit}}
+                </div>
+            </div>
+        {{=admin_form.custom.end}}
+        </div>
+    </div>
+{{pass}}
+{{for emr_form_id in emr_forms:}}
+{{emr_form = emr_forms[emr_form_id]}}
+    <div class="modal fade" id="emr_form_{{=emr_form_id}}" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true"
+         style="min-height:950px;">
+        <div class="modal-dialog" role="document">
+        {{=emr_form.custom.begin}}
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">EMR Access</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-desktop'></i> EMR</div>
+                        <div class="col-md-7 col-sm-12">{{=emr_form.custom.widget.emr}} </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-envelope-o'></i> Username</div>
+                        <div class="col-md-7 col-sm-12">{{=emr_form.custom.widget.emr_email}} </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-unlock-alt'></i> Password</div>
+                        <div class="col-md-7 col-sm-12">{{=emr_form.custom.widget.emr_password}} </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12"><b><i
+                                class='fa faa-flash animated fa-fw fa-exclamation-triangle' style="color: red;"></i> EMR
+                            Error</b></div>
+                        <p>
+                        <div class="col-md-7 col-sm-12">{{=emr_form.custom.widget.emr_problem}} </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <h5>EMR Directions</h5>
+                    <br>
+                {{=emr_form.custom.widget.emr_directions}}
+                    <p>
+
+
+                    <hr>
+                    <h5>Team Viewer</h5>
+                    <p>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-users'></i> Team Viewer</div>
+                        <div class="col-md-7 col-sm-12">{{=emr_form.custom.widget.emr_teamviewer}}</div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                {{=emr_form.custom.submit}}
+                </div>
+            </div>
+        {{=emr_form.custom.end}}
+        </div>
+    </div>
+{{pass}}
+{{for cc_form_id in cc_forms:}}
+{{cc_form = cc_forms[cc_form_id]}}
+    <div class="modal fade" id="cc_form_{{=cc_form_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true" style="min-height:1000px;">
+        <div class="modal-dialog modal-lg" role="document">
+        {{=cc_form.custom.begin}}
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Credit Card Info</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <h5 style="color: blue"> Sending Check: </h5>
+                    <h6 class="form-check">{{=cc_form.custom.widget.payment_is_check}}</h6>
+                    <hr>
+                    <h5 style="color: blue"> Application Fee: </h5>
+                    <h6 class="form-check">New Application Process Fee (per provider) -
+                        {{="$%0.2f"%(len(cc_forms_meta[cc_form_id]['practice'].providers) * 500)}}{{if not cc_forms_meta[cc_form_id]['practice'].is_renewal:}}<i class="fa fa-fw fa-check text-success"></i>{{pass}}</h6>
+                    <h6 class="form-check">Renewal Application Process Fee (per provider)
+                        {{="$%0.2f"%(len(cc_forms_meta[cc_form_id]['practice'].providers) * 120)}}{{if cc_forms_meta[cc_form_id]['practice'].is_renewal:}}<i class="fa fa-fw fa-check text-success"></i>{{pass}}</h6>
+                    <hr>
+                    <div class="row credit-card-form">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-user'></i> First Name</div>
+                                <div class="col-md-7 col-sm-12">{{=cc_form.custom.widget.credit_card_first_name}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-user-o'></i> Last Name</div>
+                                <div class="col-md-7 col-sm-12">{{=cc_form.custom.widget.credit_card_last_name}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-cc-visa'></i> Card Type</div>
+                                <div class="col-md-7 col-sm-12">{{=cc_form.custom.widget.credit_card_type}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-credit-card'></i> Account #</div>
+                                <div class="col-md-7 col-sm-12">{{=cc_form.custom.widget.credit_card_number}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-calendar'></i> Expiration Year
+                                </div>
+                                <div class="col-md-7 col-sm-12">{{=cc_form.custom.widget.credit_card_expiration_year}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-calendar'></i> Expiration Month
+                                </div>
+                                <div class="col-md-7 col-sm-12">{{=cc_form.custom.widget.credit_card_expiration_month}}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-credit-card-alt'></i> CVV #</div>
+                                <div class="col-md-7 col-sm-12">{{=cc_form.custom.widget.credit_card_cvv}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-home'></i> Street</div>
+                                <div class="col-md-7 col-sm-12">{{=cc_form.custom.widget.credit_card_street}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-location-arrow'></i> State</div>
+                                <div class="col-md-7 col-sm-12">{{=cc_form.custom.widget.credit_card_state}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-map-marker'></i> Zip</div>
+                                <div class="col-md-7 col-sm-12">{{=cc_form.custom.widget.credit_card_zip}}</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                {{=cc_form.custom.submit}}
+                </div>
+            </div>
+        {{=cc_form.custom.end}}
+        </div>
+    </div>
+{{pass}}
+{{for baa_form_id in baa_forms:}}
+{{baa_form = baa_forms[baa_form_id]}}
+    <div class="modal fade" id="baa_form_{{=baa_form_id}}" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true"
+         style="min-height:700px;">
+        <div class="modal-dialog" role="document">
+        {{=baa_form.custom.begin}}
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Business Associates Agreement Document</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+
+                <div class="modal-body">
+                    <h6><i class="fa fa-download" aria-hidden="true"></i>&nbsp; Please Download BAA Template</h6>
+
+
+                    <a href="{{=URL('static','policy/baa/Insight_PCMH_BAA_FORM.DOC')}}">Business Associates Agreement
+                        Template</a>
+
+                    <hr>
+
+                {{if baa_links[baa_form_id]["file_upload"] and baa_links[baa_form_id]["file_name"]:}}<i
+                        class="fa fa-file-o fa-fw"></i><a
+                        href="{{=URL(f='nt_download', args=baa_links[baa_form_id]["file_upload"])}}"><i>{{=baa_links[baa_form_id]["file_name"]}}</i></a><br><br>{{pass}}
+
+                {{=baa_form.custom.widget.baa_file_name}}
+                {{=baa_form.custom.widget.baa_file_upload}}
+
+
+                </div>
+                <div class="modal-footer">
+                {{=baa_form.custom.submit}}
+                </div>
+            </div>
+        {{=baa_form.custom.end}}
+        </div>
+    </div>
+{{pass}}
+{{for practice_info_form_id in practice_info_forms:}}
+{{practice_info_form = practice_info_forms[practice_info_form_id]}}
+    <div class="modal fade" id="practice_info_{{=practice_info_form_id}}" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true" style="min-height:1000px;">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Provider Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {{=practice_info_form.custom.begin}}
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="row">
+                                <div class="col-sm-12"><i class='fa fa-fw fa-user-md'></i> Name</div>
+                                <div class="col-sm-12">{{=practice_info_form.custom.widget.providers}}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="row">
+                                <div class="col-sm-12"><i class='fa fa-fw fa-id-card-o'></i> NPI</div>
+                                <div class="col-sm-12">{{=practice_info_form.custom.widget.provider_npi}}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="row">
+                                <div class="col-sm-12"><i class='fa fa-fw fa-id-card'></i> License</div>
+                                <div class="col-sm-12">{{=practice_info_form.custom.widget.provider_license}}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="row">
+                                <div class="col-sm-12"><i class='fa fa-fw fa-birthday-cake'></i> DOB</div>
+                                <div class="col-sm-12">{{=practice_info_form.custom.widget.provider_dob}}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="row">
+                                <div class="col-sm-12"><i class='fa fa-fw fa-list-alt'></i> Board</div>
+                                <div class="col-sm-12">{{=practice_info_form.custom.widget.provider_board}}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="row">
+                                <div class="col-sm-12"><i class='fa fa-fw fa-id-badge'></i> Credential</div>
+                                <div class="col-sm-12">{{=practice_info_form.custom.widget.provider_credential}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <h5>Days and Hours</h5>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-sm-12"><i class='fa fa-fw fa-calendar'></i> Days</div>
+                                <div class="col-sm-12">{{=practice_info_form.custom.widget.days}}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-sm-12"><i class='fa fa-fw fa-clock-o'></i> Open</div>
+                                <div class="col-sm-12">{{=practice_info_form.custom.widget.hours_from}}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-sm-12"><i class='fa fa-fw fa-clock-o'></i> Close</div>
+                                <div class="col-sm-12">{{=practice_info_form.custom.widget.hours_to}}</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <h5>Practice Information</h5>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-hospital-o'></i> Practice Name</div>
+                        <div class="col-md-7 col-sm-12">{{=practice_info_form.custom.widget.practice_name}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-home'></i> Practice Specialty</div>
+                        <div class="col-md-7 col-sm-12">{{=practice_info_form.custom.widget.practice_specialty}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-map-marker'></i> Address</div>
+                        <div class="col-md-7 col-sm-12">{{=practice_info_form.custom.widget.address}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-phone'></i> Phone</div>
+                        <div class="col-md-7 col-sm-12">{{=practice_info_form.custom.widget.phone}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-fax'></i> Fax</div>
+                        <div class="col-md-7 col-sm-12">{{=practice_info_form.custom.widget.fax}}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-id-card'></i> Practice NPI</div>
+                        <div class="col-md-7 col-sm-12">{{=practice_info_form.custom.widget.practice_npi}}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-envelope'></i> Practice Email</div>
+                        <div class="col-md-7 col-sm-12">{{=practice_info_form.custom.widget.practice_npi}}</div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                {{=practice_info_form.custom.submit}}
+
+                </div>
+            {{=practice_info_form.custom.end}}
+            </div>
+        </div>
+    </div>
+{{pass}}
+    <!-- Card Body -->
+    <div class="row" class="list">
+    {{for i, each in enumerate(practices):}}
+    {{practice_id = each.id}}
+        <div class="col-lg-3 col-md-6 portfolio-item">
+            <div class="card h-60" style="box-shadow: 10px 10px 5px grey;">
+                <div class="row">
+				<div class="col-sm-6">	
+				<div style="text-align: left;"><i class="fa  fa-fw fa-bell-o"></i></div>
+				</div>
+				<div class="col-sm-6">
+				<div style="text-align: right;"><a href="{{=URL("delete_practice", args=[each.id])}}"
+                                                   class="text-secondary confirmation "><i
+                        class="fa faa-burst faa-fast animated-hover fa-fw fa-times-circle-o"></i></a></div>
+				</div>
+				
+				</div>
+				
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="#" class="practice_name" data-placement="auto" data-toggle="modal"
+                           data-target="#practice_info_{{=each.id}}"
+                           title="Practice Information" data-html="true">
+
+                        {{=each.practice_name}}
+                        </a>
+                    </h5>
+                    <hr>
+                    <h6 class="card-title">
+                        <span class="provider_names">{{=', '.join(each.providers or [])}}</span></h6>
+                    <hr>
+                    <div class="row" style="text-align: center;">
+
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-sm btn-success faa-parent animated-hover"
+                                    data-toggle="modal" title="Administrator"
+                                    data-target="#trainer_assign{{=each.id}}"><i
+                                    class="fa  faa-bounce fa-fw fa-smile-o"></i>
+                            </button>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <button type="button"
+                                    class="btn btn-sm btn-{{if emr_forms_green[each.id]:}}success{{else:}}danger{{pass}} faa-parent animated-hover"
+                                    data-toggle="modal" title="EMR Access"
+                                    data-target="#emr_form_{{=each.id}}"><i class="fa faa-flash fa-fw fa-desktop"></i>
+                            </button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-sm btn-{{if cc_forms_meta[each.id]['green']:}}success{{else:}}danger{{pass}} faa-parent animated-hover"
+                                    data-toggle="modal" title="Credit Card Info"
+                                    data-target="#cc_form_{{=each.id}}"><i
+                                    class="fa faa-horizontal fa-fw fa-credit-card"></i></button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button"
+                                    class="btn btn-sm btn-{{if baa_links[each.id]["file_upload"] and baa_links[each.id]["file_name"]:}}success{{else:}}danger{{pass}} faa-parent animated-hover"
+                                    data-toggle="modal" title="BAA Agreement"
+                                    data-target="#baa_form_{{=each.id}}"><i
+                                    class="fa  faa-shake fa-fw fa-briefcase"></i></button>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row" style="text-align: center;">
+                        <div class="col-lg-12">
+
+                            <canvas id="barChart_{{=each.id}}" style="max-width: 500px;"></canvas>
+                        {{import random}}
+                            <script>
+
+                                var ctxB = document.getElementById("barChart_{{=each.id}}").getContext('2d');
+                                var myBarChart = new Chart(ctxB, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: ["Gap", "Staff", "Provider"],
+                                        datasets: [{
+                                            //label: '# of Votes',
+                                            data: [{{="%0.2f"%_get_progress_by_practice(practice_id, "gap")["percent"]}}, {{="%0.2f"%_get_progress_by_practice(practice_id, "front")["percent"]}}, {{="%0.2f"%_get_progress_by_practice(practice_id, "provider")["percent"]}}],
+                                            backgroundColor: [
+                                                'rgba(165, 0, 255, .5)',
+                                                'rgba(27, 103, 226, .5)',
+                                                'rgba(255, 119, 0, .5)'
+                                            ],
+                                            borderColor: [
+                                                'rgba(165, 0, 255)',
+                                                'rgba(27, 103, 226)',
+                                                'rgba(255, 119, 0)'
+                                            ],
+                                            borderWidth: 1
+                                        }]
+                                    },
+                                    options: {
+                                        legend: {
+                                            display: false
+                                        },
+                                        scales: {
+
+                                            xAxes: [{
+                                                gridLines: {
+                                                    drawBorder: false,
+                                                    display: false,
+                                                }
+
+                                            }],
+
+                                            yAxes: [{
+                                                gridLines: {
+                                                    drawBorder: false,
+                                                    display: false
+                                                },
+
+                                                ticks: {
+                                                    display: false
+
+                                                }
+
+                                            }]
+                                        }
+                                    }
+                                });
+                            </script>
+
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-4"><a type="button" class="btn btn-sm btn-warning"
+                                                 href="{{=URL('dashboard', vars=dict(practice=each.id, section="gap" or session.section))}}"><b>DASHBOARD</b></a>
+                        </div>
+                        <div class="col-lg-4">
+                            <button type="button" class="btn btn-sm btn-info faa-parent animated-hover"
+                                    data-toggle="modal" title="Appointment Update"
+                                    data-target="#appointment" href="#"
+                                    style="position: relative; left: 50px;"><i
+                                    class="fa faa-flash fa-fw fa-calendar"></i></button>
+                        </div>
+                        <div class="col-lg-4">
+                            <button type="button" class="btn btn-sm btn-primary pull-right faa-parent animated-hover"
+                                    data-toggle="modal" title="Send Message"
+                                    data-target="#commentModal"><i class="fa faa-tada fa-fw fa-comment"></i></button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    {{pass}}
+    </div>
+    <!-- /.row -->
+
+
+    <!-- Pagination -->
+
+
+</div>
+<!-- /.container -->
+
+
+<div class="modal fade" id="appointment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true" style="min-height:700px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Appointment Update</h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="sel1">Select list:</label>
+                    <select class="form-control" id="sel1">
+                        <option>Canceled</option>
+                        <option>Rescheduled</option>
+                        <option>Custom</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder=" Message here..." class="form-control" rows="5" id="comment"></textarea>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true" style="min-height:700px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <span style="position: relative; bottom: 5px;">Subject:&nbsp;</span><input
+                    style='position: relative; bottom: 5px;'>
+                <div class="form-group">
+                    <textarea placeholder=" Message here..." class="form-control" rows="5" id="comment"></textarea>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{block scripts}}
+{{super}}
+<script>
+    $(function () {
+        $('.imclientinfo').hide();
+    });
+    $("#imclientcheck").on('change', function () {
+        if (this.checked) {
+            $(".imclientinfo").slideDown();
+        } else if (this.checked === false) {
+            $(".imclientinfo").slideUp();
+        }
+    });
+</script>
+
+
+<script>
+    $(function () {
+        //$('.credit-card-form').hide();
+    });
+    $("[name='payment_is_check']").on('change', function () {
+        if (!this.checked) {
+            $(".credit-card-form").slideDown();
+        } else if (!this.checked === false) {
+            $(".credit-card-form").slideUp();
+        }
+    });
+</script>
+
+<!-- Include jQuery - see http://jquery.com -->
+<script type="text/javascript">
+    $('.confirmation').on('click', function () {
+        return confirm('Are you sure?');
+    });
+</script>
+<script type="text/javascript">
+    //https://github.com/davidstutz/bootstrap-multiselect/issues/741
+    $(document).ready(function () {
+        $('[multiple="multiple"]').multiselect({
+            templates: {
+                li: '<li><a class="dropdown-item"><label class="m-0 pl-2 pr-0"></label></a></li>',
+                ul: ' <ul class="multiselect-container dropdown-menu p-1 m-0"></ul>',
+                button: '<button type="button" class="multiselect dropdown-toggle" data-toggle="dropdown" data-flip="false"><span class="multiselect-selected-text"></span> <b class="caret"></b></button>',
+                filter: '<li class="multiselect-item filter"><div class="input-group m-0"><input class="form-control multiselect-search" type="text"></div></li>',
+                filterClearBtn: '<span class="input-group-btn"><button type="button" class="btn btn-secondary multiselect-clear-filter">&times;</button></span>'
+            },
+            buttonContainer: '<div class="dropdown" />',
+            buttonClass: 'btn btn-secondary',
+            enableFiltering: true,
+            enableCaseInsensitiveFiltering: true
+        });
+    });
+</script>
+{{end}}
+
+{{block page_head}}
+{{super}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+<script src="{{=URL('static','js/bootstrap-multiselect.js')}}"></script>
+<link href="{{=URL('static', 'css/bootstrap-multiselect.css')}}" rel="stylesheet">
+{{end}}

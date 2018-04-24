@@ -1,0 +1,315 @@
+{{extend "layout.html"}}
+{{block page_head}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+{{end}}
+
+<!-- Page Content -->
+<div class="container">
+    <h2> &nbsp; </h2>
+    <div class="card dropdown dropright" style="text-align: center;">
+
+        <b>
+
+
+            <h1><i class="fa fa-pie-chart" aria-hidden="true"></i> Performance Tracking</h1>
+
+
+        </b>
+    </div>
+    <h2> &nbsp; </h2>
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title" style="text-align: center; color: black;">
+                        <div class="pull-left"><b>Jazzmyn Byrd</b></div>
+                        <div class="dropdown pull-right dropright" style="position: relative; right: 5px; bottom: 5px;">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Switch Profile
+                            </button>
+
+
+                            <div style="position: relative;" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">All</a>
+                                <div class="dropdown-divider"></div>
+
+                            </div>
+                    </h3>
+                </div>
+
+                <hr>
+                <div class="row">
+                    <div class="card-body col-lg-6">
+
+                        <div class="card">
+                            <canvas id="doughnutChart2" width="50" height="50"></canvas>
+                            <script>
+								//doughnut
+								var ctxD = document.getElementById("doughnutChart2").getContext('2d');
+								var myLineChart = new Chart(ctxD, {
+									type: 'doughnut',
+									data: {
+										labels: ["QC", "DP", "UD", "SD", "CT", "CM"],
+										datasets: [
+											{
+												data: [245, 42, 25, 12, 3, 5],
+												backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#ADFF6C", "#EF35FF", "#2B42FD"],
+												hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#ADFF6C", "#EF35FF", "#616774"]
+											}
+										]
+									},
+									options: {
+										responsive: true
+									}
+								});
+
+
+                            </script>
+
+                        </div>
+                        <li class="list-group-item list-group-item-action">
+
+                            <div style=" text-align: center;">
+                                <h5>Status</h5>
+
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <button type="button"
+                                        style="width: 100%; position: relative; margin-bottom: 3px; background-color: #F7464A;"
+                                        class="btn">
+                                    <div class="pull-left">Question Cards</div>
+                                    <div class="badge badge-light pull-right"
+                                         style="position: relative; top:5px; left:7px;">245
+                                    </div>
+                                </button>
+                                <button type="button"
+                                        style="width: 100%; position: relative; margin-bottom: 3px; background-color: #5AD3D1;"
+                                        class="btn">
+                                    <div class="pull-left">Downloaded Policies</div>
+                                    <div class="badge badge-light pull-right"
+                                         style="position: relative; top:5px; left:7px;">42
+                                    </div>
+                                </button>
+                                <button type="button"
+                                        style="width: 100%; position: relative; margin-bottom: 3px; background-color:  #FDB45C"
+                                        class="btn">
+                                    <div class="pull-left">Uploaded Documents</div>
+                                    <div class="badge badge-light pull-right"
+                                         style="position: relative; top:5px; left:7px;">25
+                                    </div>
+                                </button>
+                                <button type="button"
+                                        style="width: 100%; position: relative; margin-bottom: 3px; background-color: #ADFF6C;"
+                                        class="btn">
+                                    <div class="pull-left">Signed Documents</div>
+                                    <div class="badge badge-light pull-right"
+                                         style="position: relative; top:5px; left:7px;">12
+                                    </div>
+                                </button>
+                                <button type="button"
+                                        style="width: 100%; position: relative; margin-bottom: 3px; background-color: #EF35FF;"
+                                        class="btn">
+                                    <div class="pull-left">Completed Trainings</div>
+                                    <div class="badge badge-light pull-right"
+                                         style="position: relative; top:5px; left:7px;">3
+                                    </div>
+                                </button>
+
+                                <button type="button"
+                                        style="width: 100%; position: relative; margin-bottom: 3px; background-color:#2B42FD;"
+                                        class="btn">
+                                    <div class="pull-left">Canceled Meetings</div>
+                                    <div class="badge badge-light pull-right"
+                                         style="position: relative; top:5px; left:7px;">5
+                                    </div>
+                                </button>
+
+                            </div>
+                        </li>
+                    </div>
+
+                    <div class="card-body col-lg-6">
+                        <div class="card">
+                            <div style="background-color: #048A00;  text-align: center; position: relative;">
+                                <h5 style="color: white; position: relative; top: 3px;">Progress</h5>
+                            </div>
+                            <div>
+
+                                <div class="input-group input-file pull-right" style="width: 227px;" name="Fichier1">
+
+                                    <input type="text" class="form-control" placeholder='Find Practice...'/>
+
+                                    <span class="input-group-btn">
+									<button class="btn btn-warning btn-choose" type="button"><i
+                                            class="fa fa-fw fa-search"></i></button>
+								</span> &nbsp;
+                                </div>
+                            </div>
+
+                            <div style="max-height: 537px; overflow-y: scroll; position: relative;">
+
+                                <div style=" padding-left: 10px; padding-right: 10px;"> <h6 style="margin-top: 5px;"> Parkchester Medical PC</h6>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                                             role="progressbar" style="width: 25%"></div>
+                                    </div>
+                                    <p>
+                                    <div style="text-align: center;"><a href="#" class="btn btn-sm btn-light">DASHBOARD</a></div>
+                                </div>
+
+                                    <hr>
+
+
+                                    <div style=" padding-left: 10px; padding-right: 10px;"> <h6> Hillside Pediatric Practice </h6>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                                                 role="progressbar" style="width: 45%"></div>
+                                        </div>
+                                        <p>
+                                        <div style="text-align: center;"><a href="#" class="btn btn-sm btn-light">DASHBOARD</a>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+<br>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title" style="text-align: center; color: black;"><b>Ebony Davis</b></h4>
+                <hr>
+                <div class="row">
+                    <div class="card-body col-lg-6">
+
+                        <div class="card">
+                            <canvas id="doughnutChart1" width="50" height="50"></canvas>
+                            <script>
+								//doughnut
+								var ctxD = document.getElementById("doughnutChart1").getContext('2d');
+								var myLineChart = new Chart(ctxD, {
+									type: 'doughnut',
+									data: {
+										labels: ["QC", "DP", "UD", "SD", "CT", "CM"],
+										datasets: [
+											{
+												data: [215, 35, 22, 4, 4, 6],
+												backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#ADFF6C", "#EF35FF", "#2B42FD"],
+												hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#ADFF6C", "#EF35FF", "#616774"]
+											}
+										]
+									},
+									options: {
+										responsive: true
+									}
+								});
+
+
+                            </script>
+
+                        </div>
+                        <li class="list-group-item list-group-item-action">
+
+                            <div style=" text-align: center;">
+                                <h5>Status</h5>
+
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <button type="button"
+                                        style="width: 100%; position: relative; margin-bottom: 3px; background-color: #F7464A;"
+                                        class="btn">
+                                    <div class="pull-left">Question Cards</div>
+                                    <div class="badge badge-light pull-right"
+                                         style="position: relative; top:5px; left:7px;">215
+                                    </div>
+                                </button>
+                                <button type="button"
+                                        style="width: 100%; position: relative; margin-bottom: 3px; background-color: #5AD3D1;"
+                                        class="btn">
+                                    <div class="pull-left">Downloaded Policies</div>
+                                    <div class="badge badge-light pull-right"
+                                         style="position: relative; top:5px; left:7px;">35
+                                    </div>
+                                </button>
+                                <button type="button"
+                                        style="width: 100%; position: relative; margin-bottom: 3px; background-color:  #FDB45C"
+                                        class="btn">
+                                    <div class="pull-left">Uploaded Documents</div>
+                                    <div class="badge badge-light pull-right"
+                                         style="position: relative; top:5px; left:7px;">22
+                                    </div>
+                                </button>
+                                <button type="button"
+                                        style="width: 100%; position: relative; margin-bottom: 3px; background-color: #ADFF6C;"
+                                        class="btn">
+                                    <div class="pull-left">Signed Documents</div>
+                                    <div class="badge badge-light pull-right"
+                                         style="position: relative; top:5px; left:7px;">4
+                                    </div>
+                                </button>
+                                <button type="button"
+                                        style="width: 100%; position: relative; margin-bottom: 3px; background-color: #EF35FF;"
+                                        class="btn">
+                                    <div class="pull-left">Completed Trainings</div>
+                                    <div class="badge badge-light pull-right"
+                                         style="position: relative; top:5px; left:7px;">4
+                                    </div>
+                                </button>
+
+                                <button type="button"
+                                        style="width: 100%; position: relative; margin-bottom: 3px; background-color:#2B42FD;"
+                                        class="btn">
+                                    <div class="pull-left">Canceled Meetings</div>
+                                    <div class="badge badge-light pull-right"
+                                         style="position: relative; top:5px; left:7px;">2
+                                    </div>
+                                </button>
+
+                            </div>
+                        </li>
+                    </div>
+
+                    <div class="card-body col-lg-6">
+                        <div class="card">
+                            <div style="background-color: #048A00;  text-align: center; position: relative;">
+                                <h5 style="color: white; position: relative; top: 3px;">Progress</h5>
+                            </div>
+                            <div>
+
+                                <div class="input-group input-file" style="width: 227px;" name="Fichier1">
+								<span class="input-group-btn">
+									<button class="btn btn-warning btn-choose" type="button"><i
+                                            class="fa fa-fw fa-search"></i></button>
+								</span>
+                                    <input type="text" class="form-control" placeholder='Find Practice...'/> &nbsp;
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- /.container -->
+

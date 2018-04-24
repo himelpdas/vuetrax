@@ -1,0 +1,293 @@
+{
+  "km1": {
+    "type": "response",
+    "inquire": "How does the practice track referrals?"
+  },
+  "km8": {
+    "type": "upload",
+    "inquire": "EMR Database Analysis - Patient Demographics"
+  },
+  "km9": {
+    "type": "upload",
+    "inquire": "EMR Database Analysis - Patient Diversity"
+  },
+  "km10": {
+    "type": "upload",
+    "inquire": "EMR Database Analysis - Patient Language Needs"
+  },
+  "km11a2": {
+    "type": "download",
+    "inquire": "Patient Call Back for Preventive and Chronic Services",
+    "assets": [
+      {
+        "name": "job_descriptions_policy.doc",
+        "url": "policy/1-TC-A/TC-02_Job_Descriptions_Policy.docx",
+        "icon": "file-word-o"
+      }
+    ]
+  },
+  "km11b": {
+    "type": "download",
+    "inquire": "Patient Call Back for Preventive and Chronic Services",
+    "assets": [
+      {
+        "name": "telephone_encounter.doc",
+        "url": "policy/1-TC-A/TC-02_Job_Descriptions_Policy.docx",
+        "icon": "file-word-o"
+      },
+      {
+        "name": "quarr_hedis_guide.doc",
+        "url": "policy/1-TC-A/TC-02_Job_Descriptions_Policy.docx",
+        "icon": "file-word-o"
+      }
+    ]
+  },
+  "ac1a": {
+    "type": "yesNo",
+    "inquire": "Do You Use a Patient Survey?",
+    "branches": {
+      "ac1b": {
+        "type": "upload",
+        "inquire": "Great! Please upload survey tool examples",
+        "showIfParentEquals": true
+      },
+      "ac1c": {
+        "type": "download",
+        "inquire": "Please download all Survey Tool Templates",
+        "assets": [
+          {
+            "name": "Survey_Family_Medicine_English",
+            "url": "policy/6-QI-A/QI-04A_2017_Survey_Family_Medicine_English.docx",
+            "icon": "file-word-o"
+          },
+          {
+            "name": "Survey_Pediatric_Medicine_English",
+            "url": "policy/6-QI-A/QI-04A_2017_Survey_Pediatric_Medicine_English.docx",
+            "icon": "file-word-o"
+          },
+          {
+            "name": "Survey_Internal_Medicine_English",
+            "url": "policy/6-QI-A/QI-04A_2017_Survey_Internal_Medicine_English.docx",
+            "icon": "file-word-o"
+          }
+        ],
+        "showIfParentEquals": false
+      }
+    }
+  },
+  "ac1d": {
+    "type": "yesNo",
+    "inquire": "Do You Use a Suggestion Box?",
+    "branches": {
+      "ac1e": {
+        "type": "upload",
+        "inquire": "Great! Please upload suggestion box results",
+        "showIfParentEquals": true
+      },
+      "ac1f": {
+        "type": "download",
+        "inquire": "Please download suggestion box template:",
+        "assets": [
+          {
+            "name": "Suggestion_Box_2017_English",
+            "url": "policy/6-QI-A/QI_04B_AC_01_Suggestion_Box_2017_English.pdf",
+            "icon": "file-word-o"
+          }
+        ],
+        "showIfParentEquals": false
+      }
+    }
+  },
+  "ac2a": {
+    "type": "yesNo",
+    "inquire": "Does your practice use Same-Day Appointments?",
+    "branches": {
+      "ac1e": {
+        "type": "upload",
+        "inquire": "Great! Please upload screenshot of Same-Day Appointment block usage in EMR Schedule (7 days)",
+        "showIfParentEquals": true
+      },
+      "ac1f": {
+        "type": "download",
+        "inquire": "Please download Same-Day Appointment policy:",
+        "assets": [
+          {
+            "name": "General_Office_policy",
+            "url": "policy/3-AC-A/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx",
+            "icon": "file-word-o"
+          }
+        ],
+        "showIfParentEquals": false
+      }
+    }
+  },
+  "km11a": {
+    "type": "download",
+    "inquire": "Patient Call Back for Preventive and Chronic Services",
+    "assets": [
+      {
+        "name": "job_descriptions_policy.doc",
+        "url": "policy/1-TC-A/TC-02_Job_Descriptions_Policy.docx",
+        "icon": "file-word-o"
+      }
+    ]
+  },
+  "ac4": {
+    "type": "download",
+    "inquire": "Please download Telephone Encounters Template:",
+    "assets": [
+      {
+        "name": "DSRIP_policy.doc",
+        "url": "policy/1-TC-C/TC-09_Policy_on_distribution_of_materials_regarding_practice_role_as_a_medical_home.docx",
+        "icon": "file-word-o"
+      }
+    ]
+  },
+  "ac73": {
+    "type": "download",
+    "inquire": "Please download Patient Portal Training:",
+    "assets": [
+      {
+        "name": "DSRIP_policy.doc",
+        "url": "policy/1-TC-C/TC-09_Policy_on_distribution_of_materials_regarding_practice_role_as_a_medical_home.docx",
+        "icon": "file-word-o"
+      }
+    ]
+  },
+  "ac81": {
+    "type": "download",
+    "inquire": "Please download ecure Electronic Messaging:",
+    "assets": [
+      {
+        "name": "DSRIP_policy.doc",
+        "url": "policy/1-TC-C/TC-09_Policy_on_distribution_of_materials_regarding_practice_role_as_a_medical_home.docx",
+        "icon": "file-word-o"
+      }
+    ]
+  },
+  "ac84": {
+    "type": "download",
+    "inquire": "Please download Clinician Selection Policy:",
+    "assets": [
+      {
+        "name": "DSRIP_policy.doc",
+        "url": "policy/1-TC-C/TC-09_Policy_on_distribution_of_materials_regarding_practice_role_as_a_medical_home.docx",
+        "icon": "file-word-o"
+      }
+    ]
+  },
+  "ac85": {
+    "type": "yesNo",
+    "inquire": "Does your practice have multiple providers?",
+    "branches": {
+      "ac86": {
+        "type": "download",
+        "inquire": "Since you have multiple providers, please download PCP Selection Report",
+        "assets": [
+          {
+            "name": "security_risk_assessment.doc",
+            "url": "policy/1-TC-A/TC-02_Job_Descriptions_Policy.docx",
+            "icon": "file-word-o"
+          }
+        ],
+        "showIfParentEquals": true
+      }
+    }
+  },
+  "cc1a": {
+    "type": "download",
+    "inquire": "Please download Referral and Orders Tracking policy:",
+    "assets": [
+      {
+        "name": "specific_tracking_guide_packet.doc",
+        "url": "policy/1-TC-C/TC-09_Policy_on_distribution_of_materials_regarding_practice_role_as_a_medical_home.docx",
+        "icon": "file-word-o"
+      }
+    ]
+  },
+  "cc1b": {
+    "type": "yesNo",
+    "inquire": "Do you track referral orders in your EMR?",
+    "branches": {
+      "cc1ba": {
+        "type": "upload",
+        "inquire": "Great! Please  upload a screen shot of your EMR Tracking",
+        "showIfParentEquals": true
+      }
+    },
+    "cc1c": {
+      "type": "upload",
+      "inquire": "Since you don't use EMR for Tracking, Please upload cam scan of a sample external tracking",
+      "showIfParentEquals": false
+    }
+  },
+  "cc1e": {
+    "type": "response",
+    "inquire": "Do you send referrals electronically, fax or with patient?"
+  },
+  "cc1aa": {
+    "type": "yesNo",
+    "inquire": "Do you include the following: Specific Clinical Question? Required Timing and Type of Referral (Emergent, Urgent or Routine)? Pertinent Patient Demographics, Clinical Data, and Test Results?"
+  },
+  "cc1bb": {
+    "type": "yesNo",
+    "inquire": "Do you follow-up on all referrals, especially ones that are overdue, until a specialist report is received?"
+  },
+  "cc1cc": {
+    "type": "yesNo",
+    "inquire": "Do you scan all specialist reports in patient record?"
+  },
+  "cc6dd": {
+    "type": "upload",
+    "inquire": "EMR Database Analysis - Specialists Referrals: Please upload (3) Consult Notes from (3) Specialists"
+  },
+  "cc6ee": {
+    "type": "response",
+    "inquire": "Please list (3) Specialist patient's are referred to:"
+  },
+  "cc7": {
+    "type": "upload",
+    "inquire": "Specialists Online Reviews Research"
+  },
+  "cc11": {
+    "type": "upload",
+    "inquire": "EMR Database Analysis - Specialists Referrals: Please upload (3) Consult Notes from (3) Specialists"
+  },
+  "cc14": {
+    "type": "download",
+    "inquire": "Please download Hospitalization/ER Visit Tracking Template",
+    "assets": [
+      {
+        "name": "office_policy.doc",
+        "url": "policy/3-AC-A/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx",
+        "icon": "file-word-o"
+      }
+    ]
+  },
+  "cc14a": {
+    "type": "download",
+    "inquire": "Please download policy for Contacting Patients after Hospitalization/ER Visit",
+    "assets": [
+      {
+        "name": "office_policy.doc",
+        "url": "policy/3-AC-A/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx",
+        "icon": "file-word-o"
+      }
+    ]
+  },
+  "qi1": {
+    "type": "upload",
+    "inquire": "EMR Database Analysis - Quality Measures Reports (for each provider)"
+  },
+  "qi1a": {
+    "type": "download",
+    "inquire": "Please download Appointment Availability Analysis",
+    "assets": [
+      {
+        "name": "availability_analysis.doc",
+        "url": "policy/3-AC-A/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx",
+        "icon": "file-word-o"
+      }
+    ]
+  }
+}

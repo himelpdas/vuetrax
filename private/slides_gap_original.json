@@ -1,0 +1,180 @@
+{
+  "tc1a1": {
+    "type": "response",
+    "inquire": "Who will be the Clinician Lead?"
+  },
+  "tc1a2": {
+    "type": "response",
+    "inquire": "What is the Clinician Lead Credentials"
+  },
+  "tc1a3": {
+    "type": "response",
+    "inquire": "Roles and Responsibilities - To Support Implementation of PCMH NYS Model and Ensure All Providers and Staff are Trained and Continuously Provide Patient Centered Care. - Please Sign Below:"
+  },
+  "tc1b1": {
+    "type": "response",
+    "inquire": "Who will be the Staff Lead?"
+  },
+  "tc1b2": {
+    "type": "response",
+    "inquire": "What is the Staff Lead Credentials"
+  },
+  "tc1b3": {
+    "type": "response",
+    "inquire": "Roles and Responsibilities - To Support Implementation of PCMH NYS Model and Ensure All Providers and Staff are Trained and Continuously Provide Patient Centered Care. - Please Sign Below:"
+  },
+  "tc1c": {
+    "type": "download",
+    "inquire": "Please download Team Transformation Policy",
+    "assets": [
+      {
+        "name": "job_descriptions_policy.doc",
+        "url": "policy/1-TC-A/TC-02_Job_Descriptions_Policy.docx",
+        "icon": "file-word-o"
+      }
+    ]
+  },
+  "tc2a": {
+    "type": "response",
+    "inquire": "What jobs does your practice have? - Please List Them Here:"
+  },
+  "tc2b": {
+    "type": "response",
+    "inquire": "What is the Team Structure - Please List Here:",
+    "template": "<p>Example:</p><ul><li>Provider (Ahmad)<ul><li>MA (Lori)</li><li>MA (Sunita)</li></ul></li><li>NP (Carol)<ul><li>MA (Luis)<ul><li>Intern (Anik)</li></ul></li><li>MA (John)</li></ul></li><li>Office Manager<ul><li>Front Desk (Tracy)</li><li>Front Desk (Linda)</li></ul></li></ul>"
+  },
+  "tc2c": {
+    "type": "download",
+    "inquire": "Please download the Job Description Policy",
+    "assets": [
+      {
+        "name": "job_descriptions_policy.doc",
+        "url": "policy/1-TC-A/TC-02_Job_Descriptions_Policy.docx",
+        "icon": "file-word-o"
+      }
+    ]
+  },
+  "tc3a": {
+    "type": "yesNo",
+    "inquire": "Does the practice participate in a PPS?",
+    "branches": {
+      "tc3b": {
+        "type": "response",
+        "inquire": "Please Input PPS",
+        "showIfParentEquals": true
+      }
+    }
+  },
+  "tc3c": {
+    "type": "download",
+    "inquire": "Please download PPS Policy below:",
+    "assets": [
+      {
+        "name": "DSRIP_policy.doc",
+        "url": "policy/1-TC-C/TC-09_Policy_on_distribution_of_materials_regarding_practice_role_as_a_medical_home.docx",
+        "icon": "file-word-o"
+      }
+    ]
+  },
+  "tc5a": {
+    "type": "response",
+    "inquire": "Please input name and version of Practice's EMR:"
+  },
+  "tc5b": {
+    "type": "yesNo",
+    "inquire": "Has the practice ever performed a Security Risk Analysis?",
+    "branches": {
+      "tc5c": {
+        "type": "upload",
+        "inquire": "Great! Please upload Analysis",
+        "showIfParentEquals": true
+      },
+      "tc5d": {
+        "type": "download",
+        "inquire": "Please download Security Risk Analysis Document",
+        "assets": [
+          {
+            "name": "security_risk_assessment.doc",
+            "url": "policy/1-TC-A/TC-02_Job_Descriptions_Policy.docx",
+            "icon": "file-word-o"
+          }
+        ],
+        "showIfParentEquals": false
+      }
+    }
+  },
+  "tc7a": {
+    "type": "yesNo",
+    "inquire": "Does the practice have Quartely Staff/Provider Meetings?",
+    "branches": {
+      "tc7b": {
+        "type": "yesNo",
+        "inquire": "Are your performance and quality measurements reviewed?",
+        "showIfParentEquals": true,
+        "branches": {
+          "tc1a9": {
+            "type": "upload",
+            "inquire": "Please upload latest Quarterly",
+            "showIfParentEquals": true
+          }
+        }
+      },
+      "tc7c": {
+        "type": "download",
+        "inquire": "Please download Quarterly Staff Meeting Policy / Staff Involvement in QI Policy Template",
+        "assets": [
+          {
+            "name": "job_descriptions_policy.doc",
+            "url": "policy/1-TC-A/TC-02_Job_Descriptions_Policy.docx",
+            "icon": "file-word-o"
+          }
+        ],
+        "showIfParentEquals": false
+      }
+    }
+  },
+  "tc8a": {
+    "type": "yesNo",
+    "inquire": "Does the practice have a Medical Home Brochure?",
+    "branches": {
+      "tc8b": {
+        "type": "upload",
+        "inquire": "Please upload your Medical Home Brochure:",
+        "showIfParentEquals": true
+      }
+    }
+  },
+  "ac7a": {
+    "type": "yesNo",
+    "inquire": "Do you have a Patient Portal?",
+    "branches": {
+      "ac7b": {
+        "type": "response",
+        "inquire": "What is the web address?",
+        "showIfParentEquals": true
+      }
+    }
+  },
+  "ac82": {
+    "type": "yesNo",
+    "inquire": "Do you have more than ONE provider in your practice?",
+    "branches": {
+      "ac7b2": {
+        "type": "response",
+        "inquire": "Please list all providers at your practice.",
+        "showIfParentEquals": true
+      }
+    }
+  },
+  "ac12": {
+    "type": "download",
+    "inquire": "After Hours EMR Access",
+    "assets": [
+      {
+        "name": "office_policy.doc",
+        "url": "policy/3-AC-A/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx",
+        "icon": "file-word-o"
+      }
+    ]
+  }
+}

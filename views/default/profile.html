@@ -1,0 +1,182 @@
+{{extend 'layout.html'}}
+<body>
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading -->
+
+    <h1 style="position: relative; color:white" class="my-4">
+        <div class="card" style="background-color: #0A698C;">
+            <b>
+                <img style="position: relative; left:5px; bottom: 5px; width:40px; height:40px;" class="rounded"
+                     src="./static/ebony.png"> Ebony Davis
+                <div class="dropdown pull-right dropright" style="position: relative; right: 5px; bottom: 5px;">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Tag Out
+                    </button>
+                    <div style="position: relative;" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">All</a>
+                    </div>
+                </div>
+            </b>
+        </div>
+
+        <div style="text-align: right;"><a href="#" class="btn btn-sm btn-danger" data-toggle="modal"
+                                           data-target="#exampleModal">ADD PRACTICE <i class="fa fa-plus-circle"
+                                                                                       aria-hidden="true"></i> </a>
+        </div>
+
+    </h1>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New Practice</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tr>
+                            <td><p><i class='fa fa-fw fa-home'></i> Practice </p></td>
+                            <td><input style='position: relative; bottom: 5px;'> </td>
+                        </tr>
+                        <tr>
+                            <td><p><i class='fa fa-fw fa-user-md'></i> Physician</p></td>
+                            <td><input style='position: relative; bottom: 5px;'> </td>
+                        </tr>
+                        <tr>
+                            <td><p><i class='fa fa-fw fa-wrench'></i> Trainer </p></td>
+                            <td><input style='position: relative; bottom: 5px;'> </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+            <div class="card h-60">
+
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="#" data-placement="auto" data-toggle="popover" title="Practice danger" data-html="true"
+                           data-content="<table style='white-space: nowrap; position: relative;'><tr><td><p><i class = 'fa fa-fw fa-home'></i> Practice Specialty</p></td><td> <input style='position: relative; bottom: 5px;'> </input> </td></tr><tr><td><p><i class = 'fa fa-fw fa-user-md'></i> Provider</p></td><td> <input style='position: relative; bottom: 5px;'> </input> </td></tr><tr><td><p><i class = 'fa fa-fw fa-user-md'></i> Provider #2</p></td><td> <input style='position: relative; bottom: 5px;'> </input> </td></tr><tr><td><p><i class = 'fa fa-fw fa-map-marker'></i> Location</p></td><td> <input style='position: relative; bottom: 5px;'> </input> </td></tr><td><p><i class = 'fa fa-fw fa-phone'></i> Phone</p></td><td> <input style='position: relative; bottom: 5px;'> </input> </td><tr><td><p><i class = 'fa fa-fw fa-fax'></i> Fax</p></td><td> <input style='position: relative; bottom: 5px;'> </input> </td></tr><tr><td><p><i class = 'fa fa-fw fa-calendar'></i> Days</p></td><td> <input style='position: relative; bottom: 5px;'> </input> </td></tr><tr><td><p><i class = 'fa fa-fw fa-clock-o'></i> Hours</p></td><td> <input style='position: relative; bottom: 5px;'> </input> </td></tr><tr><td><p><i class = 'fa fa-fw fa-list-alt'></i> Provider Credentials</p></td><td> <input style='position: relative; bottom: 5px;'></input> </td></tr><tr><td><p><i class = 'fa fa-fw fa-id-card'></i> Provider NPI</p></td><td> <input style='position: relative; bottom: 5px;'> </input> </td></tr><tr><td><p><i class = 'fa fa-fw fa-id-card-o'></i> Practice NPI</p></td><td> <input style='position: relative; bottom: 5px;'> </input> </td></tr><tr><td><p><i class = 'fa fa-fw fa-usd'></i> Practice Tax ID</p></td><td> <input style='position: relative; bottom: 5px;'> </input> </td></tr><tr><td><p><i class = 'fa fa-fw fa-birthday-cake'></i> Provider DOB</p></td><td> <input style='position: relative; bottom: 5px;'> </input> </td></tr></table> ">Healthcare
+                            Family Plus</a>
+                    </h5>
+                    <hr>
+                    <h6 class="card-title">
+                        Zukia Hossain MD <p>
+                        <table class="table table-sm table-striped">
+                            <tr>
+                                <th>
+                                    TC
+                                </th>
+                                <th>
+                                    KM
+                                </th>
+                                <th>
+                                    AC
+                                </th>
+                                <th>
+                                    CM
+                                </th>
+                                <th>
+                                    CC
+                                </th>
+                                <th>
+                                    QI
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5><i style="color:green" class="fa fa-check-circle fa-fw" aria-hidden="true"></i>
+                                    </h5>
+                                </td>
+                                <td>
+                                    <h5><i style="color:green" class="fa fa-check-circle fa-fw" aria-hidden="true"></i>
+                                    </h5>
+                                </td>
+                                <td>
+                                    <h5><i style="color:red" class="fa fa-exclamation-circle fa-fw fa-spin"
+                                           aria-hidden="true"></i></h5>
+                                </td>
+                                <td>
+                                    <h5><i style="color:green" class="fa fa-check-circle fa-fw" aria-hidden="true"></i>
+                                    </h5>
+                                </td>
+                                <td>
+                                    <h5><i style="color:green" class="fa fa-check-circle fa-fw" aria-hidden="true"></i>
+                                    </h5>
+                                </td>
+                                <td>
+                                    <h5><i style="color:green" class="fa fa-check-circle fa-fw" aria-hidden="true"></i>
+                                    </h5>
+                                </td>
+                            </tr>
+                        </table>
+                    </h6>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <button type="button" class="btn btn-sm btn-warning"><a href="#"
+                                                                                    class="btn btn-sm btn-danger"><b>DASHBOARD</b></a>
+                            </button>
+                        </div>
+                        <div class="col-lg-4">
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="modal"
+                                    data-target="#appointment"><a href="#" class="btn btn-sm btn-warning"
+                                                                  style="position: relative; left: 50px;"><i
+                                    class="fa fa-fw fa-calendar"></i></a></button>
+                        </div>
+
+
+                        <div class="col-lg-4">
+                            <button type="button" class="btn btn-sm btn-primary pull-right" data-toggle="modal"
+                                    data-target="#commentModal"><i class="fa fa-fw fa-comment"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- /.row -->
+
+
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+<!-- /.container -->
+</body>

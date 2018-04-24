@@ -1,0 +1,153 @@
+{
+	"1": {	"tc1a1" : ["Quien va hacer el doctor responsable para dirijir el projecto de PCMH.", "input"], 
+			"tc1a2" : ["Cuales son los credenciales del lider escojido para dirijir el projecto de PCMH?", "input"], 
+			"tc1a3" : ["Papeles y Responsabilidades - Para apoyar la implementacion del modelo de PCMH y asegurar que todo los doctores y empleados son entrenado para proveer un cuidado centrado a todo los pacientes acuerdo a los valores del modelo de PCMH 2017", "Signature"], 
+			"tc1b1" : ["Quien va hacer el empleado responsable para dirijir el projecto de PCMH?", "el mismo lider de los doctores , si no check box"],	
+			"tc1b2" : ["Cuales son los credenciales del empleado responsables del projecto PCMH?", "input"], 
+			"tc1b3" : ["Papeles y Responsabilidades - Para apoyar la implementacion del modelo de PCMH y asegurar que todo los doctores y empleados sean entrenados para proveer un cuidado centrado a todo los pacientes acuerdo a los valores del modelo de PCMH 2017.", "Signature"], 
+			"tc1c" : ["Politica de la transformacion del equipo", "descargar el enlace"],
+			"tc2a" : ["Cuales son los puestos del equipo de cuidado en la clinica"
+			"tc2a1" : ["Cual es la estructura de el equipo de cuidado en la clinica", "multiple input"],
+			"tc2a2" : ["La Politica de la Descripciones de Puestos/Cargos", "descarga el enlace"],
+			"tc3a" : ["¿La clinica participa en un PPS?", "si-no"],
+			"tc3b" : ["Si seleccionaste si, Por favor de escribir el nombre del PPS.", "input"],
+			"tc3c" : ["Politica de la Participacion en DSRIP.", "descargar el enlace"],
+			"tc5a1" : ["Por favor indique el sistema de lo record medico electronico de la clinica(EMR)", "input"],			
+			"tc5a2" : ["¿La practica, en alguna vez ha tenido un Analisis de riesgo de seguridad?", "si-no"],			
+			"tc5b" : ["Si seleccionaste si", "Carga/sube la copia aqui"],
+			"tc5c" : ["Si seleccionaste no", "Descarga el excel que contiene la evaluacion de riesgo de seguridad"],
+			"tc7a" : ["¿La practica tiene reuniones trimestrales con todos los doctores y empleados?", "si-no"],
+			"tc7b" : ["Si seleccionaste si, ¿Los reportes de medida de cualidad son revisado?", "si-no"],
+			"tc7c" : ["Si seleccionaste no, Por Favor descarga el enlace que sigue", "Descarga la plantilla y la politicas de las reuniones trimestrales y la participacion de los empleados en el mejoramiento de la clinica"
+			"tc8b1" : ["Si seleccionaste si", "Carge/sube el folleto aqui", "tc8a" "Cargar"],
+			"tc8b2" : ["Si seleccionaste no, Por Favor descarga la plantilla del folleto aqui", "tc8a" "descargar el enlace"]
+			
+			},
+	"2": {	"km1" : ["Cuando el doctor refiere a los pacientes a un especialista O a un servicio medico, ¿como se aseguran que el paciente fue a la cita y tienen el resumen de la cita con el especialista, cuales son los procedimientos de la clinica acuerdo a estos?", "input"],
+			"km2" : ["Entrenamineto para el doctor - Evaluacion Comprensivo de Salud(Comprehensive Health Assessment)", "Descarga el guia de la nota de progresso en el EMR/record medico electronico de los pacientes"],
+			"km3" : ["Entrenamineto para el doctor - Examen de depresión", "Descarga el guia de la nota de progresso en el EMR/record medico electronico de los pacientes"],
+			"km4" : ["Entrenamineto para el doctor- Examen de salud de comportamiento", "Descarga el guia de la nota de progresso en el EMR/record medico electronico de los pacientes"],
+			"km5" : ["Entrenamineto para el doctor - Evaluacion de salud Oral/dental", "Descarga el guia de la nota de progresso en el EMR/record medico electronico de los pacientes"],
+			"km6" : ["Analisis del base de dato del sistema medico - Condiciones predominante", "Carga/Sube el documento"],
+			"km7" : ["Analisis del base de dato del sistema medico - Determinantes de salud", "Carga/Sube el documento"],
+			"km8" : ["Analisis del base de dato del sistema medico - Las características demográficas de los pacientes", "Carga/Sube el documento"],
+			"km9" : ["Analisis del base de dato del sistema medico - Diversidades de pacientes", "Carga/Sube el documento"],
+			"km10" : ["Analisis del base de dato del sistema medico - Nececidades linguistica", "Carga/Sube el documento"],
+			"km11a" : ["La lista para llamar los Pacientes con nececidades de servicios para cuidado preventivos o condicciones cronicas en el EMR", "Descarga el guia de los encuentro telefonico"],
+			"km11b" : ["La lista para llamar los Pacientes con nececidades de servicios para cuidado preventivos o condicciones cronicas", "Descarga el documento Quarr/hedis( la lista que envia el seguro de salud"],
+			"km14" : ["Documentacion del transicion de cuidado", "Descarga el Guia especifico para obtener el Meaningful Use (MU) del EMR"],
+			"km15" : ["Documenta la lista de medicamentos mas reciente", "Descarga el Guia especifico para obtener el Meaningful Use (MU) del EMR"],
+			"km17" : ["Evalua y verifica como el paciente responde a los Medicamentos", "Descarga el guia de la notas de progreso para entrenamiento"],
+			"km18" : ["La politica para recetas de sustancias controlada", "Descarga La politica para recetas de sustancias controlada"],
+			"km20" : ["Evidencias medicas de Guias basadas" "Descarga las plantillas"] 
+			"km21" : ["Analisis del base de dato del sistema medico - Community Resources", "Carga/sube"],
+			"km23" : ["Educacion de salud oral/dental", "Descargar el guia para el entrenamiento de nota de progreso"],
+			"km24" : ["Como toma desicciones compartidos", "Descarga el guia de la notas de progreso para entrenamiento"],
+			"km26" : ["Entrega una lista de recursos en la communidad para referir pacientes", "input"],
+			"km27" : ["El cuestionario de evaluacion de recursos en la communidad", "input"]
+			
+		}
+	"3" { 	"ac1" : ["¿Ustedes les dan encuestas/cuestionarios a los pacientes?", "si-no"],
+			"ac1" : ["Bueno! Por Favor carga/sube un ejemplo del un cuestionario completado aqui" "Carga/Sube"],
+			"ac1" : ["Esta Bien! Por favor descarga la plantilla de un cuestionario" "Descarga"],
+			"ac1" : ["¿Ustedes les ofrecen una caja de sugerencias a los pacientes para completar?", "si-no"],
+			"ac1" : ["BUENO! Por Favor carga/sube un ejemplo de los resultados de la caja de sugerencias" "Carga/sube"],
+			"ac1" : ["Por Favor descarga la plantilla de la caja de sugerencias aqui", "Descarga"],
+			"ac2a" : ["Citas del Mismo dia", "si/no"],
+			"ac2b" : ["¿Tienen un horario reservado/disponible especificamente para citas del mismo dia?", "Descarga la politica general de la Oficina aqui"],
+			"ac3" : ["Horario extendido de la oficina", "Descarga la politica de la Oficina aqui"],
+			"ac4" : ["Encuentros Telefonicos", "Guia para documentacion de encuentros telefonicos"],
+			"ac5" : ["Encuentros Telefonicos - Horario fuera de hora", "descarga el Guia de como documentar los encuentros telefonicos & excel para rastrea/seguir referencias dado a los pacientes"],
+			"ac71" : ["¿Tienes un portal electronico para los pacientes?", "ac7", "si-no"],
+			"ac72" : ["¿Cuál es la dirección del web para el portal?", input"],
+			"ac73" : ["¿Entrenamiento para usar el Portal Electronicos Para Los Pacientes", "descarga el Guia de Como usar el Portal Electronico para lo Pacientes"],
+			"ac81" : ["Mensajería electrónica segura", "Descarga el Guia de Como usar el sistema de Mensajería electrónica segura"],
+			"ac82" : ["¿La clinica tiene mas de un doctor?", "si-no"],
+			"ac83" : ["Por favor escribe los nombres de todo los doctores en la clinica", "multiple input"],
+			"ac84" : ["Por favor descarga la politica de la seleccion de Medico en la clinica por parte de los pacientes", "Descarga"],
+			"ac85" : ["Dado que tienes mas de un doctor en la clinica, Por Favor de descargar el Reporte de la Seleccion de Medico aqui", "descarga"],
+			"ac12" : ["Acceso al EMR Fuera del Horario de la Clinica", "descarga"]
+			}
+			
+	
+	"4" {	"cm1" : ["Analisis del base de dato del sistema medico - Identificación de pacientes que pueden beneficiarse del mantenimiento de cuidado ", "Carge el adjunto"]
+			"cm2" : ["Analisis del base de dato del sistema medico - Reviso de pacientes que pueden beneficiarse del mantenimiento de cuidado", "Descarga la politica de las reuniones trimestrales, la plantilla para Firmar en la hoja y la Agenda de las reuniones."],
+			"cm3" : ["Análisis del panel de pacientes para dirijirlos a los Recursos Appropiado", "Descarga la politica de las reuniones trimestrales, la plantilla para Firmar en la hoja y la Agenda de las reuniones."],
+			"cm4" : ["Analisis de revisión de los record medico - Revisa algunos record médico del paciente selecionado con el doctor", "Carga/Sube el RRW"],
+			"cm5" : ["Analisis de revisión de los record medico - Revisa algunos record médico del paciente selecionado con el doctor", "Carga/Sube RRW"],
+			"cm6" : ["Analisis de revisión de los record medico  - Revisa algunos record médico del paciente selecionado con el doctor", "Carga/Sube RRW"],
+			"cm7" : ["Analisis de revisión de los record medico - Revisa algunos record médico del paciente selecionado con el doctor", "Carga/Sube RRW"],
+			"cm8" : ["Analisis de revisión de los record medico - Revisa algunos record médico del paciente selecionado con el doctor", "Carga/Sube RRW"]
+	}
+	
+	"5" {	"cc1a" : ["Rastreo de referencias y pedidos de labortorio y de imagenes", "Descarga el guia especifico de como rastrea resultados y reportes, el excel para rastrea/seguir referencias dado a los pacientes y el guia de como documentar encuentros telefonicos"],
+			"cc1b" : ["¿Tu puedes rastrea referencias en tu EMR?", "si-no"],
+			"cc1c" : ["Bueno! Por Favor carga/sube la captura de pantalla de tu EMR", "Carga/Sube"],
+			"cc1d" : ["Como no usas el EMR para rastrea referencias, Por Favor carga/sube el ejemplo proveido para rastrea referencias fuera del EMR", "carga"],
+			"cc1e" : ["¿Ustedes mandan referencias electronicamente, por fax or con el paciente?", "input"],
+			"cc1aa" : ["¿Tu incluye lo siguiente?: Preguntas clinica especifico? La medida del tiempo y tipo de referencia necesario (emergente, Urgente or Rutina)? Datos demográficos del paciente Pertinente, Datos de clinica, y Resultado de examenes?", "si-no"],
+			"cc1bb" : ["¿Ustedes hacen seguimiento de todas las referencias, especialmiente cuando son atrasado, hasta que reciban el reporte del especialista referido?", "si-no"],
+			"cc1cc" : ["¿Escanea todos los informes del especialista en el record medico del paciente?", "si-no"],
+			"cc6dd" : ["Analisis del base de dato del sistema medico - Referencias para ver un Especialistas", "sube"],
+			"cc6ee" : ["Por Favor escriba los nombres de tres especialista a quien tu refiere tus pacientes", "multiple input"],
+			"cc7" : ["El Estudio de la revisa de especialista en el internet", "carga/sube"],
+			"cc11" : ["Analisis de la Respondancia a Referencia", "carga"],
+			"cc14" : ["Seguimiento de visitas de emergencias/hospitalizacion", "descarga el excel para el seguimiento de visitas de emergencias/hospitalizacion - plantilla para agregar hospitalización como un tipo de visita en el EMR."],
+			"cc16" : ["Contacto con los pacientes despues de una visita de emergencias/hospitalizacion", "descarga la politica general de la oficina"],
+	}
+	"6" {	"qi1" : [ "Analisis del base de dato del sistema medico - Reportes de la medida de calidad", "carga"],
+			"qi1" : [ "Analisis de la disponibilidad de citas", "descarga la plantilla de la disponibilidad de citas"]
+		
+		}
+		
+}
+	
+
+
+
+
+
+{
+
+	
+	"1":{	"tc6a" : ["¿La clinica tiene hoja de reunión (huddle sheets)?", "si-no"],
+			"tc6b" : ["Usted seleciono si", "Carga la hoja de reunion aqui"],
+			"tc6c" : ["Usted seleciono no", "descarga la plantilla de la hoja de reunion"]
+			
+		},
+				
+	"2": {	"km8" : ["Analisis del base de dato del sistema medico - Demografía del paciente", "Carga el documento"],
+			"km9" : ["Analisis del base de dato del sistema medico- La diversidad del paciente", "Carga el documento"],
+			"km10" : ["Analisis del base de dato del sistema medico - Necesidades Lingüísticas del paciente ", "Carga el documento"],
+			"km11a" : ["La lista para llamar a los Pacientes con nececidades de servicios para cuidado preventivos o condicciones cronicas ", "descarga el guia para documentar los encuentros telefonicos"],
+			"km11b" : ["La lista para llamar a los Pacientes con nececidades de servicios para cuidado preventivos o condicciones cronicas", "Descarga la lista de QUARR/HEIDIS"],
+			"km14" : ["Documentacion de la transitacion de cuidado", "descarga el guia especifico para el EMR para obtener el MU (Meaningful Use)"],
+			"km15" : ["Documenta la lista de medicamentos mas reciente", "descarga el guia especifico para el EMR para obtener el MU"],
+			"km21" : ["Analisis del base de dato del sistema medico - Recurso en la Communidad", "carga"],
+			"km26" : ["Proporcione una lista de los recursos en la comunidad donde los pacientes se pueden referir", "input"],
+						
+		}
+	"3" { 	"ac2a" : ["Citas para el mismo dia", "si/no"],
+			"ac2b" : ["Por favor carga Captura de pantalla de uso del mismo día durante una semana", "ac2a" "carga"],
+			"ac2c" : ["¿No hay citas para el mismo dia?" "ac2a", "descarga"],
+			"ac4" : ["Encuentros telefonicos", " Guia para documentar encuentros telefonicos"],
+			"ac5" : ["Encuentros telefonicos - Horario fuera de las horas de operacion", "descarga el Guia para documentar encuentros telefonicos y el excel para rastrea todos los encuentros telefonicos"],
+			"ac71" : ["¿Tienes un portal electronico para los pacientes?", "ac7", "si-no"],
+			"ac72" : ["¿Cuál es la dirección del web para el portal?", input"],
+			"ac73" : ["Entrenamiento para usar el portal electronico para los pacientes", "descarga el guia aqui"],
+			"ac12" : ["Acceso al EMR Fuera del Horario de la Clinica", "descarga"]
+			}
+				
+	"4" {	"cc1a" : ["Rastreo de referencias y pedidos de labortorio y de imagenes", "descarga el guia que le corresponde al EMR, el rastreo para rastrea, entrenamiento de para documentar encuentros telefonicos"],
+			"cc1b" : ["¿Tu puedes rastrea/siguir referencias en tu EMR??", "si-no"],
+			"cc1c" : ["Bueno! Por Favor carga/sube la captura de pantalla (screenshot) de tu EMR", "Carga"],
+			"cc1d" : ["Como no usas el EMR para rastrea/seguir las referencias dado a los pacientes, Por Favor carga/sube el ejemplo proveido para rastrea/seguir todas las referencias dado a los pacientes fuera del EMR", "carga"],
+			"cc1e" : ["Ustedes mandan referencias electronicamente, por fax or con los pacientes", "input"],
+			"cc1aa" : ["¿Tu incluye lo siguiente?: Preguntas clinica especifico? La medida del tiempo y tipo de referencia necesario (emergente, Urgente or Rutina) para el paciente? Datos demográficos del paciente Pertinente, Datos de clinica, y Resultado de examenes?", "si-no"],
+			"cc1bb" : ["¿Ustedes hacen seguimiento de todas las referencias, especialmiente cuando son atrasado, hasta que reciban el reporte del especialista referido?", "si-no"],
+			"cc1cc" : ["¿Escanea todos los informes del especialista en los record medico de los pacientes?", "si-no"],
+			"cc14" : ["Seguimiento de visitas de emergencias/hospitalizacion", "descarga el excel para el seguimiento de visitas de emergencias/hospitalizacion - plantilla para agregar hospitalización como un tipo de visita en el EMR."],
+			"cc16" : ["Contacto con los pacientes despues de una visita de emergencias/hospitalizacion", "descarga la politica general de la oficina"],
+		}
+	
+}			

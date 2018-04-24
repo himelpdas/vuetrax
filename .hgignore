@@ -1,0 +1,20 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+syntax: glob
+
+.*.sw[poqrst]
+*.orig
+*.pyc
+*.log
+*.rej
+*.back
+*~
+*.*~
+*bak
+\#*
+.\#*
+.DS_Store
+sessions/*
+databases/*
+errors/127.0.0*
+models/conf.py
+

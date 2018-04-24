@@ -1,0 +1,145 @@
+{{extend 'layout.html'}}
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+    <div class="container">
+        <a class="navbar-brand" href="#"><h2><img src="{{=URL('static', 'images/vuetrax_new2.png')}}"
+                                                  style="height: 46px;"></h2></a>
+        <div class="btn-group"></div>
+    </div>
+
+</nav>
+
+
+<!-- Page Content -->
+<div class="bg">
+    <div>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#loginModal"><i
+                class="fa fa-fw fa-sign-in"></i>LOGIN
+        </button> &nbsp;
+        <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#registerModal"><i
+                class="fa fa-fw fa-user-plus"></i>REGISTER
+        </button>
+    </div>
+    <!-- Page Heading -->
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">LOGIN</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {{login_form=auth.login()}}
+        {{=login_form.custom.begin}}
+            <div class="modal-body">
+
+                <div class="row" style=" white-space: nowrap;">
+                    <div class="col-lg-3 col-sm-12">
+                        <div style="margin-bottom: 10px;"><i class='fa fa-fw fa-envelope'></i> Email</div>
+                    </div>
+                    <div class="col-lg-9 col-sm-12">{{=login_form.custom.widget.email}}</div>
+                </div>
+                <br>
+                <div class="row" style=" white-space: nowrap;">
+                    <div class="col-lg-3 col-sm-12">
+                        <div style="margin-bottom: 10px;"><i class='fa fa-fw fa-unlock'></i> Password</div>
+                    </div>
+                    <div class="col-lg-9 col-sm-12">{{=login_form.custom.widget.password}}</div>
+                </div>
+                <a href="{{=URL('user', args=['request_reset_password'])}}">Reset Password</a>
+            </div>
+            <div class="modal-footer">
+				<div class="row">
+                    <div class="col-lg-3"  style="text-align: left;">
+                        Remember? &nbsp;
+                    </div>
+                    <div class="col-lg-3"  style="text-align: right;">
+                        {{=login_form.custom.widget.remember_me}}
+                    </div>
+                    <div class="col-lg-6">
+                        {{=login_form.custom.submit}}
+                    </div>
+				</div>
+            </div>
+        {{=login_form.custom.end}}
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true" style="min-height:700px; ">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">REGISTER</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            {{register_form=auth.register()}}
+            {{=register_form.custom.begin}}
+                <div class="row" style=" white-space: nowrap;">
+                    <div class="col-lg-3 col-sm-12">
+                        <div style="margin-bottom: 10px;"><i class='fa fa-fw fa-address-card-o'></i> First Name</div>
+                    </div>
+                    <div class="col-lg-9 col-sm-12">{{=register_form.custom.widget.first_name}}</div>
+                </div>
+                <br>
+                <div class="row" style=" white-space: nowrap;">
+                    <div class="col-lg-3 col-sm-12">
+                        <div style="margin-bottom: 10px;"><i class='fa fa-fw fa-address-card'></i> Last Name</div>
+                    </div>
+                    <div class="col-lg-9 col-sm-12">{{=register_form.custom.widget.last_name}}</div>
+                </div>
+                <br>
+                <div class="row" style=" white-space: nowrap;">
+                    <div class="col-lg-3 col-sm-12">
+                        <div style="margin-bottom: 10px;"><i class='fa fa-fw fa-envelope'></i> Email</div>
+                    </div>
+                    <div class="col-lg-9 col-sm-12">{{=register_form.custom.widget.email}}</div>
+                </div>
+                <br>
+                <div class="row" style=" white-space: nowrap;">
+                    <div class="col-lg-3 col-sm-12">
+                        <div style="margin-bottom: 10px;"><i class='fa fa-fw fa-unlock'></i> Password</div>
+                    </div>
+                    <div class="col-lg-9 col-sm-12">{{=register_form.custom.widget.password}}</div>
+                </div>
+                <br>
+                <div class="row" style=" white-space: nowrap;">
+                    <div class="col-lg-3 col-sm-12">
+                        <div style="margin-bottom: 10px;"><i class='fa fa-fw fa-check-circle'></i> Verify</div>
+                    </div>
+                    <div class="col-lg-9 col-sm-12">{{=register_form.custom.widget.password_two}}</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+        {{=register_form.custom.submit}}
+            </div>
+        {{=register_form.custom.end}}
+        </div>
+    </div>
+</div>
+
+
+{{block scripts}}
+{{super}}
+{{if login_form.errors:}}
+<script>
+    $('#loginModal').modal()
+</script>
+{{pass}}
+{{if register_form.errors:}}
+<script>
+    $('#registerModal').modal()
+</script>
+{{pass}}
+{{end}}

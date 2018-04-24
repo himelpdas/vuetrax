@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.ValueError'> 'tc1a2' is not in list"
+p3
+sS'layer'
+p4
+S'C:\\Users\\George Dewey\\Desktop\\viewtrax_server\\web2py\\applications\\viewtrax\\controllers/default.py'
+p5
+sS'code'
+p6
+S'<code object <module> at 07C1C698, file "C:\\Users\\George Dewey\\Desktop\\viewtrax_server\\web2py\\applications\\viewtrax\\controllers/default.py", line 13>'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "C:\\Users\\George Dewey\\Desktop\\viewtrax_server\\web2py\\gluon\\restricted.py", line 219, in restricted\n    exec(ccode, environment)\n  File "C:\\Users\\George Dewey\\Desktop\\viewtrax_server\\web2py\\applications\\viewtrax\\controllers/default.py", line 482, in <module>\n  File "C:\\Users\\George Dewey\\Desktop\\viewtrax_server\\web2py\\gluon\\globals.py", line 419, in <lambda>\n    self._caller = lambda f: f()\n  File "C:\\Users\\George Dewey\\Desktop\\viewtrax_server\\web2py\\applications\\viewtrax\\controllers/default.py", line 277, in questions\n    _set_question_navigation(navigation, question_order, current_id, practice_id, section)\n  File "C:\\Users\\George Dewey\\Desktop\\viewtrax_server\\web2py\\applications\\viewtrax\\controllers/default.py", line 208, in _set_question_navigation\n    current_index = identifiers.index(current_id)\nValueError: \'tc1a2\' is not in list\n'
+p11
+s.

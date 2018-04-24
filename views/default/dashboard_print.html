@@ -1,0 +1,51 @@
+ <html>
+ <body>
+        <div>
+
+            <h4>{{=practice.practice_name}}</h4>
+            <h6>{{=practice.address}}</h6>
+            <h6>{{=practice.phone}} | {{=practice.fax}}</h6>
+
+
+        </div>
+<br>
+
+<h2>Training Progress: {{="%0.2f"%(progress["percent"]*100.0)}}%</h2>
+
+<div>
+
+    {{for identifier in question_order:}}
+        {{
+            answer = db((db.answer.identifier==identifier) & (db.answer.practice==practice_id)).select().last()
+            print answer
+
+            meta_data = json.loads(getattr(answer, 'meta_data', '{}' ) or '{}' )
+            print meta_data
+        }}
+        {{if answer and meta_data:}}
+
+                    <h3>{{=meta_data["inquire"]}}</h3>
+
+                        {{if meta_data["type"] == "yesNo":}}
+                            <br><i>{{="Yes" if answer.yes_no else "No"}}</i>
+                        {{elif meta_data["type"] == "response":}}
+                            <br><i>{{=XML(answer.response)}}</i>
+                        {{elif meta_data["type"] == "upload":}}
+                            {{answers = db((db.answer.identifier==identifier) & (db.answer.practice==practice_id)).select()}}
+                            {{for answer in answers:}}
+                                <br><i>{{=answer.file_name}}</i>
+                            {{pass}}
+                        {{elif meta_data["type"] == "download":}}
+                            {{for asset in meta_data["assets"]:}}
+                                <br><i>{{=asset["name"]}}</i>
+                            {{pass}}
+                        {{pass}}
+
+
+        {{pass}}
+        {{if answer:}}
+        <br>{{pass}}
+    {{pass}}
+
+</div>
+ </body></html>

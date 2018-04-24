@@ -1,0 +1,163 @@
+{{extend 'layout.html'}}
+<div class="container">
+    <h2> &nbsp; </h2>
+    <div class="card" class="dropdown dropright" style="text-align: center;">
+
+        <b>
+
+
+            <h4>{{=practice.practice_name}}</h4>
+            <h6>{{=practice.address}}</h6>
+            <h6>{{=practice.phone}} | {{=practice.fax}}</h6>
+
+
+        </b>
+    </div>
+
+    <div class="row">
+
+        <div class="card-body d-print-none">
+            <a href="{{=URL("dashboard", vars=dict(practice=practice_id, section=session.section or "gap"))}}"
+            class="card-link faa-parent animated-hover"><i class="fa fa-fw fa-arrow-left faa-tada"></i> Go Back</a>
+            <span class="dropdown pull-right">
+				  <button class="btn btn-info dropdown-toggle btn-sm" type="button" id="dropdownMenu2"
+                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Language
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+					<button class="dropdown-item" type="button">English</button>
+					<button class="dropdown-item disabled" type="button">Spanish</button>
+					<button class="dropdown-item disabled" type="button">Bangla</button>
+				  </div>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div style="text-align: center">
+        {{for identifier in progress["answered_by_id"]:}}
+        <a href="{{=URL(vars=request.get_vars, args=[identifier])}}"
+           title="{{=_recurse_find_by_key(slides, identifier)[0]["inquire"]}}"><i
+            class="fa fa-2x fa-fw {{if progress["answered_by_id"][identifier] and identifier!=current_id:}}fa-check-circle-o text-success faa-tada animated-hover {{elif identifier!=current_id:}}fa-times-circle-o text-danger faa-tada animated-hover {{elif progress["answered_by_id"][identifier]:}}fa-check-circle text-info faa-pulse animated {{else:}}fa-times-circle
+        text-info faa-pulse animated{{pass}}"></i></a>
+        {{pass}}
+    </div>
+    <br>
+    <div class="card" style="padding: 30px;">
+
+        <div class="card" style="padding: 30px; text-align: center; background-color: #F2FCFF;">
+            <h2>{{=current_slide["inquire"]}}</h2>
+            <div class="row  align-middle">
+                <div class="col-lg-2">
+                    {{if navigation["previous_id"]:}}<a href="{{=navigation["previous_url"]}}"><h2><i
+                        class="fa fa-fw fa-arrow-left faa-tada animated-hover" title="Previous"></i></h2></a>{{pass}}
+                </div>
+                <div class="col-lg-8">
+                    {{if form:}}
+                    {{=form.custom.begin}}
+                    {{if is_upload:}}
+                    <br>
+                    {{for f in uploads:}}
+                    <h3>
+                        <i class="fa fa-fw fa-file-o"></i>{{=A(f.file_name, _href=URL(f='nt_download',
+                        args=f.file_upload))}}
+                    </h3>
+                    {{pass}}
+                    <br>
+                    Filename: {{=form.custom.widget.file_name}}
+                    <br>
+                    Upload: {{=form.custom.widget.file_upload}}
+                    <br>
+                    {{elif is_yes_no:}}
+                    <br>{{=form.custom.widget.yes_no}}<br>
+                    {{else:}}
+                    <br>
+                    {{=form.custom.widget.response}}
+                    <br>
+                    {{pass}}
+                    <hr>
+                    {{=form.custom.submit}}
+                    {{=form.custom.end}}
+                    {{elif is_download:}}
+                    <br>
+                    {{for download in downloads:}}
+                    <h3>{{if "icon" in download:}}<i
+                            class="fa fa-fw fa-{{=download["icon"]}}"></i>{{pass}}{{=A(download["name"],
+                        _href=URL('static', str(download["url"])))}}
+                    </h3>
+                    {{pass}}
+                    {{pass}}
+                </div>
+                <div class="col-lg-2">
+                    {{if navigation["next_id"]:}}<a href="{{=navigation["next_url"]}}"><h2><i
+                        class="fa fa-fw fa-arrow-right faa-tada animated-hover" title="Next"></i></h2></a>{{pass}}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<!-- /.container -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer faa-parent animated-hover">
+                <button type="button" class="btn btn-primary"><i class="fa faa-pulse fa-floppy-o"
+                                                                 aria-hidden="true"></i> Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Comment Board</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <textarea placeholder=" Comment here..." class="form-control" rows="5" id="comment"></textarea>
+
+                </div>
+            </div>
+            <div class="modal-footer faa-parent animated-hover">
+                <button type="button" class="btn btn-primary"><i class="fa faa-pulse fa-floppy-o"
+                                                                 aria-hidden="true"></i>Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{block page_head}}
+{{super}}
+<script src="{{=URL('static', 'js/tinymce/tinymce.min.js')}}"></script>
+<script>tinymce.init({
+    selector: 'textarea',
+    branding: false,
+    plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template  table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount   imagetools    contextmenu colorpicker textpattern help',
+    toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat'
+});
+</script>  {{#https://stackoverflow.com/questions/44133697/how-do-i-remove-the-branding-from-tinymce-where-it-says-powered-by-tinymce}}
+
+{{end}}

@@ -1,0 +1,202 @@
+{{extend 'layout.html'}}
+	
+    <!-- Page Content -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <div class="container">
+		<h2> &nbsp; </h2>
+		      	<div class="card" class="dropdown dropright" style="text-align: center;">
+						
+		<b>
+				
+            <h4>{{=practice.practice_name}}</h4>
+            <h6>{{=practice.address}}</h6>
+            <h6>{{=practice.phone}} | {{=practice.fax}}</h6>
+				
+				
+					 
+											
+			</b>
+		</div>	
+		<h2> &nbsp; </h2>
+		
+		<div class="row">
+		
+					<div class="card-body" >
+							<a href="#" class="card-link"><i class="fa fa-fw fa-copy"></i> Copy Board</a>
+							<a href="#" class="card-link"><i class="fa fa-fw fa-paper-plane-o"></i> Share Board</a>
+					</div>
+				</div>
+				</div>
+			</div>
+		
+			<div class="container">
+			
+					<div class="card" style="padding: 30px;" >
+					<div class="col-lg-12" style="max-height: 795px;">
+					<div class="form-group" style="text-align: center;">
+										<ul class="nav nav-pills nav-fill">
+					  <li class="nav-item">
+						<a class="nav-link active" href="#">Gap Analysis Training <button type="button" class="btn btn-sm btn-primary pull-right" style="position: relative; bottom: 3px;"><i class="fa fa-fw fa-download"></i></button></a>
+					  </li>
+					  <li class="nav-item" style="background-color: #F7F7F7;">
+						<a class="nav-link" href="#">Front Desk Training <button type="button"  class="btn btn-sm btn-primary pull-right " style="position: relative; bottom: 3px;"> <i class="fa fa-fw fa-download"></i></button></a>
+					  </li>
+					  <li class="nav-item" style="background-color: #F7F7F7;">
+						<a class="nav-link" href="#">Provider Training <button type="button"  class="btn btn-sm btn-primary pull-right " style="position: relative; bottom: 3px;"> <i class="fa fa-fw fa-download"></i></button></a>
+					  </li>
+
+					</ul>
+									
+									</h5>
+								
+								</div>
+				<hr>
+				<div class="dropdown" style="text-align: center">
+				  <button class="btn btn-info dropdown-toggle"  type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Language
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+					<button class="dropdown-item" type="button">English</button>
+					<button class="dropdown-item" type="button">Spanish</button>
+					<button class="dropdown-item" type="button">Bangla</button>
+				  </div>
+				</div>
+				<p>
+				</div>
+				<div class="card" id="questionCard" style="background-color: #CCFAF8; text-align: center; margin-bottom: 15px; box-shadow: 5px 5px 5px grey;">
+				<h3> Concept 1: Team-Based Care & Practice Organization  </h3> 
+					<div style=" padding-left: 200px; padding-right: 200px;">
+										<div class="progress" >
+											<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"  style="width: 50%"></div>
+										</div>
+										</div>
+							<hr>
+							<div class="row">
+							<h5><div class="col-lg-6"><a href="{{=URL('questions', vars=dict(practice=practice_id), args=[1])}}" class="btn btn-warning">Continue Question Reel</a></div></h5>
+							<h5><div class="col-lg-6"><a href="{{=URL('questions', vars=dict(practice=practice_id), args=[1])}}" class="btn btn-info">View Question Answers</a></div></h5>
+							</div>
+							<p>
+				</div>
+				<div class="card" id="questionCard" style="background-color: #CCFAF8; text-align: center; margin-bottom: 15px; box-shadow: 5px 5px 5px grey;">
+				<h3> Concept 2: Knowing and Managing Patients  </h3> 
+				<div style=" padding-left: 200px; padding-right: 200px;">
+										<div class="progress" >
+											<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"  style="width: 50%"></div>
+										</div>
+										</div>
+							<hr>
+							<h5><a href="{{=URL('questions', vars=dict(practice=practice_id), args=[2])}}" class="btn btn-warning">Continue Question Reel</a></h5>
+							<p>
+				</div>
+				<div class="card" id="questionCard" style="background-color: #15D0CA; text-align: center; margin-bottom: 15px; box-shadow: 5px 5px 5px grey;">
+				<h3> Concept 3: Patient-Centered Access & Continuity  </h3> 
+					<div style=" padding-left: 200px; padding-right: 200px;">
+						<div class="progress" >
+							<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"  style="width: 0%"></div>
+						</div>
+					</div>
+							<hr>
+							<h5><a href="{{=URL('questions', vars=dict(practice=practice_id), args=[3])}}" class="btn btn-danger">Begin Question Reel</a></h5>
+							<p>
+				</div>
+				<div class="card" id="questionCard" style="background-color: #15D0CA; text-align: center; margin-bottom: 15px; box-shadow: 5px 5px 5px grey;">
+				<h3> Concept 4: Care Management and Support  </h3> 
+					<div style=" padding-left: 200px; padding-right: 200px;">
+						<div class="progress" >
+							<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"  style="width: 0%"></div>
+						</div>
+					</div>
+							<hr>
+							<h5><a href="{{=URL('questions', vars=dict(practice=practice_id), args=[4])}}" class="btn btn-danger">Begin Question Reel</a></h5>
+							<p>
+				</div>
+				<div class="card" id="questionCard" style="background-color: #15D0CA; text-align: center; margin-bottom: 15px; box-shadow: 5px 5px 5px grey;">
+				<h3> Concept 5: Care Coordination and Care Transistions </h3>
+					<div style=" padding-left: 200px; padding-right: 200px;">
+						<div class="progress" >
+							<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"  style="width: 0%"></div>
+						</div>
+					</div>
+							<hr>
+							<h5><a href="{{=URL('questions', vars=dict(practice=practice_id), args=[5])}}" class="btn btn-danger">Begin Question Reel</a></h5>
+							<p>
+				</div>
+				<div class="card" id="questionCard" style="background-color: #15D0CA; text-align: center; margin-bottom: 15px; box-shadow: 5px 5px 5px grey;">
+				<h3> Concept 6: Performance Measurement and Quality Improvement </h3> 
+					<div style=" padding-left: 200px; padding-right: 200px;">
+						<div class="progress" >
+							<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"  style="width: 0%"></div>
+						</div>
+					</div>		
+							<hr>
+							<h5><a href="{{=URL('questions', vars=dict(practice=practice_id), args=[6])}}" class="btn btn-danger">Begin Question Reel</a></h5>
+							<p>
+				</div>
+					
+				
+				
+				
+				
+				
+				
+					
+				</div>
+			</div>
+				
+			
+		
+		<h2> &nbsp; </h2>
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; George Dewey & Himel Das 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+               <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Comment Board</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+    <textarea placeholder=" Comment here..." class="form-control" rows="5" id="comment"></textarea>
+  
+</div>
+      </div>
+      <div class="modal-footer">
+               <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

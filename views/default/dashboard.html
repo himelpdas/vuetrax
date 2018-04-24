@@ -1,0 +1,312 @@
+{{extend 'layout.html'}}
+
+<!-- Page Content -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="container">
+    <div class="row">
+
+        <div class="card-body d-print-none">
+            {{if my_role != "participant":}}
+            <a href="{{=URL("home", vars=dict(practice=practice_id, section=session.section or "gap"))}}"
+               class="card-link faa-parent animated-hover"><i class="fa fa-fw fa-arrow-left faa-tada"></i> Go Back
+            {{pass}}
+            {{if not is_tracking:}}
+            <a href="{{=URL("dashboard_print.pdf", vars=dict(practice=practice_id, section=session.section or
+            "gap"))}}" class="card-link faa-parent animated-hover"><i class="fa fa-fw fa-print faa-tada"></i> Print</a>
+            {{pass}}
+            <span class="dropdown pull-right">
+				  <button class="btn btn-info dropdown-toggle btn-sm" type="button" id="dropdownMenu2"
+                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Language
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+					<button class="dropdown-item" type="button">English</button>
+					<button class="dropdown-item disabled" type="button">Spanish</button>
+					<button class="dropdown-item disabled" type="button">Bangla</button>
+				  </div>
+            </span>
+        </div>
+    </div>
+</div>
+<h2></h2>
+<div class="container">
+
+    <div class="card" class="dropdown dropright" style="text-align: center;">
+
+        <b>
+
+            <h4>{{=practice.practice_name}}</h4>
+            <h6>{{=practice.address}}</h6>
+            <h6>{{=practice.phone}} | {{=practice.fax}}</h6>
+
+
+        </b>
+    </div>
+
+</div>
+
+<h1></h1>
+<div class="container">
+    <div class="form-group center" style="text-align: center;">
+        <ul class="nav nav-pills nav-fill" style="text-align: center;">
+            <li class="nav-item">
+                <a class="nav-link {{if not is_tracking:}}active{{pass}}"
+                   href="{{=URL(vars=dict(practice=practice_id, section="gap"))}}">Training
+
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{if is_tracking:}}active{{pass}}"
+                   href="{{=URL(vars=dict(practice=practice_id, section="referral"))}}">Tracking
+
+                </a>
+            </li>
+
+        </ul>
+
+
+    </div>
+
+</div>
+<div class="container">
+
+{{if not is_tracking:}}
+    <div class="card" style="padding: 30px;">
+        <div class="col-lg-12" style="max-height: 795px;">
+            <div class="form-group" style="text-align: center;">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link {{if is_gap:}}active{{pass}}"
+                           href="{{=URL(vars=dict(practice=practice_id, section="gap"))}}">Gap Analysis Training
+
+                        </a>
+                    </li>
+                    <li class="nav-item" style="background-color: #F7F7F7;">
+                        <a class="nav-link {{if is_front:}}active{{pass}}"
+                           href="{{=URL(vars=dict(practice=practice_id, section="front"))}}">Non-Clinical Training
+
+                        </a>
+                    </li>
+                    <li class="nav-item" style="background-color: #F7F7F7;">
+                        <a class="nav-link {{if is_provider:}}active{{pass}}"
+                           href="{{=URL(vars=dict(practice=practice_id, section="provider"))}}">Clinician Training
+
+                        </a>
+                    </li>
+
+                </ul>
+
+
+            </div>
+            <hr>
+
+        </div>
+
+
+        <div class="card" id="questionCard"
+             style="background-color: #CCFAF8; text-align: center; margin-bottom: 15px; box-shadow: 5px 5px 5px grey;">
+            <h3> {{=section.capitalize()}} {{="Analysis" if is_gap else ""}} {{="Desk" if is_front else ""}} Training
+                Progress: {{="%0.2f"%(progress["percent"]*100.0)}}% </h3>
+            <div style=" padding-left: 200px; padding-right: 200px;">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                         style="width: {{=" %0.2f"%(progress["percent"]*100.0)}}%">
+                    </div>
+                </div>
+            </div>
+            <hr>
+        {{progress_zero = progress["percent"] == 0}}
+        {{progress_100 = progress["percent"] == 1}}
+        {{if progress_zero:
+        btn_color = "danger"
+        btn_text = "Begin"
+        elif progress_100:
+        btn_color = "success"
+        btn_text = "Edit"
+        else:
+        btn_color = "warning"
+        btn_text = "Continue"
+        pass
+        }}
+            <div class="center-block">
+                <h5>
+                    <a href="{{=URL('questions', vars=dict(practice=practice_id, section=section or " gap"),
+                    args=[first_question])}}"
+                       class="btn btn-{{=btn_color}}"><i class="fa faa-pulse animated fa-share-square-o"
+                                                         aria-hidden="true"></i> {{=btn_text}}
+                        Question Reel </a></h5>
+
+            </div>
+        </div>
+
+        <div class="summary">
+            <ul>
+                <hr>
+            {{for identifier in question_order:}}
+            {{
+            answer = db((db.answer.identifier==identifier) & (db.answer.practice==practice_id)).select().last()
+            print answer
+
+            meta_data = json.loads(getattr(answer, 'meta_data', '{}' ) or '{}' )
+            print meta_data
+            }}
+            {{if answer and meta_data:}}
+                <li>
+                {{for each in range(meta_data["depth"]):}}
+                    <ul>
+                        <li>
+                        {{pass}}
+                            <b>{{=meta_data["inquire"]}}</b>
+
+                        {{if meta_data["type"] == "yesNo":}}
+                            <br>&mdash;<i>{{="Yes" if answer.yes_no else "No"}}</i>
+                        {{elif meta_data["type"] == "response":}}
+                            <br>&mdash;<i>{{=XML(answer.response)}}</i>
+                        {{elif meta_data["type"] == "upload":}}
+                        {{answers = db((db.answer.identifier==identifier) &
+                        (db.answer.practice==practice_id)).select()}}
+                        {{for answer in answers:}}
+                            <br>&mdash;<i>{{=answer.file_name}}</i>
+                        {{pass}}
+                        {{elif meta_data["type"] == "download":}}
+                        {{for asset in meta_data["assets"]:}}
+                            <br>&mdash;<i>{{=asset["name"]}}</i>
+                        {{pass}}
+                        {{pass}}
+
+                        {{for each in range(meta_data["depth"]):}}
+                        </li>
+                    </ul>
+                {{pass}}
+                </li>
+
+            {{pass}}
+            {{if answer:}}
+                <hr>
+            {{pass}}
+            {{pass}}
+            </ul>
+        </div>
+
+    </div>
+{{pass}}
+
+
+    <!-test-->
+
+{{if is_tracking:}}
+    <div class="card" style="padding: 30px;">
+        <div class="col-lg-12">
+            <div class="form-group" style="text-align: center;">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link {{if is_imaging:}}active{{pass}}"
+                           href="{{=URL(vars=dict(practice=practice_id, section="imaging"))}}"><i class="fa faa-pulse animated fa-eye"
+                                                                                              aria-hidden="true"></i>
+                            Imaging
+
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{if is_lab:}}active{{pass}}"
+                           href="{{=URL(vars=dict(practice=practice_id, section="lab"))}}"><i class="fa faa-pulse animated fa-flask"
+                                                                                              aria-hidden="true"></i>
+                            Labs
+
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{if is_referral:}}active{{pass}}"
+                           href="{{=URL(vars=dict(practice=practice_id, section="referral"))}}"><i class="fa faa-pulse animated fa-user-md"
+                                                                                              aria-hidden="true"></i>
+                            Referrals
+
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{if is_telephone:}}active{{pass}}"
+                           href="{{=URL(vars=dict(practice=practice_id, section="telephone"))}}"><i
+                                class="fa faa-pulse animated  fa-phone-square" aria-hidden="true"></i> Phone Encounters
+
+                        </a>
+                    </li>
+                      <li class="nav-item">
+                        <a class="nav-link {{if is_telephone:}}active{{pass}}"
+                           href="{{=URL(vars=dict(practice=practice_id, section="telephone"))}}"><i
+                                class="fa faa-pulse animated  fa-comments-o" aria-hidden="true"></i> Secure Messaging
+
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {{if is_hospital:}}active{{pass}}"
+                           href="{{=URL(vars=dict(practice=practice_id, section="hospital"))}}"><i
+                                class="fa faa-pulse animated  fa-h-square" aria-hidden="true"></i> ER/Urgent/Hospitalizations
+
+                        </a>
+                    </li>
+
+                </ul>
+
+
+            </div>
+            <hr>
+            {{=form}}
+        </div>
+
+
+    </div>
+{{pass}}
+
+
+
+    <h2> &nbsp; </h2>
+
+    <!-- /.container -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Comment Board</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <textarea placeholder=" Comment here..." class="form-control" rows="5" id="comment"></textarea>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

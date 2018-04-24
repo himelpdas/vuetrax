@@ -1,0 +1,58 @@
+{
+
+ 
+    "cm1": {
+      "type": "upload",
+        "inquire": "EMR Database Analysis - Identifying Patients Who May Benefit From Care Management",
+   
+	},   
+	
+	"cm2": {
+		"type": "download",
+		"inquire": "EMR Database Analysis - Reviewing Patients Who May Benefit From Care Management",
+		"assets": [
+		{
+		  "name": "quarterly_meeting_review_policy.doc",
+		  "url": "policy/3-AC-A/quarterly_meeting_review_policy.doc.docx",
+		  "icon": "file-word-o"
+		}
+	  ],
+	  
+	},
+	"cm3": {
+		"type": "download",
+		"inquire": "Analysis of Patient Panel in Order to direct Resources Appropriately",
+		"assets": [
+		{
+		  "name": "meeting_signin_sheet.doc",
+		  "url": "policy/3-AC-A/quarterly_meeting_review_policy.doc.docx",
+		  "icon": "file-word-o"
+		}
+	  ],
+	  
+	},
+	"cm4": {
+      "type": "upload",
+        "inquire": "Record Review Workbook Analysis - Review Selected Charts With the Providers",
+   
+	},
+
+	
+	  "qi1": {
+		"type": "upload",
+        "inquire": "EMR Database Analysis - Quality Measures Reports (for each provider)"
+	},
+	"qi1a": {
+		"type": "download",
+		"inquire": "Please download Appointment Availability Analysis",
+		"assets": [
+		{
+		  "name": "availability_analysis.doc",
+		  "url": "policy/3-AC-A/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx",
+		  "icon": "file-word-o"
+		}
+	  ],
+	  
+	}  
+    
+}

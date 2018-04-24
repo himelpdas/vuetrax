@@ -1,0 +1,338 @@
+{
+  "p1": {
+    "type": "yesNo",
+    "inquire": "Do you keep up to date problem lists for all your patients?"
+  },
+  "p2": {
+    "type": "yesNo",
+    "inquire": "Do you document medical history of patient and family in your EMR?"
+  },
+  "p3": {
+    "type": "yesNo",
+    "inquire": "Do you document mental health and substance abuse in your EMR? Both patient and family?"
+  },
+  "p4": {
+    "type": "yesNo",
+    "inquire": "Do you document Social/Family/Cultural patient characteristics? For example, education level, marital status, unemployment, social support, unassigned responsibilities, are you on food stamps?"
+  },
+  "p5": {
+    "type": "yesNo",
+    "inquire": "Do you document patient communication needs?"
+  },
+  "p6": {
+    "type": "yesNo",
+    "inquire": "Do you document behaviors affecting health? For example, smoking, alcohol, risky sexual behavioral, and/or second-hand smoke, oral health care (last dental appointment)."
+  },
+  "p7": {
+    "type": "yesNo",
+    "inquire": "Do you document social functioning? For example, for elderly patients, do they get out and socialize or have social activities or communities. Independent living? Asking questions about social functioning."
+  },
+  "p8": {
+    "type": "yesNo",
+    "inquire": "Do you document social determinants of health? Do you question the patients availability of resources, food, social support, food and housing insecurities, household/environmental risk disorder, or if a patient can you afford their medication?"
+  },
+  "p9": {
+    "type": "yesNo",
+    "inquire": " Do you document developmental screenings in the patients charts located in the EMR? (NA for Internal Practices)"
+  },
+  "p10": {
+    "type": "yesNo",
+    "inquire": " Do you discuss with patients advanced care plan directives. (NA for Pediatric Practices)"
+  },
+  "p11": {
+    "type": "yesNo",
+    "inquire": "Do you provide depression screenings for all your patients using a standardized tool?",
+    "branches": {
+      "p11a": {
+        "type": "upload",
+        "inquire": "Great! Please upload your standardized Depression Screening Tool",
+        "showIfParentEquals": true
+      }
+    }
+  },
+  "p12": {
+    "type": "response",
+    "inquire": "Do you use any of the following behavioral health screenings: Please fill in either 'Yes' or 'No' if your practice covers any of these screenings.",
+    "template": "<p>Example:</p><ul><li>Anxiety:</li></ul><ul><li>Alcohol Use Disorder:</li></ul><ul><li>Substance Use Disorder:</li></ul><ul><li>Pediatric Behavioral Health Screening:</li></ul><ul><li>Post-Traumatic Stress Disorder:</li></ul><ul><li>Attention Deficit/Hyperactivity Disorder:</li></ul><ul><li>Postpartum Depression</li></ul>"
+  },
+  "p13": {
+    "type": "response",
+    "inquire": "Please list the top priority conditions and concerns."
+  },
+  "p14": {
+    "type": "yesNo",
+    "inquire": "Do you assess, Race, Ethnicity, Gender Identity, Sexual Orientation, Religion, Occupation, and Geographic Residence? "
+  },
+  "p15": {
+    "type": "yesNo",
+    "inquire": "Do you have patient education material according to your patients population demographics?"
+  },
+  "p16": {
+    "type": "response",
+    "inquire": "Patient Population Demographics (Out of 100 Patients, The total of these numbers must add up to 100.)",
+    "template": "<p>What is the estimated number of patients who represent each of the following languages? </p><ul><li>English: 0</li></ul><ul><li>Spanish: 0</li><li>Chinese: 0</li><li>Hindi: 0</li><li>Bengali: 0</li><li>Arabic: 0</li><li>Arabic: 0</li></ul></li><p>What is the estimated number of patients who represent each of the following genders?</p><ul><li>Male</ul></li><ul><li>Female</li></ul><ul><li>Other</li></ul><p>What is the estimated number of patients who represent each of the following ethnicity's?</p><ul><li>Non-Hispanic: 0</li></ul><ul><li>Hispanic: 0</li></ul>"
+  },
+  "p17": {
+    "type": "yesNo",
+    "inquire": "Do you have 'Other' as an option for Gender?"
+  },
+  "p18": {
+    "type": "yesNo",
+    "inquire": "Do you educate your practice on health literacy?",
+    "branches": {
+      "p19": {
+        "type": "download",
+        "inquire": "Please download Health Literacy Policy",
+        "assets": [
+          {
+            "name": "health_literacy_training",
+            "url": "policy/6-QI-A/QI-04A_2017_Survey_Family_Medicine_English.docx",
+            "icon": "file-word-o"
+          }
+        ],
+        "showIfParentEquals": false
+      }
+    }
+  },
+  "p20": {
+    "type": "response",
+    "inquire": "How do you pro-actively outreach to patients who are missing services in the following areas?",
+    "template": "<p>At least three are required:</p><ul><li>Preventive:<ul><li>Immunization:</li><li>Chronic/Acute:</li></li><li>Overdue Visit:</li></ul></li></ul>"
+  },
+  "p21": {
+    "type": "yesNo",
+    "inquire": "Do you document notation of outreach in patient medical records?"
+  },
+  "p22": {
+    "type": "yesNo",
+    "inquire": "Do you review and reconcile medications for more than 80% of patients received from care transitions? "
+  },
+  "p23": {
+    "type": "yesNo",
+    "inquire": "Does your Meaningful Use Report represent this 80% reconciliation correctly?"
+  },
+  "p24": {
+    "type": "yesNo",
+    "inquire": "Do you review and reconcile patient understanding with new prescriptions, and keep and up to date list of all medications?"
+  },
+  "p25": {
+    "type": "yesNo",
+    "inquire": "Do you review the responses and any barriers to adherence? For example, 'can you afford you medication?' or, 'why won't my patients take their medications?'"
+  },
+  "p26": {
+    "type": "response",
+    "inquire": "Do you implement clinical decision support following Evidence-Based Guidelines for the following:",
+    "template": "<p>At least four are required:</p><ul><li>Mental Health:</li></ul><ul><li>Substance Use Disorder (illegal drug use, prescription drug addiction, alcoholism):</li></ul><ul><li>Chronic/Acute:</li></ul><ul><li>A Condition related to Unhealthy Behaviors, (smoking, obesity, etc..):</li></ul><ul><li>Well Child/Adult Care:</li></ul>"
+  },
+  "p27": {
+    "type": "response",
+    "inquire": "Please list key patient needs and concerns (can be similar to predominate condition list).",
+    "template": "<ul><li>Mental Health:</li></ul><ul><li>Substance Use Disorder (illegal drug use, prescription drug addiction, alcoholism):</li></ul><ul><li>Chronic/Acute:</li></ul><ul><li>A Condition related to Unhealthy Behaviors, (smoking, obesity, etc..):</li></ul><ul><li>Well Child/Adult Care:</li></ul>"
+  },
+  "p28": {
+    "type": "yesNo",
+    "inquire": "Do you provide peer support and community resources to patients?",
+    "branches": {
+      "p28a": {
+        "type": "download",
+        "inquire": "Please download Peer Support and Community Resources",
+        "assets": [
+          {
+            "name": "support_community_resources.doc",
+            "url": "policy/6-QI-A/QI-04A_2017_Survey_Family_Medicine_English.docx",
+            "icon": "file-word-o"
+          }
+        ],
+        "showIfParentEquals": false
+      },
+      "p28b": {
+        "type": "upload",
+        "inquire": "Great! Please upload Peer Support and Community Resources",
+        "showIfParentEquals": true
+      }
+    }
+  },
+  "p29": {
+    "type": "yesNo",
+    "inquire": "Do you do an Oral Health Assessment and provide Oral Health Education Materials?",
+    "branches": {
+      "p29a": {
+        "type": "download",
+        "inquire": "Please download Oral Health Education Materials",
+        "assets": [
+          {
+            "name": "oral_health_material.doc",
+            "url": "policy/6-QI-A/QI-04A_2017_Survey_Family_Medicine_English.docx",
+            "icon": "file-word-o"
+          }
+        ],
+        "showIfParentEquals": false
+      },
+      "p29c": {
+        "type": "upload",
+        "inquire": "Great! Please upload Oral Health Education Material",
+        "showIfParentEquals": true
+      }
+    }
+  },
+  "p30": {
+    "type": "yesNo",
+    "inquire": "Do you use shared decision making aids?",
+    "branches": {
+      "p30a": {
+        "type": "download",
+        "inquire": "Please download the following materials",
+        "assets": [
+          {
+            "name": "shared_decision_aids.doc",
+            "url": "policy/6-QI-A/QI-04A_2017_Survey_Family_Medicine_English.docx",
+            "icon": "file-word-o"
+          }
+        ],
+        "showIfParentEquals": false
+      },
+      "p30c": {
+        "type": "upload",
+        "inquire": "Great! Please upload Decision Making Aids",
+        "showIfParentEquals": true
+      }
+    }
+  },
+  "p31": {
+    "type": "yesNo",
+    "inquire": "Do you keep a community resources list?",
+    "branches": {
+      "p31a": {
+        "type": "download",
+        "inquire": "Please download the following materials",
+        "assets": [
+          {
+            "name": "community_resource_material.doc",
+            "url": "policy/6-QI-A/QI-04A_2017_Survey_Family_Medicine_English.docx",
+            "icon": "file-word-o"
+          }
+        ],
+        "showIfParentEquals": false
+      },
+      "p31b": {
+        "type": "upload",
+        "inquire": "Great! Please upload Community Resource List",
+        "showIfParentEquals": true
+      }
+    }
+  },
+  "p32": {
+    "type": "response",
+    "inquire": "How do you identify patients for care management in the following areas:",
+    "template": "<ul><li>Behavioral Health:<ul><li>High Utilizations:</li><li>Poorly Controlled Complex Conditions:</li></ul></li><li>Social Determinants of Health:</li><ul><li>Referrals by Outside Organizations:</ul></li></li></ul>"
+  },
+  "p33": {
+    "type": "yesNo",
+    "inquire": "Do you have a Comprehensive Risk Stratification Process?"
+  },
+  "p34": {
+    "type": "response",
+    "inquire": "Do you discuss the following questions to your patients?",
+    "template": "<p>Example:</p><ul><li>Do you have any treatment/health plan goals?<ul><li>Are their any barriers to meeting these goals?</li><li>Do you incorporate patient preferences? For example, exercise, foods, medication types, etc...</li></ul></li><li>Do you review medications associated with the condition?<ul><li>Do you indicate follow-up time frame for each patient?<ul><li>Do you provide a written copy of care plan to patient and family?</li></ul></li><li>Do you work with patients to develop a self-management plan?</li></ul></li></ul>",
+    "branches": {
+      "p34a": {
+        "type": "response",
+        "inquire": "Please list 5 patients in the past (2) weeks where these questions can be found in their patient charts:",
+        "template": "<p>Example:</p><ul><li>Do you have any treatment/health plan goals?<ul><li>Are their any barriers to meeting these goals?</li><li>Do you incorporate patient preferences? For example, exercise, foods, medication types, etc...</li></ul></li><li>Do you review medications associated with the condition?<ul><li>Do you indicate follow-up time frame for each patient?<ul><li>Do you provide a written copy of care plan to patient and family?</li></ul></li><li>Do you work with patients to develop a self-management plan?</li></ul></li></ul>",
+        "showIfParentEquals": true
+      }
+    }
+  },
+  "p35": {
+    "type": "response",
+    "inquire": "How do you identify patients for care management in the following areas:",
+    "template": "<p>Example:</p><ul><li>Reviewed Treatment Care Plan and Treatment Goals. Assessed and addressed potential barriers to meeting treatment goals. Printout of Care plan and progress note was given to patient. patient acknowledged understanding of prescribed medications and treatment care plan.<ul><li>Are there any goals, either long term or short term, you wish to meet with your health?</li><li>Is there anything which is a barrier to meeting these goals?</li></ul></li><li>Discussed the benefits of at least a few hours each week of moderate aerobic exercise?<ul><li>Discussed with patient what kind of exercise do you enjoy?<ul><li>Discussed the importance of eating nutritious healthy food on a regular basis.</li></ul></li><li>What foods would you be willing to give up?</li></ul></li><li>What form of medication do you prefer?</li></ul>"
+  },
+  "p36": {
+    "type": "yesNo",
+    "inquire": "Do you share clinical information when requested by an external care organization?"
+  },
+  "p37": {
+    "type": "response",
+    "inquire": "Do you monitor clinical quality measures across the following categories:",
+    "template": "<p>Total of 5 measures, at least 2 in one category</p><ul><li>Immunization<ul><li>Preventive</li><li>Chronic/Acute</li></ul></li><li>Behavioral</li></ul>"
+  },
+  "p38": {
+    "type": "response",
+    "inquire": "Do you monitor resources stewardship quality measures across the following categories:",
+    "template": "<p>Total of 5 measures, at least 1 in each category</p><ul><li>Care Coordination</ul></li><ul><li>Utilization</ul></li>"
+  },
+  "p39": {
+    "type": "yesNo",
+    "inquire": "Do you assess appointment availability?",
+    "branches": {
+      "p39a": {
+        "type": "download",
+        "inquire": "Please download appointment availability standard.",
+        "assets": [
+          {
+            "name": "shared_decision_aids.doc",
+            "url": "policy/6-QI-A/QI-04A_2017_Survey_Family_Medicine_English.docx",
+            "icon": "file-word-o"
+          }
+        ],
+        "showIfParentEquals": false
+      },
+      "p39b": {
+        "type": "upload",
+        "inquire": "Great! Please upload filled out availability standard.",
+        "showIfParentEquals": true
+      }
+    }
+  },
+  "p40": {
+    "type": "download",
+    "inquire": "Please download Insight Management Survey for immediate use of practice:",
+    "assets": [
+      {
+        "name": "Insight_Management_Survey.doc",
+        "url": "policy/6-QI-A/QI-04A_2017_Survey_Family_Medicine_English.docx",
+        "icon": "file-word-o"
+      }
+    ]
+  },
+  "p41": {
+    "type": "response",
+    "inquire": "Has the practice set a goal and acted to improve in the following areas?",
+    "template": "<p>Clinical Quality Measures (three of the four following categories):</p><ul><li>Immunization<ul><li>Preventive</li><li>Chronic or acute</li></ul></li><li>Behavioral<ul><li><p>Resource Stewardship</p>Care Coordination<ul><li>Utilization</li></ul></li></ul><p>Improving Appointment Availability:</p><ul><li>Wait times</li></ul><ul><li>Following up on No-Shows</li></ul><p>Improving Patient Experience:</p><ul><li>Patient Portal Set-Up</li></ul><ul><li>Refills</li></ul><ul><li>Phone Call Back Time</li></ul>"
+  },
+  "p42": {
+    "type": "response",
+    "inquire": "If Yes to the last question, where has the practice improved performance. At least two measures:",
+    "template": "<p>Clinical Quality Measures (three of the four following categories):</p><ul><li>Immunization</ul></li><ul><li>Preventive</ul></li><ul><li>Chronic or acute</li></ul><ul><li>Behavioral</li></ul><p>Resource Stewardship</p><ul><li>Care Coordination</li></ul><ul><li>Utilization</li></ul><p>Improving Appointment Availability:</p><ul><li>Wait times</li></ul><ul><li>Following up on No-Shows</li></ul><p>Improving Patient Experience:</p><ul><li>Patient Portal Set-Up</li></ul><ul><li>Refills</li></ul><ul><li>Phone Call Back Time</li></ul>"
+  },
+  "p43": {
+    "type": "response",
+    "inquire": "At least Quarterly, does the practice review with all staff performance results in the following areas:",
+    "template": "<ul><li>Practice-Level Data</ul></li><ul><li>Individual Clinician Data</ul></li>"
+  },
+  "p44": {
+    "type": "yesNo",
+    "inquire": "Does the practice make the previous data available to patients or the public?"
+  },
+  "p45": {
+    "type": "upload",
+    "inquire": "In conclusion: Please Upload QUAAR HEDIS REPORT."
+  }
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
