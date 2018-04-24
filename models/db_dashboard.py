@@ -93,6 +93,7 @@ db.define_table(
     Field("credentials"),
     Field("dea_number"),
     Field("provider_license", "list:string"),
+    Field("practice_email", requires=IS_EMAIL()),
     Field("practice_npi"),
     Field("provider_npi", "list:string"),
     Field("provider_dob", "list:string"),

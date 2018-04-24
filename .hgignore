@@ -17,4 +17,4 @@ sessions/*
 databases/*
 errors/127.0.0*
 models/conf.py
-
+.idea/*
