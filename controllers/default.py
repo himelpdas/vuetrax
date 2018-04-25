@@ -80,7 +80,7 @@ def profiles():
             trainer_forms[usr.id] = user_form
         elif getattr(role, "role", None) == "participant":
             participant_forms[usr.id] = user_form
-        elif getattr(role, "role", None) == "usr":
+        elif getattr(role, "role", "usr") == "usr":
             usr_forms[usr.id] = user_form
 
     return dict(usrs=usrs, my_role=my_role, usr_forms=usr_forms, participant_forms=participant_forms,
