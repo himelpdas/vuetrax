@@ -108,22 +108,21 @@
                 {{=form.custom.widget.email}}
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-4 col-sm-8">
-				Role:
-				</div>
-				<div class="col-md-4 col-sm-8">
-                {{=form.custom.widget.role}}
-				</div>
-            </div>
 			<br>
             <div class="modal-footer">
                {{=form.custom.submit}}
             </div>
            </div>
             {{=form.custom.end}}
+
+            <!-- ROLE FORM -->
             {{role_form=forms[key][2]}}
-            {{=role_form}}
+            {{=role_form.custom.begin}}
+            {{=role_form.custom.widget.role}}
+            {{=role_form.custom.submit}}
+            {{=role_form.custom.end}}
+            <!-- END ROLE FORM -->
+
         {{else:}}
             <div class="modal-body">
 			<div class="row">
