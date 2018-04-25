@@ -30,12 +30,12 @@ if not request.env.web2py_runtime_gae:
     # ---------------------------------------------------------------------
     from sys import platform
     if platform == "linux" or platform == "linux2":
-        db = DAL(myconf.get('db.uri'),
+        db = DAL('mysql://vuetrax:L3+$G0m3+$1357@localhost/vuetrax',
                  pool_size=myconf.get('db.pool_size'),
                  migrate_enabled=myconf.get('db.migrate'),
                  check_reserved=['all'])
     else:
-        db = DAL('mysql://vuetrax:L3+$G0m3+$1357@localhost/vuetrax',
+        db = DAL(myconf.get('db.uri'),
                  pool_size=myconf.get('db.pool_size'),
                  migrate_enabled=myconf.get('db.migrate'),
                  check_reserved=['all'])
