@@ -8,8 +8,15 @@
     "inquire": "What is the Clinician Lead Credentials"
   },
   "tc1a3": {
-    "type": "response",
-    "inquire": "Roles and Responsibilities - To Support Implementation of PCMH NYS Model and Ensure All Providers and Staff are Trained and Continuously Provide Patient Centered Care. - Please Sign Below:"
+    "type": "upload",
+    "inquire": "Please download this link, sign, and upload below.",
+    "assets": [
+          {
+            "name": "roles_and_responsibilities.doc",
+            "url": "policy/1-TC-A/roles_and_responsibilities.docx",
+            "icon": "file-word-o"
+          }
+        ]
   },
   "tc1ba": {
     "type": "yesNo",
@@ -18,22 +25,19 @@
       "tc1b1": {
         "type": "response",
         "inquire": "Who will be the Staff Lead?",
-        "showIfParentEquals": false,
-        "branches": {
-          "tc1b2": {
+        "showIfParentEquals": false
+        },
+        "tc1b2": {
+          "type": "response",
+          "inquire": "What is the Staff Lead Credentials",
+          "showIfParentEquals": false
+          },
+          "tc1b3": {
             "type": "response",
-            "inquire": "What is the Staff Lead Credentials",
-            "showIfParentEquals": false,
-            "branches": {
-              "tc1b3": {
-                "type": "response",
-                "inquire": "Roles and Responsibilities - To Support Implementation of PCMH NYS Model and Ensure All Providers and Staff are Trained and Continuously Provide Patient Centered Care. - Please Sign Below:",
-                "showIfParentEquals": false
-              }
+            "inquire": "Roles and Responsibilities - To Support Implementation of PCMH NYS Model and Ensure All Providers and Staff are Trained and Continuously Provide Patient Centered Care. - Please Sign Below:",
+            "showIfParentEquals": false
             }
-          }
-        }
-      }
+
     }
   },
   "tc1c": {
@@ -122,11 +126,11 @@
       },
       "tc5d": {
         "type": "download",
-        "inquire": "Please download Security Risk Analysis Document",
+        "inquire": "Please download Security Risk Analysis Tool",
         "assets": [
           {
             "name": "security_risk_assessment.doc",
-            "url": "policy/1-TC-A/TC-02_Job_Descriptions_Policy.docx",
+            "url": "policy/sra_release-2.0-4-8-1.exe",
             "icon": "file-word-o"
           }
         ],

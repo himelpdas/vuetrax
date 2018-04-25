@@ -256,7 +256,7 @@
     "assets": [
       {
         "name": "er_discharge_tracking.doc",
-        "url": "policy/1-TC-C/TC-09_Policy_on_distribution_of_materials_regarding_practice_role_as_a_medical_home.docx",
+        "url": "policy/Tracking_Tool_for_ER_Discharges.xlsx",
         "icon": "file-word-o"
       }
     ]
@@ -266,8 +266,8 @@
     "inquire": "Please download, fill out, and upload Availability of Appointments Tracking Log.",
     "assets": [
       {
-        "name": "availability_appointment.doc",
-        "url": "policy/1-TC-C/TC-09_Policy_on_distribution_of_materials_regarding_practice_role_as_a_medical_home.docx",
+        "name": "availability_appointment_assessment.doc",
+        "url": "policy/6-QI-A/QI-03_Appointment_Availability_Assessment_Policy&Report.docx",
         "icon": "file-word-o"
       }
     ]
