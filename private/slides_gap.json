@@ -63,6 +63,10 @@
       }
     }
   },
+  "tc1f": {
+    "type": "yesNo",
+    "inquire": "Do you use your EMR for scheduling patient appointments?"
+  },
   "tc2a": {
     "type": "response",
     "inquire": "What jobs does your practice have? - Please List Them Here:"
