@@ -148,8 +148,9 @@ def dashboard():
     if is_provider:
         slides = json.loads(_get_private_file('slides_provider.json'), object_pairs_hook=collections.OrderedDict)
 
-    practice = db(db.practice.id == practice_id).select().last()
 
+
+    practice = db(db.practice.id == practice_id).select().last()  #TODO practice id is list
     if not is_tracking:
         _recurse_questions(slides, question_order)
 
@@ -159,7 +160,8 @@ def dashboard():
 
         first_question = question_order[0]
     else:
-        form = SQLFORM.grid(db[section], maxtextlength=40, details=False, deletable=False if IS_GRID else True)
+        db[section].practice.default=practice_id
+        form = SQLFORM.grid(db[section].practice == practice_id, maxtextlength=40, details=False, deletable=False if IS_GRID else True)
 
     return dict(**locals())
 

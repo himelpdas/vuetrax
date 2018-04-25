@@ -28,10 +28,16 @@ if not request.env.web2py_runtime_gae:
     # ---------------------------------------------------------------------
     # if NOT running on Google App Engine use SQLite or other DB
     # ---------------------------------------------------------------------
-    db = DAL(myconf.get('db.uri'),
-             pool_size=myconf.get('db.pool_size'),
-             migrate_enabled=myconf.get('db.migrate'),
-             check_reserved=['all'])
+    if platform == "linux" or platform == "linux2":
+        db = DAL(myconf.get('db.uri'),
+                 pool_size=myconf.get('db.pool_size'),
+                 migrate_enabled=myconf.get('db.migrate'),
+                 check_reserved=['all'])
+    else:
+        db = DAL('mysql://vuetrax:L3+$G0m3+$1357@localhost/vuetrax',
+                 pool_size=myconf.get('db.pool_size'),
+                 migrate_enabled=myconf.get('db.migrate'),
+                 check_reserved=['all'])
 else:
     # ---------------------------------------------------------------------
     # connect to Google BigTable (optional 'google:datastore://namespace')

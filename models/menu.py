@@ -36,9 +36,11 @@ is_imaging = section == "imaging"
 
 is_telephone = section == "telephone"
 
+is_secure_messaging = section == "secure_messaging"
+
 is_hospital = section == "hospital"
 
-is_tracking = any([is_referral, is_lab, is_imaging, is_telephone, is_hospital])
+is_tracking = any([is_referral, is_lab, is_imaging, is_telephone, is_hospital, is_secure_messaging])
 
 is_gap = section == "gap"
 

@@ -162,6 +162,7 @@ BUCKETS = ["imaging", "lab", "referral"]
 for each in BUCKETS:
     db.define_table(
         each,
+    Field("practice", db.practice),
     Field('patient',),
     Field('notes', "text"),
     Field('ordering_provider',),
@@ -177,6 +178,7 @@ for each in BUCKETS:
     db[each].is_active.readable = False
     db[each].is_active.writable = False
     db[each].id.readable = False
+    db[each].practice.readable = False
     db[each].created_by.readable = True
     db[each].created_on.readable = True
     if IS_NEW:
@@ -186,6 +188,7 @@ for each in BUCKETS:
 
 
 db.define_table("hospital",
+    Field("practice", db.practice),
     Field("patient"),
     Field("date_of_notification", "date"),
     Field("reason"),
@@ -196,8 +199,10 @@ db.define_table("hospital",
 )
 
 db["hospital"].id.readable = False
+db["hospital"].practice.readable = False
 
 db.define_table("telephone",
+    Field("practice", db.practice),
     Field('urgent', 'boolean'),
     Field('after_hours', 'boolean'),
     Field("patient"),
@@ -208,3 +213,19 @@ db.define_table("telephone",
 )
 
 db["telephone"].id.readable = False
+db["telephone"].practice.readable = False
+
+
+db.define_table("secure_messaging",
+    Field("practice", db.practice),
+    Field('urgent', 'boolean'),
+    Field('after_hours', 'boolean'),
+    Field("patient"),
+    Field("date_of_birth", "date"),
+    Field("time_of_request", "date"),
+    Field("time_when_addressed", "date"),
+    Field("transcript", "text"),
+)
+
+db["secure_messaging"].id.readable = False
+db["secure_messaging"].practice.readable = False
