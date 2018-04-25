@@ -1,6 +1,6 @@
 {{extend "layout.html"}}
+{{section="policy" if not request.vars["section"] else request.vars["section"]}}
 
-	
     <!-- Page Content -->
     <div class="container">
 		<h2> &nbsp; </h2>
@@ -18,15 +18,15 @@
 		</div>
 		<h2> &nbsp; </h2>
 
-    <div class="form-group center" style="text-align: center; color: ">
+    <div class="form-group center" style="text-align: center;  ">
                 <ul class="nav nav-pills nav-fill" style="text-align: center;">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Policies/Guides
+                        <a class="nav-link {{if section=="policy":}}active{{else:}}disabled{{pass}}" href="{{=URL(vars=dict(section='policy'))}}">Policies/Guides
 
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Education Material
+                        <a class="nav-link {{if section=="education":}}active{{else:}}disabled{{pass}}" href="{{=URL(vars=dict(section='education'))}}">Education Material
                         </a>
                     </li>
 
@@ -37,693 +37,7 @@
 
 		<hr>
 
-		<div class="row">
-		
-			<div class="col-lg-4">
-					
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title" style="text-align: center; color: blue;"><b>Team-Based Care and Practice Organization (TC)</b></h5>
-					</div>
-							<div class="list-group" style="max-height: 360px; overflow-y: scroll; position: relative;">
-					
-								<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">TC-01</h5></div>
-
-										
-									</div>
-									<hr>
-									
-									<a href="{{=URL('static','policy/Blank_Huddle_Sheet.docx')}}">Blank Huddle Sheet Template</a>
-
-								</li>
-								<li class="list-group-item list-group-item-action">
-									
-								<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">TC-02</h5></div>
-
-										
-									</div>
-									<hr>
-									<a href="{{=URL('static','policy/1-TC-A/TC-02_Team_Structure_for_Team_Based_Care.docx')}}">Team Structure & Team Based Care Policy</a><p></p>
-									<a href="{{=URL('static','policy/1-TC-A/TC-02_Job_Descriptions_Policy.docx')}}">Job Descriptions Policy</a><p></p>
-									<a href="{{=URL('static','policy/1-TC-A/TC-02_Assignment_of_Care_Duties.docx')}}">Assignment of Care Duties Policy</a>
-								</li>
-								<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">TC-03</h5></div>
-
-										
-									</div>
-									<hr>
-									
-										<a href="{{=URL('static','policy/1-TC-A/TC-03_External_collaboration_elective_1.txt')}}">DSRIP Participation Document</a><p></p>
-										<a href="{{=URL('static','policy/1-TC-A/TC-03_External_collaboration_elective_1.txt')}}">External Collaboration Elective</a>
-	
-								</li>
-
-									<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">TC-06</h5></div>
-
-										
-									</div>
-									<hr>
-									
-										
-										<a href="{{=URL('static','policy/1-TC-B/TC-06_Daily_Huddle_Procedure.docx')}}">Daily Huddle Procedure</a><p></p>
-										<a href="{{=URL('static','policy/1-TC-B/TC-06_Patient_Huddles')}}">Patient Huddle Template</a>
-										
-										
-	
-								</li>						
-									<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">TC-07</h5></div>
-
-										
-									</div>
-									<hr>
-								
-									<a href="{{=URL('static','policy/1-TC-B/TC-07_2D9_Staff_Involvement_in_Practice_Performance_and_Quality_Improvement.docx')}}">Staff Involvement in Practice</a>
-										
-	
-								</li>							
-								<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8;">
-										<div class="col-lg-12"><h5 class="center">TC-09</h5></div>
-
-										
-									</div>
-									<hr>
-									<a href="{{=URL('static','policy/1-TC-C/TC-09_Medical_Home_Brochure.pub')}}">Medical Home Brochure Template</a><p></p>
-									<a href="{{=URL('static','policy/1-TC-C/TC-09_Policy_on_distribution_of_materials_regarding_practice_role_as_a_medical_home.docx')}}">Distribution of Material Policy</a>
-									
-										
-	
-									
-								</li>
-							
-							</div>
-					
-				</div>
-				
-			</div>
-				<div class="col-lg-4">
-					
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title" style="text-align: center; color: blue;"><b>Knowing and Managing Your Patients (KM)</b></h5>
-						</div>
-							<div class="list-group" style="max-height: 360px; overflow-y: scroll; position: relative;">
-					
-								<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">KM-01</h5></div>
-
-										
-									</div>
-									<hr>
-									
-									<a href="{{=URL('static','policy/2-KM-A/Identify_Patients_for_Care_Management.docx')}}">Top Conditions Analysis Template</a>
-
-								</li>
-								<li class="list-group-item list-group-item-action">
-
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">KM-02</h5></div>
-
-
-									</div>
-									<hr>
-
-									<a href="{{=URL('static','policy/2-KM-A/KM-02_KM-03_Comprehensive_Care_Assessmt_Policy.docx')}}">Comprehensive Care Assessment Policy</a><p></p>
-									<a href="{{=URL('static','policy/2-KM-A/telephone_encounter.docx')}}">Telephone Encounter Template</a>
-
-
-
-
-								</li>
-								
-								<li class="list-group-item list-group-item-action">
-									
-								<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">KM-03</h5></div>
-
-										
-									</div>
-									<hr>
-										<a href="{{=URL('static','policy/2-KM-A/KM-02_KM-03_Comprehensive_Care_Assessmt_Policy.docx')}}">Comprehensive Care Assessment Policy</a> <p></p>
-										<a href="{{=URL('static','policy/2-KM-A/KM-04_Behavioral_Health_Screenings_Policy_1.docx')}}">Depression Screening Tool Training Guide</a>
-									
-								</li>
-								<li class="list-group-item list-group-item-action">
-									
-								<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">KM-04</h5></div>
-
-										
-									</div>
-									<hr>
-									
-										<a href="{{=URL('static','policy/2-KM-A/KM-04_Behavioral_Health_Screenings_Policy_1.docx')}}">Behavioral Health Screenings Policy</a>
-									
-								</li>
-								
-								
-								
-								<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">KM-05</h5></div>
-
-										
-									</div>
-									<hr>
-									
-										<a href="{{=URL('static','policy/2-KM-A/KM-05_Oral_Health_Screenings_Policy_1.docx')}}">Oral Health Screening Policy</a>
-
-								
-								</li>
-								<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">KM-06</h5></div>
-
-										
-									</div>
-									<hr>
-								
-										<a href="{{=URL('static','policy/2-KM-A/KM-05_Oral_Health_Screenings_Policy_1.docx')}}">Top Conditions Analysis Template</a>
-								
-								</li>
-
-								<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">KM-08-09-10</h5></div>
-
-										
-									</div>
-									<hr>
-									
-									<a href="{{=URL('static','policy/2-KM-A/patient_population_demographics_report_template.docx')}}">Patient Population Demographics Analysis Report Template</a>
-									
-										
-								</li>
-								<li class="list-group-item list-group-item-action">
-
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">KM-11</h5></div>
-
-
-									</div>
-									<hr>
-									<a href="{{=URL('static','policy/1-TC-A/TC-02_Job_Descriptions_Policy.docx')}}">Job Descriptions Policy</a><p></p>
-									<a href="{{=URL('static','policy/2-KM-C/KM-11_Training_Materials_for_Health_Literacy.ppt')}}">Health Literacy Training Document</a>
-
-
-								</li>
-								<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">KM-12</h5></div>
-
-										
-									</div>
-									<hr>
-									<a href="{{=URL('static','policy/2-KM-C/Letters_Phone_Scripts_Templates.zip')}}">Letters & Phone Script Templates</a>
-
-									
-								
-								</li><li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">KM-17</h5></div>
-
-										
-									</div>
-									<hr>
-									<a href="{{=URL('static','policy/2-KM-C/KM-12_policy.docx')}}">Progress Note Documentation Training Policy</a>
-										
-	
-								
-								</li>
-
-								<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">KM-20</h5></div>
-
-										
-									</div>
-									<hr>
-									<a href="{{=URL('static','policy/2-KM-C/KM-12_policy.docx')}}">Progress Note Documentation Training Template</a>
-								
-								</li>
-
-								<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">KM-26</h5></div>
-
-										
-									</div>
-									<hr>
-								
-										<a href="{{=URL('static','policy/2-KM-F/KM-28_Case_Conference_Policy_2')}}">Community Resource List</a>
-										
-	
-								
-								</li>
-														
-																
-								
-							</div>
-							
-					
-				</div>
-				
-				&nbsp;
-			</div>
-			
-			<div class="col-lg-4">
-					
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title" style="text-align: center; color: blue;"><b>Patient-Centered Access and Continuity (AC)</b></h5>
-					</div>
-							<div class="list-group" style="max-height: 360px; overflow-y: scroll; position: relative;">
-					
-								<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">AC-01</h5></div>
-
-										
-									</div>
-									<hr>
-									<a href="{{=URL('static','policy/3-AC-A/AC-01_Assessment_of_Access_Needs_Policy.docx')}}">Assessment of Access Policy</a><p></p>
-										<a href="{{=URL('static','policy/3-AC-A/AC-01_Assessment_of_Access_Needs_Policy.docx')}}">Survey Process Policy</a><p></p>
-										<a href="{{=URL('static','policy/3-AC-A/AC-01_Assessment_of_Access_Needs_Policy.docx')}}">Suggestion Box Procedure Policy </a>
-										
-										
-									
-									</li>
-								<li class="list-group-item list-group-item-action">
-									
-								<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">AC-02</h5></div>
-
-										
-									</div>
-									<hr>
-									<a href="{{=URL('static','policy/3-AC-A/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx')}}"> General Office Policy </a><p></p>
-									<a href="{{=URL('static','policy/3-AC-A/same_day_appointment_usage.docx')}}"> Same-Day Appointment Usage Template </a>
-								</li>
-								<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">AC-04</h5></div>
-
-										
-									</div>
-									<hr>
-									<div class="row">
-										<a href="{{=URL('static','policy/3-AC-A/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx')}}">General Office Policy</a>
-										
-										
-	
-									</div>
-								</li>
-								<li class="list-group-item list-group-item-action">
-
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">AC-05</h5></div>
-
-
-									</div>
-									<hr>
-									<div class="row">
-										<a href="{{=URL('static','policy/3-AC-A/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx')}}">General Office Policy</a>
-
-
-
-									</div>
-								</li>
-								<li class="list-group-item list-group-item-action">
-
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">AC-08</h5></div>
-
-
-									</div>
-									<hr>
-									<div class="row">
-										<a href="{{=URL('static','policy/3-AC-A/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx')}}">General Office Policy</a>
-
-
-
-									</div>
-								</li>
-										<li class="list-group-item list-group-item-action">
-									
-										<div class="row" style="background-color: #E6FFD8">
-											<div class="col-lg-12"><h5 class="center">AC-10</h5></div>
-
-											
-										</div>
-									<hr>
-										<a href="{{=URL('static','policy/3-AC-B/AC-10_11_credits_Orient_new_patients_to_practice_and_record_transfer_policy.docx')}}">Transfer Policy</a>
-										
-									</li>
-									
-									<li class="list-group-item list-group-item-action">
-									
-										<div class="row" style="background-color: #E6FFD8">
-											<div class="col-lg-12"><h5 class="center">AC-11</h5></div>
-
-											
-										</div>
-									<hr>
-										<a href="{{=URL('static','policy/3-AC-B/AC-11_PCP_selection_report.docx')}}">Clinician Selection Report</a><p>
-										<a href="{{=URL('static','policy/3-AC-B/AC-10_11_credits_Orient_new_patients_to_practice_and_record_transfer_policy.docx')}}">Transfer Policy</a>
-										
-									</li>
-									
-									<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">AC-12</h5></div>
-
-										
-									</div>
-									<hr>
-									
-										<a href="{{=URL('static','policy/3-AC-B/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx')}}">General Office Policy</a>
-										
-									
-									
-								</li>									
-														
-																
-								
-							</div>
-					
-				</div>
-				
-			</div>
-			
-			<div class="col-lg-4">
-					
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title" style="text-align: center; color: blue;"><b>Care Management and Support (CM)</b></h5>
-					</div>
-							<div class="list-group" style="max-height: 360px; overflow-y: scroll; position: relative;">
-					
-								<li class="list-group-item list-group-item-action">
-									
-								<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">CM-01-02</h5></div>
-
-										
-									</div>
-									<hr>
-									<a href="{{=URL('static','policy/4-CM-A/CM-01_Care_Coordination_Policy.docx')}}">Care Management Policy</a><p></p>
-									<a href="{{=URL('static','policy/4-CM-A/CM-2_Report_Identify_Patients_for_Care_Management.docx')}}">Care Management Report Template</a><p></p>
-									<a href="{{=URL('static','policy/4-CM-B/09_NCQA_PCMH_Record_Review_Workbook.xlsx')}}">Record Review Workbook Template</a><p></p>
-									<a href="{{=URL('static','policy/4-CM-B/09_NCQA_PCMH_Record_Review_Workbook.xlsx')}}">Comprehensive Care Template Document</a>
-									
-								</li>
-								<li class="list-group-item list-group-item-action">
-
-								<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">CM-04-08</h5></div>
-
-
-									</div>
-									<hr>
-									<a href="{{=URL('static','policy/4-CM-B/09_NCQA_PCMH_Record_Review_Workbook.xlsx')}}">Record Review Workbook Template</a>
-
-
-								</li>
-								<li class="list-group-item list-group-item-action">
-									
-								<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">CM-09</h5></div>
-
-										
-									</div>
-									<hr>
-									
-									<a href="{{=URL('static','policy/4-CM-B/CM-09_Care_Plan_Integration_Policy.docx')}}">Care Plan Integration Policy</a>
-									
-									
-								</li>
-															
-														
-																
-								
-							</div>
-					
-				</div>
-				
-			</div>
-			<div class="col-lg-4">
-					
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title" style="text-align: center; color: blue;"><b>Care Coordination and Care Transitions  (CC)</b></h5>
-					</div>
-							<div class="list-group" style="max-height: 360px; overflow-y: scroll; position: relative;">
-					
-								<li class="list-group-item list-group-item-action">
-									
-								<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">CC-01</h5></div>
-
-										
-									</div>
-									<hr>
-									
-									<a href="{{=URL('static','policy/5-CC-A/CC-01_Lab_&_Imaging_Test_Management_Policy.docx')}}">Lab and Imaging Test Management Policy</a>
-								</li>
-								
-								<li class="list-group-item list-group-item-action">
-									
-								<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">CC-02</h5></div>
-
-										
-									</div>
-									<hr>
-									
-									<a href="{{=URL('static','policy/5-CC-A/CC-02_Newborn_Screenings_Policy_1.docx')}}">Newborn Screening Policy</a>
-								</li>
-								
-								<li class="list-group-item list-group-item-action">
-									
-								<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">CC-04</h5></div>
-
-										
-									</div>
-									<hr>
-									
-									<a href="{{=URL('static','policy/5-CC-B/CC-04,CC-08,CC-09,CC-21C_Process_and_Procedure_for_Referrals_to_outside_consultants_and_specialists.docx')}}">Referral Management Policy</a>
-
-								</li>
-								<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">CC-07</h5></div>
-
-										
-									</div>
-									<hr>
-									
-									<a href="{{=URL('static','policy/5-CC-B/CC-07_Health_Grades_Reports_for_Specialists.docx')}}">Health Grades Reports for Specialists Policy</a>
-
-										
-										
-								</li>
-								<li class="list-group-item list-group-item-action">
-
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">CC-08-09</h5></div>
-
-
-									</div>
-									<hr>
-
-									<a href="{{=URL('static','policy/5-CC-B/CC-04,CC-08,CC-09,CC-21C_Process_and_Procedure_for_Referrals_to_outside_consultants_and_specialists.docx')}}">Referral Management Policy</a>
-
-
-
-								</li>
-
-								
-								<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">CC-14-16</h5></div>
-
-										
-									</div>
-									<hr>
-										<a href="{{=URL('static','policy/5-CC-C/CC-14_Waiting_Room_Poster_Hospital-ER_Visits.docx')}}">Waiting Room Poster</a><p></p>
-										<a href="{{=URL('static','policy/5-CC-C/CC-14,15,16,17,19_Policy_for_Follow_Up_Hospitalizations&ER_Visits.docx')}}">Hospitalization Follow Up Policy</a><p></p>
-										<a href="{{=URL('static','policy/5-CC-C/CC-14_Consent_to_Release_Confidential_Information.docx')}}">Consent to Release Form</a>
-
-									
-								</li>
-								
-								<li class="list-group-item list-group-item-action">
-									
-									<div class="row" style="background-color: #E6FFD8">
-										<div class="col-lg-12"><h5 class="center">CC-20</h5></div>
-
-										
-									</div>
-									<hr>
-										
-										<a href="{{=URL('static','policy/5-CC-C/CC-20_Action_plan_for_transitioning_peds_to_adult_care.docx')}}">Transitioning Peds to Adult Plan </a><p></p>
-										<a href="{{=URL('static','policy/5-CC-C/CC-20_Welcome_and_Orientation_of_New_Young_Adults.docx')}}">Welcome and Orientation of New Adults</a>
-									
-								</li>	
-								
-														
-																
-								
-							</div>
-					
-				</div>
-				
-			</div>
-			<div class="col-lg-4">
-					
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title" style="text-align: center; color: blue;"><b>Performance Measurement and Quality Improvement (QI)</b></h5>
-					</div>
-							<div class="list-group" style="max-height: 360px; overflow-y: scroll; position: relative;">
-					
-					
-						<li class="list-group-item list-group-item-action">
-							
-						<div class="row" style="background-color: #E6FFD8">
-								<div class="col-lg-12"><h5 class="center">QI-03</h5></div>
-
-								
-							</div>
-							<hr>
-
-
-							<a href="{{=URL('static','policy/6-QI-A/QI-03_Appointment_Availability_Assessment_Policy&Report.docx')}}">Appointment Availability Template</a>
-						</li>
-						
-						<li class="list-group-item list-group-item-action">
-							
-						<div class="row" style="background-color: #E6FFD8">
-								<div class="col-lg-12"><h5 class="center">QI-04</h5></div>
-
-								
-							</div>
-							<hr>
-							<a href="{{=URL('static','policy/6-QI-A/QI-04A_2017_Survey_Family_Medicine_English.pdf')}}">English Family Medicine Survey</a><p></p>
-							<a href="{{=URL('static','policy/6-QI-A/QI-04A_2017_Survey_Family_Medicine_Spanish.pdf')}}">Spanish Family Medicine Survey</a><p></p>
-							<a href="{{=URL('static','policy/6-QI-A/QI-04A_2017_Survey_Internal_Medicine_English.pdf')}}">English Internal Medicine Survey</a><p></p>
-							<a href="{{=URL('static','policy/6-QI-A/QI-04A_2017_Survey_Internal_Medicine_Spanish.pdf')}}">Spanish Internal Medicine Survey</a><p></p>
-							<a href="{{=URL('static','policy/6-QI-A/QI-04A_2017_Survey_Pediatric_Medicine_English.pdf')}}">English Pediatric Medicine Survey</a><p></p>
-							<a href="{{=URL('static','policy/6-QI-A/QI-04A_2017_Survey_Pediatric_Medicine_Spanish.pdf')}}">Spanish Pediatric Medicine Survey</a><p></p>
-							<a href="{{=URL('static','policy/6-QI-A/QI_04B_AC_01_Suggestion_Box_2017_English.pdf')}}">Suggestion Box English PDF</a><p></p>
-							<a href="{{=URL('static','policy/6-QI-A/QI_04B_AC_01_Suggestion_Box_2017_Spanish.pdf')}}">Suggestion Box Spanish PDF</a><p></p>
-							<a href="{{=URL('static','policy/6-QI-A/QI-04B_Suggestion_Box_Results_EN_SP.xlsx')}}">Suggestion Box English & Spanish</a><p></p>
-							<a href="{{=URL('static','policy/6-QI-A/QI-04A_Survey_Results.xlsx')}}">Survey Results</a>
-							
-							
-						</li>
-						
-						<li class="list-group-item list-group-item-action">
-							
-							<div class="row" style="background-color: #E6FFD8">
-								<div class="col-lg-12"><h5 class="center"></h5>QI-08-12</div>
-
-								
-							</div>
-							<hr>
-							
-								<a href="{{=URL('static','policy/6-QI-B/NCQA_PCMH_Quality_Measurement_and_Improvement_Worksheet.docx')}}">Quality Measurement Worksheet</a>
-
-							
-						</li>
-						
-						<li class="list-group-item list-group-item-action">
-							
-							<div class="row" style="background-color: #E6FFD8">
-								<div class="col-lg-12"><h5 class="center"></h5>QI-15</div>
-
-								
-							</div>
-							<hr>
-							
-								<a href="{{=URL('static','policy/6-QI-A/Dissemination_of_Practice_Info_to_Staff_Policy1.docx')}}">Dissemination of Practice Info</a>
-
-						</li>	
-											
-																
-								
-							</div>
-					
-				</div>
-				
-			</div>
-		 </div>
-	</div> 
-		<h2> &nbsp; </h2>
-    <div class="container">
-		<h2> &nbsp; </h2>
-		      	<div class="card dropdown dropright" style="text-align: center;">
-
-		<b>
-				<a href="{{=URL('static','education.zip')}}" type="button" class="btn btn-sm btn-info pull-left" style="text-align: left; position: absolute; left: 5px; top: 5px;"><b><i class="fa faa-float animated fa-fw fa-cloud-download" style="color: black;"></i>&nbsp;Download All</b></a>
-
-				<h3><i class="fa fa-fw fa-list" style="color: black;"></i>&nbsp;TEMPLATE LIBRARY</h3>
-
-
-
-
-			</b>
-		</div>
-		<h2> &nbsp; </h2>
-
-    <div class="form-group center" style="text-align: center; color: ">
-                <ul class="nav nav-pills nav-fill" style="text-align: center;">
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Policies/Guides
-
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Education Material
-                        </a>
-                    </li>
-
-                </ul>
-
-
-            </div>
-
-		<hr>
-
+        {{if section=="education":}}
 		<div class="row">
 
 			<div class="col-lg-6">
@@ -799,10 +113,663 @@
 				</div>
 
 			</div>
+        </div>
+        {{pass}}
+        {{if section=="policy":}}
+		<div class="row">
+
+			<div class="col-lg-4">
+
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title" style="text-align: center; color: blue;"><b>Team-Based Care and Practice Organization (TC)</b></h5>
+					</div>
+							<div class="list-group" style="max-height: 360px; overflow-y: scroll; position: relative;">
+
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">TC-01</h5></div>
+
+
+									</div>
+									<hr>
+
+									<a href="{{=URL('static','policy/Blank_Huddle_Sheet.docx')}}">Blank Huddle Sheet Template</a>
+
+								</li>
+								<li class="list-group-item list-group-item-action">
+
+								<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">TC-02</h5></div>
+
+
+									</div>
+									<hr>
+									<a href="{{=URL('static','policy/1-TC-A/TC-02_Team_Structure_for_Team_Based_Care.docx')}}">Team Structure & Team Based Care Policy</a><p></p>
+									<a href="{{=URL('static','policy/1-TC-A/TC-02_Job_Descriptions_Policy.docx')}}">Job Descriptions Policy</a><p></p>
+									<a href="{{=URL('static','policy/1-TC-A/TC-02_Assignment_of_Care_Duties.docx')}}">Assignment of Care Duties Policy</a>
+								</li>
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">TC-03</h5></div>
+
+
+									</div>
+									<hr>
+
+										<a href="{{=URL('static','policy/1-TC-A/TC-03_External_collaboration_elective_1.txt')}}">DSRIP Participation Document</a><p></p>
+										<a href="{{=URL('static','policy/1-TC-A/TC-03_External_collaboration_elective_1.txt')}}">External Collaboration Elective</a>
+
+								</li>
+
+									<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">TC-06</h5></div>
+
+
+									</div>
+									<hr>
+
+
+										<a href="{{=URL('static','policy/1-TC-B/TC-06_Daily_Huddle_Procedure.docx')}}">Daily Huddle Procedure</a><p></p>
+										<a href="{{=URL('static','policy/1-TC-B/TC-06_Patient_Huddles')}}">Patient Huddle Template</a>
 
 
 
+								</li>
+									<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">TC-07</h5></div>
+
+
+									</div>
+									<hr>
+
+									<a href="{{=URL('static','policy/1-TC-B/TC-07_2D9_Staff_Involvement_in_Practice_Performance_and_Quality_Improvement.docx')}}">Staff Involvement in Practice</a>
+
+
+								</li>
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8;">
+										<div class="col-lg-12"><h5 class="center">TC-09</h5></div>
+
+
+									</div>
+									<hr>
+									<a href="{{=URL('static','policy/1-TC-C/TC-09_Medical_Home_Brochure.pub')}}">Medical Home Brochure Template</a><p></p>
+									<a href="{{=URL('static','policy/1-TC-C/TC-09_Policy_on_distribution_of_materials_regarding_practice_role_as_a_medical_home.docx')}}">Distribution of Material Policy</a>
+
+
+
+
+								</li>
+
+							</div>
+
+				</div>
+
+			</div>
+				<div class="col-lg-4">
+
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title" style="text-align: center; color: blue;"><b>Knowing and Managing Your Patients (KM)</b></h5>
+						</div>
+							<div class="list-group" style="max-height: 360px; overflow-y: scroll; position: relative;">
+
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">KM-01</h5></div>
+
+
+									</div>
+									<hr>
+
+									<a href="{{=URL('static','policy/2-KM-A/Identify_Patients_for_Care_Management.docx')}}">Top Conditions Analysis Template</a>
+
+								</li>
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">KM-02</h5></div>
+
+
+									</div>
+									<hr>
+
+									<a href="{{=URL('static','policy/2-KM-A/KM-02_KM-03_Comprehensive_Care_Assessmt_Policy.docx')}}">Comprehensive Care Assessment Policy</a><p></p>
+									<a href="{{=URL('static','policy/2-KM-A/telephone_encounter.docx')}}">Telephone Encounter Template</a>
+
+
+
+
+								</li>
+
+								<li class="list-group-item list-group-item-action">
+
+								<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">KM-03</h5></div>
+
+
+									</div>
+									<hr>
+										<a href="{{=URL('static','policy/2-KM-A/KM-02_KM-03_Comprehensive_Care_Assessmt_Policy.docx')}}">Comprehensive Care Assessment Policy</a> <p></p>
+										<a href="{{=URL('static','policy/2-KM-A/KM-04_Behavioral_Health_Screenings_Policy_1.docx')}}">Depression Screening Tool Training Guide</a>
+
+								</li>
+								<li class="list-group-item list-group-item-action">
+
+								<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">KM-04</h5></div>
+
+
+									</div>
+									<hr>
+
+										<a href="{{=URL('static','policy/2-KM-A/KM-04_Behavioral_Health_Screenings_Policy_1.docx')}}">Behavioral Health Screenings Policy</a>
+
+								</li>
+
+
+
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">KM-05</h5></div>
+
+
+									</div>
+									<hr>
+
+										<a href="{{=URL('static','policy/2-KM-A/KM-05_Oral_Health_Screenings_Policy_1.docx')}}">Oral Health Screening Policy</a>
+
+
+								</li>
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">KM-06</h5></div>
+
+
+									</div>
+									<hr>
+
+										<a href="{{=URL('static','policy/2-KM-A/KM-05_Oral_Health_Screenings_Policy_1.docx')}}">Top Conditions Analysis Template</a>
+
+								</li>
+
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">KM-08-09-10</h5></div>
+
+
+									</div>
+									<hr>
+
+									<a href="{{=URL('static','policy/2-KM-A/patient_population_demographics_report_template.docx')}}">Patient Population Demographics Analysis Report Template</a>
+
+
+								</li>
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">KM-11</h5></div>
+
+
+									</div>
+									<hr>
+									<a href="{{=URL('static','policy/1-TC-A/TC-02_Job_Descriptions_Policy.docx')}}">Job Descriptions Policy</a><p></p>
+									<a href="{{=URL('static','policy/2-KM-C/KM-11_Training_Materials_for_Health_Literacy.ppt')}}">Health Literacy Training Document</a>
+
+
+								</li>
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">KM-12</h5></div>
+
+
+									</div>
+									<hr>
+									<a href="{{=URL('static','policy/2-KM-C/Letters_Phone_Scripts_Templates.zip')}}">Letters & Phone Script Templates</a>
+
+
+
+								</li><li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">KM-17</h5></div>
+
+
+									</div>
+									<hr>
+									<a href="{{=URL('static','policy/2-KM-C/KM-12_policy.docx')}}">Progress Note Documentation Training Policy</a>
+
+
+
+								</li>
+
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">KM-20</h5></div>
+
+
+									</div>
+									<hr>
+									<a href="{{=URL('static','policy/2-KM-C/KM-12_policy.docx')}}">Progress Note Documentation Training Template</a>
+
+								</li>
+
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">KM-26</h5></div>
+
+
+									</div>
+									<hr>
+
+										<a href="{{=URL('static','policy/2-KM-F/KM-28_Case_Conference_Policy_2')}}">Community Resource List</a>
+
+
+
+								</li>
+
+
+
+							</div>
+
+
+				</div>
+
+				&nbsp;
+			</div>
+
+			<div class="col-lg-4">
+
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title" style="text-align: center; color: blue;"><b>Patient-Centered Access and Continuity (AC)</b></h5>
+					</div>
+							<div class="list-group" style="max-height: 360px; overflow-y: scroll; position: relative;">
+
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">AC-01</h5></div>
+
+
+									</div>
+									<hr>
+									<a href="{{=URL('static','policy/3-AC-A/AC-01_Assessment_of_Access_Needs_Policy.docx')}}">Assessment of Access Policy</a><p></p>
+										<a href="{{=URL('static','policy/3-AC-A/AC-01_Assessment_of_Access_Needs_Policy.docx')}}">Survey Process Policy</a><p></p>
+										<a href="{{=URL('static','policy/3-AC-A/AC-01_Assessment_of_Access_Needs_Policy.docx')}}">Suggestion Box Procedure Policy </a>
+
+
+
+									</li>
+								<li class="list-group-item list-group-item-action">
+
+								<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">AC-02</h5></div>
+
+
+									</div>
+									<hr>
+									<a href="{{=URL('static','policy/3-AC-A/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx')}}"> General Office Policy </a><p></p>
+									<a href="{{=URL('static','policy/3-AC-A/same_day_appointment_usage.docx')}}"> Same-Day Appointment Usage Template </a>
+								</li>
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">AC-04</h5></div>
+
+
+									</div>
+									<hr>
+									<div class="row">
+										<a href="{{=URL('static','policy/3-AC-A/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx')}}">General Office Policy</a>
+
+
+
+									</div>
+								</li>
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">AC-05</h5></div>
+
+
+									</div>
+									<hr>
+									<div class="row">
+										<a href="{{=URL('static','policy/3-AC-A/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx')}}">General Office Policy</a>
+
+
+
+									</div>
+								</li>
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">AC-08</h5></div>
+
+
+									</div>
+									<hr>
+									<div class="row">
+										<a href="{{=URL('static','policy/3-AC-A/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx')}}">General Office Policy</a>
+
+
+
+									</div>
+								</li>
+										<li class="list-group-item list-group-item-action">
+
+										<div class="row" style="background-color: #E6FFD8">
+											<div class="col-lg-12"><h5 class="center">AC-10</h5></div>
+
+
+										</div>
+									<hr>
+										<a href="{{=URL('static','policy/3-AC-B/AC-10_11_credits_Orient_new_patients_to_practice_and_record_transfer_policy.docx')}}">Transfer Policy</a>
+
+									</li>
+
+									<li class="list-group-item list-group-item-action">
+
+										<div class="row" style="background-color: #E6FFD8">
+											<div class="col-lg-12"><h5 class="center">AC-11</h5></div>
+
+
+										</div>
+									<hr>
+										<a href="{{=URL('static','policy/3-AC-B/AC-11_PCP_selection_report.docx')}}">Clinician Selection Report</a><p>
+										<a href="{{=URL('static','policy/3-AC-B/AC-10_11_credits_Orient_new_patients_to_practice_and_record_transfer_policy.docx')}}">Transfer Policy</a>
+
+									</li>
+
+									<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">AC-12</h5></div>
+
+
+									</div>
+									<hr>
+
+										<a href="{{=URL('static','policy/3-AC-B/AC-02,03,04,05,07,08,12_Office_Policy_marked_copy.docx')}}">General Office Policy</a>
+
+
+
+								</li>
+
+
+
+							</div>
+
+				</div>
+
+			</div>
+
+			<div class="col-lg-4">
+
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title" style="text-align: center; color: blue;"><b>Care Management and Support (CM)</b></h5>
+					</div>
+							<div class="list-group" style="max-height: 360px; overflow-y: scroll; position: relative;">
+
+								<li class="list-group-item list-group-item-action">
+
+								<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">CM-01-02</h5></div>
+
+
+									</div>
+									<hr>
+									<a href="{{=URL('static','policy/4-CM-A/CM-01_Care_Coordination_Policy.docx')}}">Care Management Policy</a><p></p>
+									<a href="{{=URL('static','policy/4-CM-A/CM-2_Report_Identify_Patients_for_Care_Management.docx')}}">Care Management Report Template</a><p></p>
+									<a href="{{=URL('static','policy/4-CM-B/09_NCQA_PCMH_Record_Review_Workbook.xlsx')}}">Record Review Workbook Template</a><p></p>
+									<a href="{{=URL('static','policy/4-CM-B/09_NCQA_PCMH_Record_Review_Workbook.xlsx')}}">Comprehensive Care Template Document</a>
+
+								</li>
+								<li class="list-group-item list-group-item-action">
+
+								<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">CM-04-08</h5></div>
+
+
+									</div>
+									<hr>
+									<a href="{{=URL('static','policy/4-CM-B/09_NCQA_PCMH_Record_Review_Workbook.xlsx')}}">Record Review Workbook Template</a>
+
+
+								</li>
+								<li class="list-group-item list-group-item-action">
+
+								<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">CM-09</h5></div>
+
+
+									</div>
+									<hr>
+
+									<a href="{{=URL('static','policy/4-CM-B/CM-09_Care_Plan_Integration_Policy.docx')}}">Care Plan Integration Policy</a>
+
+
+								</li>
+
+
+
+
+							</div>
+
+				</div>
+
+			</div>
+			<div class="col-lg-4">
+
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title" style="text-align: center; color: blue;"><b>Care Coordination and Care Transitions  (CC)</b></h5>
+					</div>
+							<div class="list-group" style="max-height: 360px; overflow-y: scroll; position: relative;">
+
+								<li class="list-group-item list-group-item-action">
+
+								<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">CC-01</h5></div>
+
+
+									</div>
+									<hr>
+
+									<a href="{{=URL('static','policy/5-CC-A/CC-01_Lab_&_Imaging_Test_Management_Policy.docx')}}">Lab and Imaging Test Management Policy</a>
+								</li>
+
+								<li class="list-group-item list-group-item-action">
+
+								<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">CC-02</h5></div>
+
+
+									</div>
+									<hr>
+
+									<a href="{{=URL('static','policy/5-CC-A/CC-02_Newborn_Screenings_Policy_1.docx')}}">Newborn Screening Policy</a>
+								</li>
+
+								<li class="list-group-item list-group-item-action">
+
+								<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">CC-04</h5></div>
+
+
+									</div>
+									<hr>
+
+									<a href="{{=URL('static','policy/5-CC-B/CC-04,CC-08,CC-09,CC-21C_Process_and_Procedure_for_Referrals_to_outside_consultants_and_specialists.docx')}}">Referral Management Policy</a>
+
+								</li>
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">CC-07</h5></div>
+
+
+									</div>
+									<hr>
+
+									<a href="{{=URL('static','policy/5-CC-B/CC-07_Health_Grades_Reports_for_Specialists.docx')}}">Health Grades Reports for Specialists Policy</a>
+
+
+
+								</li>
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">CC-08-09</h5></div>
+
+
+									</div>
+									<hr>
+
+									<a href="{{=URL('static','policy/5-CC-B/CC-04,CC-08,CC-09,CC-21C_Process_and_Procedure_for_Referrals_to_outside_consultants_and_specialists.docx')}}">Referral Management Policy</a>
+
+
+
+								</li>
+
+
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">CC-14-16</h5></div>
+
+
+									</div>
+									<hr>
+										<a href="{{=URL('static','policy/5-CC-C/CC-14_Waiting_Room_Poster_Hospital-ER_Visits.docx')}}">Waiting Room Poster</a><p></p>
+										<a href="{{=URL('static','policy/5-CC-C/CC-14,15,16,17,19_Policy_for_Follow_Up_Hospitalizations&ER_Visits.docx')}}">Hospitalization Follow Up Policy</a><p></p>
+										<a href="{{=URL('static','policy/5-CC-C/CC-14_Consent_to_Release_Confidential_Information.docx')}}">Consent to Release Form</a>
+
+
+								</li>
+
+								<li class="list-group-item list-group-item-action">
+
+									<div class="row" style="background-color: #E6FFD8">
+										<div class="col-lg-12"><h5 class="center">CC-20</h5></div>
+
+
+									</div>
+									<hr>
+
+										<a href="{{=URL('static','policy/5-CC-C/CC-20_Action_plan_for_transitioning_peds_to_adult_care.docx')}}">Transitioning Peds to Adult Plan </a><p></p>
+										<a href="{{=URL('static','policy/5-CC-C/CC-20_Welcome_and_Orientation_of_New_Young_Adults.docx')}}">Welcome and Orientation of New Adults</a>
+
+								</li>
+
+
+
+
+							</div>
+
+				</div>
+
+			</div>
+			<div class="col-lg-4">
+
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title" style="text-align: center; color: blue;"><b>Performance Measurement and Quality Improvement (QI)</b></h5>
+					</div>
+							<div class="list-group" style="max-height: 360px; overflow-y: scroll; position: relative;">
+
+
+						<li class="list-group-item list-group-item-action">
+
+						<div class="row" style="background-color: #E6FFD8">
+								<div class="col-lg-12"><h5 class="center">QI-03</h5></div>
+
+
+							</div>
+							<hr>
+
+
+							<a href="{{=URL('static','policy/6-QI-A/QI-03_Appointment_Availability_Assessment_Policy&Report.docx')}}">Appointment Availability Template</a>
+						</li>
+
+						<li class="list-group-item list-group-item-action">
+
+						<div class="row" style="background-color: #E6FFD8">
+								<div class="col-lg-12"><h5 class="center">QI-04</h5></div>
+
+
+							</div>
+							<hr>
+							<a href="{{=URL('static','policy/6-QI-A/QI-04A_2017_Survey_Family_Medicine_English.pdf')}}">English Family Medicine Survey</a><p></p>
+							<a href="{{=URL('static','policy/6-QI-A/QI-04A_2017_Survey_Family_Medicine_Spanish.pdf')}}">Spanish Family Medicine Survey</a><p></p>
+							<a href="{{=URL('static','policy/6-QI-A/QI-04A_2017_Survey_Internal_Medicine_English.pdf')}}">English Internal Medicine Survey</a><p></p>
+							<a href="{{=URL('static','policy/6-QI-A/QI-04A_2017_Survey_Internal_Medicine_Spanish.pdf')}}">Spanish Internal Medicine Survey</a><p></p>
+							<a href="{{=URL('static','policy/6-QI-A/QI-04A_2017_Survey_Pediatric_Medicine_English.pdf')}}">English Pediatric Medicine Survey</a><p></p>
+							<a href="{{=URL('static','policy/6-QI-A/QI-04A_2017_Survey_Pediatric_Medicine_Spanish.pdf')}}">Spanish Pediatric Medicine Survey</a><p></p>
+							<a href="{{=URL('static','policy/6-QI-A/QI_04B_AC_01_Suggestion_Box_2017_English.pdf')}}">Suggestion Box English PDF</a><p></p>
+							<a href="{{=URL('static','policy/6-QI-A/QI_04B_AC_01_Suggestion_Box_2017_Spanish.pdf')}}">Suggestion Box Spanish PDF</a><p></p>
+							<a href="{{=URL('static','policy/6-QI-A/QI-04B_Suggestion_Box_Results_EN_SP.xlsx')}}">Suggestion Box English & Spanish</a><p></p>
+							<a href="{{=URL('static','policy/6-QI-A/QI-04A_Survey_Results.xlsx')}}">Survey Results</a>
+
+
+						</li>
+
+						<li class="list-group-item list-group-item-action">
+
+							<div class="row" style="background-color: #E6FFD8">
+								<div class="col-lg-12"><h5 class="center"></h5>QI-08-12</div>
+
+
+							</div>
+							<hr>
+
+								<a href="{{=URL('static','policy/6-QI-B/NCQA_PCMH_Quality_Measurement_and_Improvement_Worksheet.docx')}}">Quality Measurement Worksheet</a>
+
+
+						</li>
+
+						<li class="list-group-item list-group-item-action">
+
+							<div class="row" style="background-color: #E6FFD8">
+								<div class="col-lg-12"><h5 class="center"></h5>QI-15</div>
+
+
+							</div>
+							<hr>
+
+								<a href="{{=URL('static','policy/6-QI-A/Dissemination_of_Practice_Info_to_Staff_Policy1.docx')}}">Dissemination of Practice Info</a>
+
+						</li>
+
+
+
+							</div>
+
+				</div>
+
+			</div>
+		 </div>
+        {{pass}}
 	</div>
+
+
 </div>
 
 
@@ -821,7 +788,7 @@
         </button>
       </div>
       <div class="modal-body">
-        
+
       </div>
       <div class="modal-footer">
                <button type="button" class="btn btn-primary">Save changes</button>
@@ -842,7 +809,7 @@
 		<!-- COMPONENT START -->
 		<div class="form-group" style="padding: 15px;">
 			<div class="input-group input-file" name="Fichier1">
-				<input type="text" class="form-control" placeholder='Choose a file...' />			
+				<input type="text" class="form-control" placeholder='Choose a file...' />
 				<span class="input-group-btn">
 					<button class="btn btn-default btn-choose" type="button">Choose</button>
 				</span>
@@ -850,7 +817,7 @@
 
 			</div>
 		</div>
-		
+
 		<!-- COMPONENT END -->
 		<div class="form-group" style="padding: 15px;">
 			<button type="submit" class="btn btn-primary pull-right" disabled>Submit</button>
@@ -873,7 +840,7 @@
 		<!-- COMPONENT START -->
 		<div class="form-group" style="padding: 15px;">
 			<div class="input-group input-file" name="Fichier1">
-				<input type="text" class="form-control" placeholder='Choose a file...' />			
+				<input type="text" class="form-control" placeholder='Choose a file...' />
 				<span class="input-group-btn">
 					<button class="btn btn-default btn-choose" type="button">Choose</button>
 				</span>
@@ -881,7 +848,7 @@
 
 			</div>
 		</div>
-		
+
 		<!-- COMPONENT END -->
 		<div class="form-group" style="padding: 15px;">
 			<button type="submit" class="btn btn-primary pull-right" disabled>Submit</button>
