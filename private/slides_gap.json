@@ -127,20 +127,8 @@
         "type": "upload",
         "inquire": "Great! Please upload Security Risk Assessment",
         "showIfParentEquals": true
-      },
-      "tc5d": {
-        "type": "download",
-        "inquire": "Please download Security Risk Analysis Tool",
-        "assets": [
-          {
-            "name": "security_risk_assessment.doc",
-            "url": "policy/sra_release-2.0-4-8-1.exe",
-            "icon": "file-word-o"
-          }
-        ],
-        "showIfParentEquals": false
       }
-    }
+     }
   },
   "tc7a": {
     "type": "yesNo",
