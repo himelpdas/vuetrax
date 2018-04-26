@@ -68,6 +68,7 @@ def profiles():
             session.flash = "User updated!"
             redirect(URL())
 
+        db.role.owner_id.default=usr.id
         if role_form.process(formname="role_form_%s"%usr.id).accepted:
             session.flash = "Role updated!"
             redirect(URL())
