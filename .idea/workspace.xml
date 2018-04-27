@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="418b3e98-cfd8-4300-9883-6dc931d8b62a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/default.py" afterPath="$PROJECT_DIR$/controllers/default.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/db_dashboard.py" afterPath="$PROJECT_DIR$/models/db_dashboard.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/menu.py" afterPath="$PROJECT_DIR$/models/menu.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/default/dashboard.html" afterPath="$PROJECT_DIR$/views/default/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/default/home.html" afterPath="$PROJECT_DIR$/views/default/home.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/default/dashboard_sustainability" afterPath="$PROJECT_DIR$/views/default/dashboard_sustainability.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/private/sustainability_training" afterPath="$PROJECT_DIR$/private/slides_staff.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/private/sustainability_emr" afterPath="$PROJECT_DIR$/private/slides_emr.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/controllers/default.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="467">
-              <caret line="279" column="0" lean-forward="true" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
+              <caret line="279" column="0" lean-forward="false" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -119,7 +111,7 @@
         <entry file="file://$PROJECT_DIR$/views/default/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-7">
-              <caret line="100" column="72" lean-forward="true" selection-start-line="100" selection-start-column="72" selection-end-line="100" selection-end-column="72" />
+              <caret line="100" column="72" lean-forward="false" selection-start-line="100" selection-start-column="72" selection-end-line="100" selection-end-column="72" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#!!top" expanded="true" />
@@ -491,7 +483,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524749306980</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="updates to json">
+      <created>1524860646232</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1524860646232</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -787,7 +786,7 @@
     <entry file="file://$PROJECT_DIR$/views/default/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
-          <caret line="100" column="72" lean-forward="true" selection-start-line="100" selection-start-column="72" selection-end-line="100" selection-end-column="72" />
+          <caret line="100" column="72" lean-forward="false" selection-start-line="100" selection-start-column="72" selection-end-line="100" selection-end-column="72" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#!!top" expanded="true" />
@@ -806,7 +805,7 @@
     <entry file="file://$PROJECT_DIR$/controllers/default.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
-          <caret line="279" column="0" lean-forward="true" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
+          <caret line="279" column="0" lean-forward="false" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
           <folding />
         </state>
       </provider>
