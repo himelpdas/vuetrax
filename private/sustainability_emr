@@ -1,0 +1,157 @@
+{
+  "e1": {
+    "type": "yesNo",
+    "inquire": "Are you using your EMR??"
+  },
+  "e2": {
+    "type": "yesNo",
+    "inquire": "Do you use it for scheduling?"
+  },
+  "e3": {
+    "type": "yesNo",
+    "inquire": "Do you check in patients, using the EMR?"
+  },
+  "e4": {
+    "type": "yesNo",
+    "inquire": "Do you document patient no-shows?"
+  },
+  "e5": {
+    "type": "response",
+    "inquire": "Do you have a Same-Day appointment block on your schedule, EVERY DAY that the practice is open?"
+  },
+  "e6": {
+    "type": "yesNo",
+    "inquire": "Do you use the Same-Day appointment type?"
+  },
+  "e7": {
+    "type": "yesNo",
+    "inquire": "Do you use the Post-Hospitalization appointment type?"
+  },
+  "e8": {
+    "type": "yesNo",
+    "inquire": "Do you keep track of labs that are sent out?"
+  },
+  "e9": {
+    "type": "yesNo",
+    "inquire": "Do you follow up on lab results that are late coming back?"
+  },
+  "e10": {
+    "type": "yesNo",
+    "inquire": "Do you keep track of imaging scripts that are sent out?"
+  },
+
+  "e11": {
+    "type": "yesNo",
+    "inquire": "Do you keep track of referrals that are sent out?"
+  },
+
+  "e12": {
+    "type": "yesNo",
+    "inquire": "Do you communicate those expectations when you send out the referral? (PCMH Blurb)"
+  },
+  "e13": {
+    "type": "yesNo",
+    "inquire": "If Pediatrics Practice: Do you use a standardized Early Child Development screening?"
+  },
+   "e14": {
+    "type": "yesNo",
+    "inquire": "If Pediatric Practice: Do you collect the State newborn screenings and scan them to charts?"
+  },
+  "e15": {
+    "type": "yesNo",
+    "inquire": "Do you have templates in your EMR to use for Care Plans?"
+  },
+  "e16": {
+    "type": "yesNo",
+    "inquire": "Do you ask patients about their goals?"
+  },
+  "e17": {
+    "type": "yesNo",
+    "inquire": "Do you work with patients to address their barriers?"
+  },
+  "e18": {
+    "type": "yesNo",
+    "inquire": "Do you document patient self-management plans?"
+  },
+  "e19": {
+    "type": "yesNo",
+    "inquire": "Do you ask patients about their preferences?"
+  },
+  "e20": {
+    "type": "yesNo",
+    "inquire": "Do you note each patient's Primary Care Physician in the chart?"
+  },
+  "e21": {
+    "type": "yesNo",
+    "inquire": "Do you document Special Communication Needs?"
+  },
+  "e22": {
+    "type": "yesNo",
+    "inquire": "Do you document smoking status?"
+  },
+   "e23": {
+    "type": "yesNo",
+    "inquire": "Do you document patient demographics?"
+  },
+  "e24": {
+    "type": "yesNo",
+    "inquire": "Specifically, do you document race?"
+  },
+  "e25": {
+    "type": "yesNo",
+    "inquire": "Specifically, do you document ethnicity?"
+  },
+  "e26": {
+    "type": "yesNo",
+    "inquire": "Specifically, do you document language?"
+  },
+  "e27": {
+    "type": "yesNo",
+    "inquire": "Specifically, do you document gender identity?"
+  },
+  "e28": {
+    "type": "response",
+    "inquire": "Do you ask patients about their family structure? (who they live with, education)"
+  },
+  "e29": {
+    "type": "yesNo",
+    "inquire": "Do you ask about health insurance and ability to pay for medications?"
+  },
+  "e30": {
+    "type": "yesNo",
+    "inquire": "Do you use your ICD10 diagnosis codes in every patient's chart, to keep a problem list?"
+  },
+  "e31": {
+    "type": "yesNo",
+    "inquire": "Do you document all medications (even if prescribed elsewhere) in EMR?"
+  },
+  "e32": {
+    "type": "yesNo",
+    "inquire": "Do you document over-the-counter medications and supplements in EMR?"
+  },
+   "e33": {
+    "type": "yesNo",
+    "inquire": "Do you ask patients about their oral health?"
+  },
+  "e34": {
+    "type": "yesNo",
+    "inquire": "Do you reconcile medications at every encounter?"
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

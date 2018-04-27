@@ -1,0 +1,143 @@
+{
+   "t1": {
+    "type": "response",
+    "inquire": "Does your practice have hours outside of standard business hours?"
+  },
+  "t2": {
+    "type": "yesNo",
+    "inquire": "Do you survey your patients for their experiences?"
+  },
+  "t3": {
+    "type": "yesNo",
+    "inquire": "Does your team have daily huddle meetings?"
+  },
+  "t4": {
+    "type": "yesNo",
+    "inquire": "Do you do Depression screenings?"
+  },
+  "t5": {
+    "type": "yesNo",
+    "inquire": "Do you do any other Behavioral screenings?"
+  },
+  "t6": {
+    "type": "yesNo",
+    "inquire": "Do you have a Patient Portal?"
+  },
+  "t7": {
+    "type": "yesNo",
+    "inquire": "Do your patients use your Portal to request refills?"
+  },
+  "t8": {
+    "type": "yesNo",
+    "inquire": "Do your patients use your Portal to make appointments?"
+  },
+  "t9": {
+    "type": "yesNo",
+    "inquire": "Do your patients use your Portal to ask Clinical Questions?"
+  },
+  "t10": {
+    "type": "yesNo",
+    "inquire": "Do you receive QUARR/HEDIS lists from the insurance companies?"
+  },
+  "t11": {
+    "type": "yesNo",
+    "inquire": "Do you contact patients about services they are due to receive?"
+  },
+  "t12": {
+    "type": "response",
+    "inquire": "How do you keep track of patients you've called?"
+  },
+  "t13": {
+    "type": "response",
+    "inquire": "When patients call with clinical questions, where do you write it down?"
+  },
+  "t14": {
+    "type": "yesNo",
+    "inquire": "Do you monitor how long patients wait for a call back?"
+  },
+  "t15": {
+    "type": "yesNo",
+    "inquire": "Does your front desk help patients make appointments for imaging?"
+  },
+  "t16": {
+    "type": "yesNo",
+    "inquire": "Do you follow up on imaging results that are late coming back?"
+  },
+  "t17": {
+    "type": "yesNo",
+    "inquire": "Does your front desk help patients make appointments for referrals?"
+  },
+  "t18": {
+    "type": "yesNo",
+    "inquire": "Do you follow up on referral results that are late coming back?"
+  },
+  "t19": {
+    "type": "yesNo",
+    "inquire": "Do you have set expectations for when you should receive reports from specialists?"
+  },
+  "t20": {
+    "type": "yesNo",
+    "inquire": "Do you talk to local hospitals and ERs when your patients are admitted?"
+  },
+  "t21": {
+    "type": "yesNo",
+    "inquire": "Do the ERs call about your patients to confirm medications and care plans?"
+  },
+  "t22": {
+    "type": "yesNo",
+    "inquire": "Do you note those calls in the patient charts?"
+  },
+  "t23": {
+    "type": "yesNo",
+    "inquire": "When patients tell you that they were at the hospital or Urgent Care facility, do you ask them for the discharge documents?"
+  },
+  "t24": {
+    "type": "yesNo",
+    "inquire": "If they don't have the discharge info, do you get it from the other provider?"
+  },
+  "t25": {
+    "type": "response",
+    "inquire": "Do you tend to prescribe more generics or brands?"
+  },
+  "t26": {
+    "type": "yesNo",
+    "inquire": "Do you keep a list of community resources for your patients?"
+  },
+  "t27": {
+    "type": "yesNo",
+    "inquire": "Do you have a suggestion box for patients?"
+  },
+  "t28": {
+    "type": "yesNo",
+    "inquire": "Do you provide patients with Advance Proxy documents and counseling?"
+  },
+  "t29": {
+    "type": "yesNo",
+    "inquire": "Do you submit to an official immunization database?"
+  },
+  "t30": {
+    "type": "yesNo",
+    "inquire": "Do you offer educational materials written in plain-english to your patients?"
+  },
+  "t31": {
+    "type": "yesNo",
+    "inquire": "Do you use tools of shared-decision-making?"
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
