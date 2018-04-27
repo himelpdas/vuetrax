@@ -69,7 +69,6 @@ db.define_table(
 
 db.define_table(
     "practice",
-    Field("is_renewal", "boolean"),
     # Field("physician", 'list:string'),
     Field("app_tool_username"),
     Field("app_tool_password"),
@@ -85,7 +84,6 @@ db.define_table(
     Field("app_tool_password"),
     Field("survey_tool_username"),
     Field("survey_tool_password"),
-    Field("is_renewal", "boolean"),
     Field("fax"),
     Field("days", "list:string"),
     Field("hours_from", "list:string"),

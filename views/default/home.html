@@ -529,7 +529,7 @@
     {{for i, each in enumerate(practices):}}
     {{practice_id = each.id}}
         <div class="col-lg-3 col-md-6 portfolio-item">
-            <div class="card h-60" style="box-shadow: 10px 10px 5px grey;">
+            <div class="card h-60" style="box-shadow: 10px 10px 5px grey; background-color:{{if each.is_renewal:}}#c8f6fc{{else:}}white{{pass}};">
                 <div class="row">
 				<div class="col-sm-6">	
 				<div style="text-align: left;"><i class="fa  fa-fw fa-bell-o"></i></div>

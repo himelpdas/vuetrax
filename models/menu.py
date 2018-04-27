@@ -48,6 +48,10 @@ is_front = section == "front"
 
 is_provider = section == "provider"
 
+is_staff_training = section == "staff"
+
+is_emr_training = section == "emr"
+
 if auth.is_logged_in():
     if auth.user.email.lower() in ["gdewey@insightmanagement.org", "himel@insightmanagement.org"]:
         my_role = "admin"

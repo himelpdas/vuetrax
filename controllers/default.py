@@ -148,7 +148,10 @@ def dashboard():
         slides = json.loads(_get_private_file('slides_front.json'), object_pairs_hook=collections.OrderedDict)
     if is_provider:
         slides = json.loads(_get_private_file('slides_provider.json'), object_pairs_hook=collections.OrderedDict)
-
+    if is_staff_training:
+        slides = json.loads(_get_private_file('slides_staff.json'), object_pairs_hook=collections.OrderedDict)
+    if is_emr_training:
+        slides = json.loads(_get_private_file('slides_emr.json'), object_pairs_hook=collections.OrderedDict)
 
 
     practice = db(db.practice.id == practice_id).select().last()  #TODO practice id is list
@@ -270,6 +273,10 @@ def questions():
         slides = json.loads(_get_private_file('slides_front.json'), object_pairs_hook=collections.OrderedDict)
     if is_provider:
         slides = json.loads(_get_private_file('slides_provider.json'), object_pairs_hook=collections.OrderedDict)
+    if is_staff_training:
+        slides = json.loads(_get_private_file('slides_staff.json'), object_pairs_hook=collections.OrderedDict)
+    if is_emr_training:
+        slides = json.loads(_get_private_file('slides_emr.json'), object_pairs_hook=collections.OrderedDict)
 
     ##print "is provider %s"%is_provider
     ##print "is gap %s"%is_gap

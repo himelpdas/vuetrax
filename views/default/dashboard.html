@@ -74,6 +74,7 @@
     <div class="card" style="padding: 30px;">
         <div class="col-lg-12" style="max-height: 795px;">
             <div class="form-group" style="text-align: center;">
+                {{if not practice.is_renewal:}}
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item">
                         <a class="nav-link {{if is_gap:}}active{{pass}}"
@@ -81,20 +82,33 @@
 
                         </a>
                     </li>
-                    <li class="nav-item" style="background-color: #F7F7F7;">
+                    <li class="nav-item">
                         <a class="nav-link {{if is_front:}}active{{pass}}"
                            href="{{=URL(vars=dict(practice=practice_id, section="front"))}}">Non-Clinical Training
 
                         </a>
                     </li>
-                    <li class="nav-item" style="background-color: #F7F7F7;">
+                    <li class="nav-item">
                         <a class="nav-link {{if is_provider:}}active{{pass}}"
                            href="{{=URL(vars=dict(practice=practice_id, section="provider"))}}">Clinician Training
 
                         </a>
                     </li>
-
                 </ul>
+                {{else:}}
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link {{if is_staff_training:}}active{{pass}}"
+                           href="{{=URL(vars=dict(practice=practice_id, section="staff"))}}">Staff Sustainability
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{if is_emr_training:}}active{{pass}}"
+                           href="{{=URL(vars=dict(practice=practice_id, section="emr"))}}">EMR Training
+                        </a>
+                    </li>
+                </ul>
+                {{pass}}
 
 
             </div>
