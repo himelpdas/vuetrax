@@ -653,7 +653,7 @@
                     <hr>
                     <div class="row">
                         <div class="col-lg-4"><a type="button" class="btn btn-sm btn-warning"
-                                                 href="{{=URL('dashboard', vars=dict(practice=each.id, section="gap" or session.section))}}"><b>DASHBOARD</b></a>
+                                                 href="{{=URL('dashboard', vars=dict(practice=each.id, section=("gap" if not each.is_renewal else "staff") or session.section))}}"><b>DASHBOARD</b></a>
                         </div>
                         <div class="col-lg-4">
                             <button type="button" class="btn btn-sm btn-info faa-parent animated-hover"

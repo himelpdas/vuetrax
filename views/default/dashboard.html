@@ -51,7 +51,7 @@
         <ul class="nav nav-pills nav-fill" style="text-align: center;">
             <li class="nav-item">
                 <a class="nav-link {{if not is_tracking:}}active{{pass}}"
-                   href="{{=URL(vars=dict(practice=practice_id, section="gap" if not is_tracking else "staff"))}}">Training
+                   href="{{=URL(vars=dict(practice=practice_id, section="gap" if not practice.is_renewal else "staff"))}}">Training
 
                 </a>
             </li>
