@@ -510,7 +510,7 @@ def _process_baa_form(practice, baa_forms, baa_links):
 def _get_admin_ids():
     pass
 
-@auth.requires_login()
+@auth.requires(my_role in ["admin", "traier"])
 def home():
     tagout = db((db.auth_user.id == request.vars["tagout"])).select().last() or auth.user
 

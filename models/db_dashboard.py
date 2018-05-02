@@ -64,7 +64,7 @@ def _keywords(_set):
 db.define_table(
     "role",
     Field("owner_id", 'reference auth_user'),
-    Field("role", requires=IS_IN_SET(["admin", "trainer"])),
+    Field("role", requires=IS_EMPTY_OR(IS_IN_SET(["admin", "trainer"]))),
 )
 
 db.define_table(
