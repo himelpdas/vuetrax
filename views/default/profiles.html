@@ -12,27 +12,36 @@
 {{for key in forms:}}
 {{usr=forms[key][0]}}
 <div class="modal fade" id="modal_{{=key}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true" style="min-height:900px;">
+     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
+         {{role_form=forms[key][2]}}
+            {{=role_form.custom.begin}}
         <div class="modal-content">
+
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Info</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Role</h5>
+
+
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+
             </div>
+            <div class="container" style="padding: 10px;">
+                    {{=role_form.custom.widget.role}}
+                </div>
             <!-- ROLE FORM -->
-            {{role_form=forms[key][2]}}
-            {{=role_form.custom.begin}}
-            {{=role_form.custom.widget.role}}
-            {{=role_form.custom.submit}}
-            {{=role_form.custom.end}}
+
+
             <!-- END ROLE FORM -->
-            </div>
             <div class="modal-footer">
+                {{=role_form.custom.submit}}
                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
+
+
         </div>
+            {{=role_form.custom.end}}
 
 
     </div>
