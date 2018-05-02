@@ -58,6 +58,7 @@ def profiles():
         db.role.owner_id.default=usr.id
         if role_form.process(formname="role_form_%s"%usr.id).accepted:
             session.flash = "Role updated!"
+            db.commit()
             redirect(URL())
 
         user_form = [usr, None, role_form]
