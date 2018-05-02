@@ -77,7 +77,7 @@
 						</a>
                     {{pass}}
 						<a class="btn btn-secondary {{if request.function=='template_library':}}active{{pass}}" href="{{=URL('template_library')}}">
-							Template Library
+							Library
 						</a>
                     <input type="text" value="{{=request.vars["search"] or ''}}" name="search" class="search" placeholder=" Search {{if request.function=="home":}}Practice{{elif request.function=="tracking":}}Trainer{{elif request.function=="profiles":}}User{{elif request.function=="template_library":}}Template{{pass}}...">
 			   </ul>
