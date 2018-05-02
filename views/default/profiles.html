@@ -2,63 +2,13 @@
 
 <!-- Page Content -->
 <div class="container">
-    <h2> &nbsp; </h2>
-    <div class="card" class="dropdown dropright" style="text-align: center;">
+    <div class="card dropdown dropright" style="text-align: center;">
         <h4><i class="fa fa-fw fa-address-book-o" style="color: black;"></i>&nbsp;Profile List</h4>
     </div>
-
-    <h2> &nbsp; </h2>
-
-    <div class="row">
-    {{def card(title, forms, max_role):}}
-        <div class="col-lg-3">
-            <div class="card-body">
-                <hr>
-                <h4 class="card-title" style="text-align: center;"><i class="fa fa-fw fa-user"></i> {{=title}}</h4>
-                <hr>
-            </div>
-
-        {{for key in forms:}}
-        {{usr = forms[key][0]}}
-            <div class="card">
-
-                <div class="list-group" style="max-height: 640px;">
-
-                    <div class="card" style="text-align: center;">
-                        <h6></h6>
-                        <h5 class="card-title"><img style="right: 10px; width:30px; height:30px;" class="rounded"
-                                                    src="{{=get_gravatar(usr.email)}}">&nbsp;{{=usr.first_name}}, {{=usr.last_name}}</h5>
-
-                        <hr>
-                        <div style="text-align: center;"><a href="#"
-                                                            class="btn btn-sm btn-{{if auth.user.id == usr.id or role_levels[my_role]>=max_role:}}danger{{else:}}success{{pass}}"
-                                                            data-toggle="modal"
-                                                            data-target="#modal_{{=key}}">{{if auth.user.id == usr.id or role_levels[my_role]>=max_role:}}
-                            Edit{{else:}}View{{pass}} Profile</a></div>
-                        <div style=" padding-bottom: 15px;">
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-            &nbsp;
-        {{pass}}
-        </div>
-    {{return}}
-    {{card("Admins", admin_forms, role_levels["admin"])}}
-    {{card("Trainers", trainer_forms, role_levels["trainer"])}}
-    {{card("Participants", participant_forms, role_levels["participant"])}}
-    {{card("New User", usr_forms, role_levels["usr"])}}
-
-    </div>
-
+    {{=profiles_grid}}
 </div>
 
-<h2> &nbsp; </h2>
 <!-- /.container -->
-{{block scripts}}
-{{def modals(title, forms, max_role):}}
 {{for key in forms:}}
 {{usr=forms[key][0]}}
 <div class="modal fade" id="modal_{{=key}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -71,50 +21,6 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-        {{if auth.user.id == usr.id or role_levels[my_role]>=max_role:}}
-            {{form=forms[key][1]}}
-            {{=form.custom.begin}}
-            <div class="modal-body">
-			<div class="row">
-				<div class="col-md-4 col-sm-8">
-				   First Name:
-				</div>
-				<div class="col-md-4 col-sm-8">
-                {{=form.custom.widget.first_name}}
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 col-sm-8">
-				   Last Name:
-				</div>
-				<div class="col-md-4 col-sm-8">
-                {{=form.custom.widget.last_name}}
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 col-sm-8">
-				Password:
-				</div>
-				<div class="col-md-4 col-sm-8">
-                {{=form.custom.widget.password}}
-				</div>
-			</div>
-			<div class="row">
-			
-				<div class="col-md-4 col-sm-8">
-				Email:
-				</div>
-				<div class="col-md-4 col-sm-8">
-                {{=form.custom.widget.email}}
-				</div>
-			</div>
-			<br>
-            <div class="modal-footer">
-               {{=form.custom.submit}}
-            </div>
-           </div>
-            {{=form.custom.end}}
-
             <!-- ROLE FORM -->
             {{role_form=forms[key][2]}}
             {{=role_form.custom.begin}}
@@ -122,47 +28,10 @@
             {{=role_form.custom.submit}}
             {{=role_form.custom.end}}
             <!-- END ROLE FORM -->
-
-        {{else:}}
-            <div class="modal-body">
-			<div class="row">
-				<div class="col-md-4 col-sm-8">
-				   First Name:
-				</div>
-				<div class="col-md-4 col-sm-8">
-						{{=usr.first_name}}
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 col-sm-8">
-				   Last Name:
-				</div>
-				<div class="col-md-4 col-sm-8">
-						{{=usr.last_name}}
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 col-sm-8">
-				   Email:
-				</div>
-				<div class="col-md-4 col-sm-8">
-						{{=usr.email}}
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 col-sm-8">
-				   Role:
-				</div>
-				<div class="col-md-4 col-sm-8">
-						{{=usr.role}}
-				</div>
-            </div>
-                
             </div>
             <div class="modal-footer">
                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
-        {{pass}}
         </div>
 
 
@@ -170,11 +39,3 @@
 
 </div>
 {{pass}}
-{{return}}
-
-{{modals("Admins", admin_forms, role_levels["admin"])}}
-{{modals("Trainers", trainer_forms, role_levels["trainer"])}}
-{{modals("Participants", participant_forms, role_levels["participant"])}}
-{{modals("New User", usr_forms, role_levels["usr"])}}
-
-{{end}}

@@ -39,55 +39,45 @@ from collections import OrderedDict
 def profiles():
     usrs = db(db.auth_user.id > 0).select()
 
-    # auth.user.role wont refresh unless using built-in auth form
-
-    role_levels = dict(admin=3, trainer=2, participant=0, usr=0)
-
-    ###print my_role, role_levels[my_role]
-
-    admin_forms = OrderedDict()
-
-    trainer_forms = OrderedDict()
-
-    participant_forms = OrderedDict()
-
-    usr_forms = OrderedDict()
+    forms = OrderedDict()
 
     db.role.id.readable=False
+
     db.role.owner_id.writable=False
 
-    for usr in usrs:
+    _usrs = []
 
-        form = SQLFORM(db.auth_user, usr)
+    for usr in usrs:
 
         role = db(db.role.id == usr.id).select().last()
 
         role_form = SQLFORM(db.role, role)
 
-        if form.process(formname="form_%s"%usr.id).accepted:
-            session.flash = "User updated!"
-            redirect(URL())
+        usr_role = getattr(role, "role", None)
 
         db.role.owner_id.default=usr.id
         if role_form.process(formname="role_form_%s"%usr.id).accepted:
             session.flash = "Role updated!"
             redirect(URL())
 
-        user_form = [usr, form, role_form]
+        user_form = [usr, None, role_form]
 
-        if getattr(role, "role", None) == "admin":
-            admin_forms[usr.id] = user_form
-        elif getattr(role, "role", None) == "trainer":
-            trainer_forms[usr.id] = user_form
-        elif getattr(role, "role", None) == "participant":
-            participant_forms[usr.id] = user_form
-        elif getattr(role, "role", "usr") == "usr":
-            usr_forms[usr.id] = user_form
+        if my_role == "admin":
+            forms[usr.id] = user_form
+            _usrs.append(usr.id)
 
-    return dict(usrs=usrs, my_role=my_role, usr_forms=usr_forms, participant_forms=participant_forms,
-                trainer_forms=trainer_forms,
-                all_dicts=dict(admin_forms.items()+trainer_forms.items()+participant_forms.items()+usr_forms.items()),
-                admin_forms=admin_forms, role_levels=role_levels)
+        elif my_role == "trainer" and not usr_role == "admin" and not usr_role == "trainer":
+            forms[usr.id] = user_form
+            _usrs.append(usr.id)
+
+    query = db(db.auth_user.id.belongs(_usrs))
+
+    db.auth_user.id.represent = lambda id, row: A("edit", _href="#", **dict(
+                {"_data-toggle": "modal", "_data-target": "#modal_%s" % id}))
+
+    profiles_grid = SQLFORM.grid(query)
+
+    return dict(usrs=usrs, my_role=my_role, profiles_grid=profiles_grid, forms=forms)
 
 
 def training():
@@ -103,7 +93,7 @@ def tracking():
 def router():
     if my_role in ["admin", "trainer"]:
         redirect(URL("home"))
-    elif my_role in ["participant"]:
+    else:
         practice = db(db.practice.trainer.contains(auth.user.id)).select().first()
         if practice:
             redirect(URL("dashboard", vars=dict(practice=practice.id, section="gap")))
