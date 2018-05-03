@@ -519,7 +519,7 @@ def home():
 
     practice_form = SQLFORM.factory(*practice_form_fields)
 
-    if IS_MASTER:
+    if not IS_MASTER:
         query = (db.practice.id > 0) & (db.practice.trainer.contains(tagout.id))
     else:
         query = (db.practice.id > 0)
