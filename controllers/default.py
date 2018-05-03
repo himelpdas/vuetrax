@@ -510,7 +510,8 @@ def _process_baa_form(practice, baa_forms, baa_links):
 def _get_admin_ids():
     pass
 
-@auth.requires(my_role in ["admin", "traier"])
+
+@auth.requires(my_role in ["admin", "trainer"] or IS_MASTER)
 def home():
     tagout = db((db.auth_user.id == request.vars["tagout"])).select().last() or auth.user
 
@@ -518,8 +519,10 @@ def home():
 
     practice_form = SQLFORM.factory(*practice_form_fields)
 
-    query = (db.practice.id > 0) & (db.practice.trainer.contains(tagout.id))
-
+    if IS_MASTER:
+        query = (db.practice.id > 0) & (db.practice.trainer.contains(tagout.id))
+    else:
+        query = (db.practice.id > 0)
     if search:
         query &= _search_cards(search)
 

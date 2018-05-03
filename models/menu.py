@@ -52,9 +52,14 @@ is_staff_training = section == "staff"
 
 is_emr_training = section == "emr"
 
+IS_MASTER = False
+
 if auth.is_logged_in():
-    if auth.user.email.lower() in ["gdewey@insightmanagement.org", "himel@insightmanagement.org"]:
+    if auth.user.email.lower() in ["gdewey@insightmanagement.org", "himel@insightmanagement.org",
+                                   "jason@insightmanagement.org"
+                                   ]:
         my_role = "admin"
+        IS_MASTER = True
     else:
         my_role = getattr(db(db.role.owner_id == auth.user.id).select().last(), "role", None) or "usr"
 else:
