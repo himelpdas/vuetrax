@@ -58,7 +58,6 @@ def profiles():
         db.role.owner_id.default=usr.id
         if role_form.process(formname="role_form_%s"%usr.id).accepted:
             session.flash = "Role updated!"
-            db.commit()
             redirect(URL())
 
         user_form = [usr, None, role_form]
@@ -388,7 +387,7 @@ def _process_practice_info_form(practice, practice_info_forms):
         Field("hours_from", "list:string", requires=IS_TIME(), default=practice.hours_from),
         Field("hours_to", "list:string", requires=IS_TIME(), default=practice.hours_to),
         Field('credentials', default=practice.credentials),
-        Field("practice_email", requires=IS_EMAIL()),
+        Field("practice_email", default=practice.practice_email, requires=IS_EMAIL()),
         Field('dea_number', default=practice.dea_number),
         Field('providers', "list:string", default=practice.providers),
         Field('provider_license', "list:string", default=practice.provider_license),
