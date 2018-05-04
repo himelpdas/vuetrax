@@ -510,9 +510,16 @@ def _process_baa_form(practice, baa_forms, baa_links):
 def _get_admin_ids():
     pass
 
-
+import math
 @auth.requires(my_role in ["admin", "trainer"] or IS_MASTER)
 def home():
+    if len(request.args):
+        page=int(request.args[0])
+    else:
+        page=0
+    items_per_page=12-1
+    limitby=(page*items_per_page,(page+1)*items_per_page+1)
+
     tagout = db((db.auth_user.id == request.vars["tagout"])).select().last() or auth.user
 
     search = request.vars["search"]
@@ -526,7 +533,12 @@ def home():
     if search:
         query &= _search_cards(search)
 
-    practices = db(query).select()
+
+    count = db(query).count()
+    practices = db(query).select(limitby=limitby)
+    pages = math.ceil(count / (items_per_page))
+
+    print count, pages
 
     if practice_form.process(formname="practice_form").accepted:
         practice_form.vars["trainer"] = [auth.user.id]
@@ -554,7 +566,8 @@ def home():
     return dict(practices=practices, practice_form=practice_form, practice_info_forms=practice_info_forms,
                 emr_forms=emr_forms, tagout=tagout, _get_progress_by_practice=_get_progress_by_practice,
                 admin_forms=admin_forms, emr_forms_green=emr_forms_green, cc_forms=cc_forms,
-                cc_forms_meta=cc_forms_meta, baa_forms=baa_forms, baa_links=baa_links)
+                cc_forms_meta=cc_forms_meta, baa_forms=baa_forms, baa_links=baa_links, page=page,
+                items_per_page=items_per_page, pages=pages)
 
 
 def _get_progress_by_practice(practice_id, section):
