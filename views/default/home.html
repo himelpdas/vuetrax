@@ -618,19 +618,31 @@
                                 var myBarChart = new Chart(ctxB, {
                                     type: 'bar',
                                     data: {
+                                        {{if not each.is_renewal:}}
                                         labels: ["Gap", "Staff", "Provider"],
+                                        {{else:}}
+                                        labels: ["Staff", "EMR"],
+                                        {{pass}}
                                         datasets: [{
                                             //label: '# of Votes',
+                                            {{if not each.is_renewal:}}
                                             data: [{{="%0.2f"%_get_progress_by_practice(practice_id, "gap")["percent"]}}, {{="%0.2f"%_get_progress_by_practice(practice_id, "front")["percent"]}}, {{="%0.2f"%_get_progress_by_practice(practice_id, "provider")["percent"]}}],
+                                            {{else:}}
+                                            data: [{{="%0.2f"%_get_progress_by_practice(practice_id, "staff")["percent"]}}, {{="%0.2f"%_get_progress_by_practice(practice_id, "emr")["percent"]}}],
+                                            {{pass}}
                                             backgroundColor: [
                                                 'rgba(165, 0, 255, .5)',
                                                 'rgba(27, 103, 226, .5)',
+                                            {{if each.is_renewal:}}
                                                 'rgba(255, 119, 0, .5)'
+                                            {{pass}}
                                             ],
                                             borderColor: [
                                                 'rgba(165, 0, 255)',
                                                 'rgba(27, 103, 226)',
+                                            {{if each.is_renewal:}}
                                                 'rgba(255, 119, 0)'
+                                            {{pass}}
                                             ],
                                             borderWidth: 1
                                         }]
