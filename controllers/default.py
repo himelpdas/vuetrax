@@ -520,6 +520,8 @@ def home():
     items_per_page=12-1
     limitby=(page*items_per_page,(page+1)*items_per_page+1)
 
+    filter = request.vars["filter"]
+
     tagout = db((db.auth_user.id == request.vars["tagout"])).select().last() or auth.user
 
     search = request.vars["search"]
@@ -532,7 +534,8 @@ def home():
         query = (db.practice.id > 0)
     if search:
         query &= _search_cards(search)
-
+    if filter:
+        query &= db.practice.is_renewal == (True if filter == "renewal" else False)
 
     count = db(query).count()
     practices = db(query).select(limitby=limitby)
