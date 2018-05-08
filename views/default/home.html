@@ -682,18 +682,12 @@
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="col-lg-3"><a type="button" class="btn btn-sm btn-warning"
+                        <div class="col-lg-6"><a type="button" class="btn btn-sm btn-warning"
                                                  href="{{=URL('dashboard', vars=dict(practice=each.id, section=("gap" if not each.is_renewal else "staff") or session.section))}}"><b>DASHBOARD</b></a>
                         </div>
+
                         <div class="col-lg-6">
-                            <button type="button" class="btn btn-sm btn-info faa-parent animated-hover"
-                                    data-toggle="modal" title="Appointment Update"
-                                    data-target="#appointment" href="#"
-                                    style="position: relative; left: 50px;"><i
-                                    class="fa faa-flash fa-fw fa-calendar"></i></button>
-                        </div>
-                        <div class="col-lg-3">
-                            <button type="button" class="btn btn-sm btn-primary faa-parent animated-hover"
+                            <button type="button" class="btn btn-sm btn-primary faa-parent animated-hover pull-right"
                                     data-toggle="modal" title="Send Message"
                                     data-target="#message_form_{{=each.id}}"><i class="fa faa-tada fa-fw fa-comment"></i></button>
                         </div>
