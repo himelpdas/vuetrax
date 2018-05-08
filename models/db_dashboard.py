@@ -140,6 +140,16 @@ db.define_table(
     auth.signature
 )
 
+
+db.define_table(
+    "messaging",
+    Field("practice", db.practice),
+    Field("subject"),
+    Field("message_", 'text'),
+    auth.signature
+)
+
+
 # simple search https://groups.google.com/forum/#!topic/web2py/3aqVqRxSEt8
 
 def _recurse_find_by_key(d, k, depth=0):

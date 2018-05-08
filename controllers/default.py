@@ -507,10 +507,28 @@ def _process_baa_form(practice, baa_forms, baa_links):
     baa_links[practice.id] = dict(file_name = practice.baa_file_name, file_upload = practice.baa_file_upload)
 
 
+def _process_message_form(practice, message_forms, message_links):
+    message_form = SQLFORM.factory(
+        Field("subject"),
+        Field("message_", 'text'),
+    )
+
+    if message_form.process(formname="message_form_%s" % practice.id).accepted:
+        db.messaging.insert(practice=practice.id, **db.messaging._filter_fields(message_form.vars))
+        session.flash = "Message Added!"
+        redirect(URL())
+
+    message_forms[practice.id] = message_form
+
+    message_links[practice.id] = db(db.messaging.practice == practice.id).select()
+
+
+
 def _get_admin_ids():
     pass
 
 import math
+import datetime
 @auth.requires(my_role in ["admin", "trainer"] or IS_MASTER)
 def home():
     if len(request.args):
@@ -541,7 +559,7 @@ def home():
     practices = db(query).select(limitby=limitby)
     pages = math.ceil(count / (items_per_page))
 
-    print count, pages
+    #print count, pages
 
     if practice_form.process(formname="practice_form").accepted:
         practice_form.vars["trainer"] = [auth.user.id]
@@ -555,7 +573,10 @@ def home():
     cc_forms = {}
     cc_forms_meta = {}
     baa_forms = {}
+    message_forms = {}
+    message_links = {}
     baa_links = {}
+    red_bells = {}
 
     for practice in practices:
         _process_practice_info_form(practice, practice_info_forms)
@@ -563,6 +584,11 @@ def home():
         _process_admin_form(practice, admin_forms)
         _process_cc_form(practice, cc_forms, cc_forms_meta)
         _process_baa_form(practice, baa_forms, baa_links)
+        _process_message_form(practice, message_forms, message_links)
+        answers = db(db.answer.practice == practice_id).select()
+        red_bells[practice.id] = all(
+            map(lambda e: (datetime.datetime.now() - e.answer.modified_on) > datetime.timedelta(days=1), answers)
+        )
 
     ###print request.post_vars
 
@@ -570,7 +596,8 @@ def home():
                 emr_forms=emr_forms, tagout=tagout, _get_progress_by_practice=_get_progress_by_practice,
                 admin_forms=admin_forms, emr_forms_green=emr_forms_green, cc_forms=cc_forms,
                 cc_forms_meta=cc_forms_meta, baa_forms=baa_forms, baa_links=baa_links, page=page,
-                items_per_page=items_per_page, pages=pages)
+                items_per_page=items_per_page, pages=pages, red_bells=red_bells, message_forms=message_forms,
+                message_links=message_links)
 
 
 def _get_progress_by_practice(practice_id, section):

@@ -550,7 +550,7 @@
             <div class="card h-60" style="box-shadow: 10px 10px 5px grey; background-color:{{if each.is_renewal:}}#c8f6fc{{else:}}white{{pass}};">
                 <div class="row">
 				<div class="col-sm-6">
-				<div style="text-align: left;"><i class="fa  fa-fw fa-bell-o"></i></div>
+				<div class="{{if red_bells[int(each.id)]:}}text-danger{{pass}}" style="text-align: left;"><i class="fa  fa-fw fa-bell-o"></i></div>
 				</div>
 				<div class="col-sm-6">
 				<div style="text-align: right;"><a href="{{=URL("delete_practice", args=[each.id])}}"
@@ -695,7 +695,7 @@
                         <div class="col-lg-3">
                             <button type="button" class="btn btn-sm btn-primary faa-parent animated-hover"
                                     data-toggle="modal" title="Send Message"
-                                    data-target="#commentModal"><i class="fa faa-tada fa-fw fa-comment"></i></button>
+                                    data-target="#message_form_{{=each.id}}"><i class="fa faa-tada fa-fw fa-comment"></i></button>
                         </div>
                     </div>
 
@@ -772,9 +772,14 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+
+{{for message_form_id in message_forms:}}
+{{message_form = message_forms[message_form_id]}}
+{{message_link_id = message_form_id}}
+<div class="modal fade" id="message_form_{{=message_form_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true" style="min-height:700px;">
     <div class="modal-dialog" role="document">
+        {{=message_form.custom.begin}}
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Message</h5>
@@ -784,20 +789,23 @@
                 </button>
             </div>
             <div class="modal-body">
-
-                <span style="position: relative; bottom: 5px;">Subject:&nbsp;</span><input
-                    style='position: relative; bottom: 5px;'>
-                <div class="form-group">
-                    <textarea placeholder=" Message here..." class="form-control" rows="5" id="comment"></textarea>
-
+                {{for msg in message_links[message_link_id]:}}
+                    <hr>{{=getattr(db(db.auth_user.id == msg.created_by).select().last(), "first_name", "N/A")}} {{=msg.subject}}<br>{{=msg.message_}}<br>{{=msg.modified_on}}
+                {{pass}}
+                <hr>
+                <span style="position: relative; bottom: 5px;">Subject:&nbsp;</span>{{=message_form.custom.widget.subject}}
+                <div class="form-group">Message:&nbsp;
+                    {{=message_form.custom.widget.message_}}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Send</button>
+                    {{=message_form.custom.submit}}
                 </div>
             </div>
         </div>
+        {{=message_form.custom.end}}
     </div>
 </div>
+{{pass}}
 
 {{block scripts}}
 {{super}}
