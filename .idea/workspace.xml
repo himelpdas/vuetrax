@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="418b3e98-cfd8-4300-9883-6dc931d8b62a" name="Default" comment="new sustainability pages and json questions">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="418b3e98-cfd8-4300-9883-6dc931d8b62a" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -222,8 +220,8 @@
       <file leaf-file-name="default.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/default.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2037">
-              <caret line="331" column="0" lean-forward="true" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
+            <state relative-caret-position="390">
+              <caret line="57" column="37" lean-forward="true" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -328,6 +326,7 @@
       <find>gap</find>
       <find>go back</find>
       <find>redirect_</find>
+      <find>.role</find>
     </findStrings>
   </component>
   <component name="HgUpdateConfigurationSettings">
@@ -668,7 +667,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525809956421</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="new sustainability pages and json questions">
+      <created>1525810548322</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1525810548322</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -731,12 +737,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updates to json" />
-    <MESSAGE value="new sustainability pages and json questions" />
     <MESSAGE value="fixed profile edit and home widgets added" />
     <MESSAGE value="pagination and renewal/initial sorting btns" />
     <MESSAGE value="submit on same page" />
     <MESSAGE value="pushh" />
-    <option name="LAST_COMMIT_MESSAGE" value="pushh" />
+    <MESSAGE value="new sustainability pages and json questions" />
+    <option name="LAST_COMMIT_MESSAGE" value="new sustainability pages and json questions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1784,8 +1790,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/default.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2037">
-          <caret line="331" column="0" lean-forward="true" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
+        <state relative-caret-position="390">
+          <caret line="57" column="37" lean-forward="true" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
           <folding />
         </state>
       </provider>
