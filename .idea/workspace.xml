@@ -25,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="default.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/default.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="388" column="35" selection-start-line="388" selection-start-column="35" selection-end-line="388" selection-end-column="35" />
+            <state relative-caret-position="250">
+              <caret line="415" column="35" lean-forward="true" selection-start-line="415" selection-start-column="35" selection-end-line="415" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -112,11 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/default/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="687" column="23" selection-start-line="687" selection-start-column="23" selection-end-line="693" selection-end-column="30" />
+            <state relative-caret-position="344">
+              <caret line="186" column="57" lean-forward="true" selection-start-line="186" selection-start-column="57" selection-end-line="186" selection-end-column="57" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -142,7 +142,6 @@
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#canvas#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
                 <element signature="e#37143#37150#1" expanded="true" />
                 <element signature="e#37610#37617#1" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -188,6 +187,9 @@
       <find>overflow</find>
       <find>ehi</find>
       <find>cal</find>
+      <find>admin</find>
+      <find>select</find>
+      <find>app_tool_username</find>
     </findStrings>
   </component>
   <component name="HgUpdateConfigurationSettings">
@@ -205,12 +207,12 @@
         <option value="$PROJECT_DIR$/private/sustainability_emr" />
         <option value="$PROJECT_DIR$/views/default/dashboard_sustainability" />
         <option value="$PROJECT_DIR$/views/default/profiles.html" />
-        <option value="$PROJECT_DIR$/controllers/default.py" />
         <option value="$PROJECT_DIR$/views/default/template_library.html" />
         <option value="$PROJECT_DIR$/static/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/views/layout.html" />
         <option value="$PROJECT_DIR$/views/default/dashboard.html" />
         <option value="$PROJECT_DIR$/views/default/home.html" />
+        <option value="$PROJECT_DIR$/controllers/default.py" />
       </list>
     </option>
   </component>
@@ -686,7 +688,6 @@
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#canvas#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
             <element signature="e#37143#37150#1" expanded="true" />
             <element signature="e#37610#37617#1" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -768,7 +769,6 @@
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#canvas#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
             <element signature="e#37143#37150#1" expanded="true" />
             <element signature="e#37610#37617#1" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -864,7 +864,6 @@
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#canvas#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
             <element signature="e#37143#37150#1" expanded="true" />
             <element signature="e#37610#37617#1" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -930,13 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/db_dashboard.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -948,13 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/default.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="388" column="35" selection-start-line="388" selection-start-column="35" selection-end-line="388" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1010,8 +995,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/default/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="687" column="23" selection-start-line="687" selection-start-column="23" selection-end-line="693" selection-end-column="30" />
+        <state relative-caret-position="344">
+          <caret line="186" column="57" lean-forward="true" selection-start-line="186" selection-start-column="57" selection-end-line="186" selection-end-column="57" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -1037,7 +1022,6 @@
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#canvas#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
             <element signature="e#37143#37150#1" expanded="true" />
             <element signature="e#37610#37617#1" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -1049,6 +1033,20 @@
             <element signature="e#40246#40252#0" expanded="true" />
             <element signature="e#40347#40353#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/default.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="415" column="35" lean-forward="true" selection-start-line="415" selection-start-column="35" selection-end-line="415" selection-end-column="35" />
         </state>
       </provider>
     </entry>

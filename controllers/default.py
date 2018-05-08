@@ -412,6 +412,7 @@ def _process_admin_form(practice, admin_forms):
     admin_form = SQLFORM.factory(
         Field('trainer', 'list:reference auth_user', default=practice.trainer,
               requires=IS_IN_DB(db, 'auth_user.id', '%(first_name)s %(last_name)s (%(id)s)', multiple=True)),
+        Field("pps"),
         Field("app_tool_username"),
         Field("app_tool_password"),
         Field("survey_tool_username"),
