@@ -58,7 +58,7 @@ def profiles():
         db.role.owner_id.default=usr.id
         if role_form.process(formname="role_form_%s"%usr.id).accepted:
             session.flash = "Role updated!"
-            redirect(URL())
+            _redirect_after_submit()
 
         user_form = [usr, None, role_form]
 
@@ -196,22 +196,20 @@ def _recurse_questions(d, l, p=None, pt=None):
     recurse(d, l, p, pt)
 
 
-
-
-
-
-
 def _get_question_progress(identifiers, pid):
-    denominator = len(identifiers)
-    answered = []
-    for identifier in identifiers:
-        answer = db((db.answer.practice==pid) & (db.answer.identifier == identifier)).select().last()
-        answered.append(bool(answer))
-    numerator = answered.count(True)
+    @cache("question_progress_%s"%pid, time_expire=300, cache_model=cache.ram)
+    def inner():
+        denominator = len(identifiers)
+        answered = []
+        for identifier in identifiers:
+            answer = db((db.answer.practice==pid) & (db.answer.identifier == identifier)).select().last()
+            answered.append(bool(answer))
+        numerator = answered.count(True)
 
-    answered_by_id = OrderedDict(zip(identifiers, answered))
+        answered_by_id = OrderedDict(zip(identifiers, answered))
 
-    return dict(percent = float(numerator) / float(denominator), answered_by_id = answered_by_id)
+        return dict(percent = float(numerator) / float(denominator), answered_by_id = answered_by_id)
+    return inner()
 
 
 def _set_question_navigation(d, identifiers, current_id, practice_id, section):
@@ -403,7 +401,7 @@ def _process_practice_info_form(practice, practice_info_forms):
     if practice_info_form.process(formname="practice_info_form_%s" % practice.id).accepted:
         db(db.practice.id == practice.id).update(**db.practice._filter_fields(practice_info_form.vars))
         session.flash = "Practice Updated!"
-        redirect(URL())
+        _redirect_after_submit()
 
     practice_info_forms[practice.id] = practice_info_form
     
@@ -421,7 +419,7 @@ def _process_admin_form(practice, admin_forms):
     if admin_form.process(formname="admin_form_%s" % practice.id).accepted:
         db(db.practice.id == practice.id).update(**db.practice._filter_fields(admin_form.vars))
         session.flash = "Admin Info Updated!"
-        redirect(URL())
+        _redirect_after_submit()
 
     admin_forms[practice.id] = admin_form
     
@@ -439,7 +437,7 @@ def _process_emr_form(practice, emr_forms, emr_forms_green):
     if emr_form.process(formname="emr_form_%s" % practice.id).accepted:
         db(db.practice.id == practice.id).update(**db.practice._filter_fields(emr_form.vars))
         session.flash = "EMR Info Updated!"
-        redirect(URL())
+        _redirect_after_submit()
 
     emr_forms[practice.id] = emr_form
     emr_forms_green[practice.id] = all([
@@ -473,7 +471,7 @@ def _process_cc_form(practice, cc_forms, cc_forms_meta):
     if cc_form.process(formname="cc_form_%s" % practice.id).accepted:
         db(db.practice.id == practice.id).update(**db.practice._filter_fields(cc_form.vars))
         session.flash = "Credit Card Info Updated!"
-        redirect(URL())
+        _redirect_after_submit()
 
     cc_forms[practice.id] = cc_form
 
@@ -500,7 +498,7 @@ def _process_baa_form(practice, baa_forms, baa_links):
     if baa_form.process(formname="baa_form_%s" % practice.id).accepted:
         db(db.practice.id == practice.id).update(**db.practice._filter_fields(baa_form.vars))
         session.flash = "BAA Form Updated!"
-        redirect(URL())
+        _redirect_after_submit()
 
     baa_forms[practice.id] = baa_form
 
@@ -516,13 +514,15 @@ def _process_message_form(practice, message_forms, message_links):
     if message_form.process(formname="message_form_%s" % practice.id).accepted:
         db.messaging.insert(practice=practice.id, **db.messaging._filter_fields(message_form.vars))
         session.flash = "Message Added!"
-        redirect(URL())
+        _redirect_after_submit()
 
     message_forms[practice.id] = message_form
 
     message_links[practice.id] = db(db.messaging.practice == practice.id).select()
 
 
+def _redirect_after_submit():
+    redirect(URL(args=request.args))
 
 def _get_admin_ids():
     pass
