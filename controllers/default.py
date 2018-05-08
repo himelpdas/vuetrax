@@ -556,7 +556,7 @@ def home():
         query &= db.practice.is_renewal == (True if filter == "renewal" else False)
 
     count = db(query).count()
-    practices = db(query).select(limitby=limitby)
+    practices = db(query).select(limitby=limitby, orderby=~db.practice.id)
     pages = math.ceil(count / (items_per_page))
 
     #print count, pages
@@ -586,9 +586,7 @@ def home():
         _process_baa_form(practice, baa_forms, baa_links)
         _process_message_form(practice, message_forms, message_links)
         answers = db(db.answer.practice == practice_id).select()
-        red_bells[practice.id] = all(
-            map(lambda e: (datetime.datetime.now() - e.answer.modified_on) > datetime.timedelta(days=1), answers)
-        )
+        red_bells[practice.id] = []
 
     ###print request.post_vars
 
