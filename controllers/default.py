@@ -343,6 +343,7 @@ def questions():
                          file_upload=form.vars.file_upload, yes_no=yes_no, practice=practice_id,
                          meta_data=json.dumps(meta_data))
         session.flash = 'Submission accepted!'
+        practice.update_record(dashboard_modified_on=datetime.datetime.now())
         _recurse_questions(slides, question_order)
         _set_question_navigation(navigation, question_order, current_id, practice_id, section)
         redirect(navigation["next_url"] if navigation["next_url"] else navigation["current_url"])
