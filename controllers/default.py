@@ -522,7 +522,7 @@ def _process_message_form(practice, message_forms, message_links):
 
 
 def _redirect_after_submit():
-    redirect(URL(args=request.args))
+    redirect(URL(args=request.args, vars=request.get_vars))
 
 def _get_admin_ids():
     pass
