@@ -55,8 +55,10 @@ def profiles():
 
         usr_role = getattr(role, "role", None)
 
-        db.role.owner_id.default=usr.id
-        if role_form.process(formname="role_form_%s"%usr.id).accepted:
+        def onvalidation(form, usr_id=usr.id):
+            form.vars.owner_id = usr_id
+
+        if role_form.process(formname="role_form_%s"%usr.id, onvalidation=onvalidation).accepted:
             session.flash = "Role updated!"
             _redirect_after_submit()
 
