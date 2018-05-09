@@ -50,14 +50,14 @@
     <div class="form-group center" style="text-align: center;">
         <ul class="nav nav-pills nav-fill" style="text-align: center;">
             <li class="nav-item">
-                <a class="nav-link {{if not is_tracking:}}active{{pass}}"
+                <a class="nav-link {{if is_training:}}active{{pass}}"
                    href="{{=URL(vars=dict(practice=practice_id, section="gap" if not practice.is_renewal else "staff"))}}">Training
 
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{if is_tracking:}}active{{pass}}"
-                   href="{{=URL(vars=dict(practice=practice_id, section="survey"))}}">PCMH Survey
+                <a class="nav-link {{if is_survey:}}active{{pass}}"
+                   href="{{=URL(vars=dict(practice=practice_id, section="survey_tc"))}}">PCMH Survey
 
                 </a>
             </li>
@@ -76,7 +76,7 @@
 </div>
 <div class="container">
 
-{{if not is_tracking:}}
+{{if is_training:}}
     <div class="card" style="padding: 30px;">
         <div class="col-lg-12" style="max-height: 795px;">
             <div class="form-group" style="text-align: center;">
@@ -161,36 +161,41 @@
 
 
         </div>
-        </div>
+
+{{pass}}
+
 <p></p>
+<div class="container">
+{{if is_survey:}}
            <div class="card" style="padding: 30px;">
 
                 <div class="col-lg-12" style="max-height: 795px;">
                     <div class="form-group" style="text-align: center;">
                         <ul class="nav nav-pills nav-fill">
                           <li class="nav-item">
-                            <a class="nav-link active" href="#">TC</a>
+                            <a class="nav-link {{if is_survey_tc:}}active{{pass}}" href="{{=URL(vars=dict(practice=practice_id, section="survey_tc"))}}">TC</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">KM</a>
+                            <a class="nav-link {{if is_survey_km:}}active{{pass}}" href="{{=URL(vars=dict(practice=practice_id, section="survey_km"))}}">KM</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">AC</a>
+                            <a class="nav-link {{if is_survey_ac:}}active{{pass}}" href="{{=URL(vars=dict(practice=practice_id, section="survey_ac"))}}">AC</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">CM</a>
+                            <a class="nav-link {{if is_survey_cm:}}active{{pass}}" href="{{=URL(vars=dict(practice=practice_id, section="survey_cm"))}}">CM</a>
                           </li>
                                     <li class="nav-item">
-                            <a class="nav-link" href="#">CC</a>
+                            <a class="nav-link {{if is_survey_cc:}}active{{pass}}" href="{{=URL(vars=dict(practice=practice_id, section="survey_cc"))}}">CC</a>
                           </li>
                                     <li class="nav-item">
-                            <a class="nav-link" href="#">QI</a>
+                            <a class="nav-link {{if is_survey_qi:}}active{{pass}}" href="{{=URL(vars=dict(practice=practice_id, section="survey_qi"))}}">QI</a>
                           </li>
                         </ul>
                    </div>
                </div>
 
        <hr>
+               {{if is_survey_tc:}}
               <div class="form-group">
                 <label for="exampleInputEmail1">TC-01 PCMH Transformation Leads <b>(CORE)</b></label>
                <div class="row">
@@ -312,7 +317,11 @@
 
               </div>
               </div>
-<hr>
+               <hr>
+              <button type="submit" class="btn btn-primary center">Submit</button>
+               {{pass}}
+
+              {{if is_survey_km:}}
                 <div class="form-group">
                 <label for="exampleInputEmail1">KM-01 Problem Lists <b>(CORE)</b></label>
               <div class="row">
@@ -680,7 +689,11 @@
 
               </div>
               </div>
-                <hr>
+               <hr>
+              <button type="submit" class="btn btn-primary center">Submit</button>
+               {{pass}}
+
+               {{if is_survey_ac:}}
                 <div class="form-group">
                 <label for="exampleInputEmail1">AC-01 Access Needs and Preferences <b> (CORE)</b></label>
                <div class="row">
@@ -863,6 +876,10 @@
                   </div>
               </div>
                <hr>
+              <button type="submit" class="btn btn-primary center">Submit</button>
+               {{pass}}
+
+               {{if is_survey_cm:}}
                 <div class="form-group">
                 <label for="exampleInputEmail1">CM-01 Identifying Patients for Care Management <b> (CORE)</b></label>
                    <div class="row">
@@ -979,7 +996,11 @@
 
                   </div>
               </div>
-                             <hr>
+               <hr>
+              <button type="submit" class="btn btn-primary center">Submit</button>
+               {{pass}}
+
+               {{if is_survey_cc:}}
                 <div class="form-group">
                 <label for="exampleInputEmail1">CC-01 Lab and Imaging Test Management <b> (CORE)</b></label>
                    <div class="row">
@@ -1252,7 +1273,11 @@
 
                   </div>
               </div>
-                         <hr>
+               <hr>
+              <button type="submit" class="btn btn-primary center">Submit</button>
+               {{pass}}
+
+               {{if is_survey_qi:}}
                 <div class="form-group">
                 <label for="exampleInputEmail1">QI-01 Clinical Quality Measures <b> (CORE)</b></label>
                    <div class="row">
@@ -1501,13 +1526,14 @@
               </div>
                 <hr>
               <button type="submit" class="btn btn-primary center">Submit</button>
-            </form>
 
+{{pass}}
             </div>
-</div>
+            </div>
+
         <div class="summary">
             <ul>
-                <hr>
+
             {{for identifier in question_order:}}
             {{
             answer = db((db.answer.identifier==identifier) & (db.answer.practice==practice_id)).select().last()

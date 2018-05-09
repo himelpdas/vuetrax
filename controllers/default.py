@@ -145,7 +145,7 @@ def dashboard():
 
 
     practice = db(db.practice.id == practice_id).select().last()  #TODO practice id is list
-    if not is_tracking:
+    if is_training:
         _recurse_questions(slides, question_order)
 
         navigation = {}
@@ -153,6 +153,10 @@ def dashboard():
         progress = _get_question_progress(question_order, practice_id)
 
         first_question = question_order[0]
+
+    elif is_survey:
+        pass
+
     else:
         db[section].practice.default=practice_id
         form = SQLFORM.grid(db[section].practice == practice_id, maxtextlength=40, details=False, deletable=False if IS_GRID else True)

@@ -52,6 +52,22 @@ is_staff_training = section == "staff"
 
 is_emr_training = section == "emr"
 
+is_training = any([is_provider, is_gap, is_front, is_staff_training, is_emr_training])
+
+is_survey = "survey" in section
+
+is_survey_tc = section == "survey_tc"
+
+is_survey_km = section == "survey_km"
+
+is_survey_ac = section == "survey_ac"
+
+is_survey_cm = section == "survey_cm"
+
+is_survey_cc = section == "survey_cc"
+
+is_survey_qi = section == "survey_qi"
+
 IS_MASTER = False
 
 if auth.is_logged_in():
