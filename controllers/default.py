@@ -199,7 +199,7 @@ def _recurse_questions(d, l, p=None, pt=None):
 
 
 def _get_question_progress(identifiers, pid):
-    @cache("question_progress_%s"%pid, time_expire=300, cache_model=cache.ram)
+    @cache("question_progress_%s"%pid, time_expire=300, cache_model=cache.disk)
     def inner():
         denominator = len(identifiers)
         answered = []
