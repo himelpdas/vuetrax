@@ -372,41 +372,6 @@ def nt_download():
 
 def template_library():
     return dict()
-
-
-def _process_practice_info_form(practice, practice_info_forms):
-    practice_info_form = SQLFORM.factory(
-        Field('practice_specialty',
-              requires=IS_IN_SET(['Internal Medicine', 'Pediatrics', 'Family']),
-              default=practice.practice_specialty
-              ),
-        Field('address', default=practice.address),
-        Field('practice_name', default=practice.practice_name),
-        Field('phone', default=practice.phone),
-        Field('fax', default=practice.fax),
-        Field('days', "list:string", default=practice.days),
-        Field("hours_from", "list:string", requires=IS_TIME(), default=practice.hours_from),
-        Field("hours_to", "list:string", requires=IS_TIME(), default=practice.hours_to),
-        Field('credentials', default=practice.credentials),
-        Field("practice_email", default=practice.practice_email, requires=IS_EMAIL()),
-        Field('dea_number', default=practice.dea_number),
-        Field('providers', "list:string", default=practice.providers),
-        Field('provider_license', "list:string", default=practice.provider_license),
-        Field('provider_npi', "list:string", default=practice.provider_npi),
-        Field('provider_dob', "list:string", default=practice.provider_dob),
-        Field('provider_board', "list:string", default=practice.provider_board),
-        Field('provider_credential', "list:string", default=practice.provider_credential),
-        Field('practice_npi', default=practice.practice_npi),
-        Field('practice_tax_id', default=practice.practice_tax_id),
-
-    )
-
-    if practice_info_form.process(formname="practice_info_form_%s" % practice.id).accepted:
-        db(db.practice.id == practice.id).update(**db.practice._filter_fields(practice_info_form.vars))
-        session.flash = "Practice Updated!"
-        _redirect_after_submit()
-
-    practice_info_forms[practice.id] = practice_info_form
     
 
 def _process_admin_form(practice, admin_forms):
@@ -571,7 +536,6 @@ def home():
         id = db.practice.insert(**db.practice._filter_fields(practice_form.vars))
         redirect(URL(vars=request.get_vars))
 
-    practice_info_forms = {}
     emr_forms = {}
     emr_forms_green = {}
     admin_forms = {}
@@ -584,7 +548,6 @@ def home():
     red_bells = {}
 
     for practice in practices:
-        _process_practice_info_form(practice, practice_info_forms)
         _process_emr_form(practice, emr_forms, emr_forms_green)
         _process_admin_form(practice, admin_forms)
         _process_cc_form(practice, cc_forms, cc_forms_meta)
@@ -595,7 +558,7 @@ def home():
 
     ###print request.post_vars
 
-    return dict(practices=practices, practice_form=practice_form, practice_info_forms=practice_info_forms,
+    return dict(practices=practices, practice_form=practice_form,
                 emr_forms=emr_forms, tagout=tagout, _get_progress_by_practice=_get_progress_by_practice,
                 admin_forms=admin_forms, emr_forms_green=emr_forms_green, cc_forms=cc_forms,
                 cc_forms_meta=cc_forms_meta, baa_forms=baa_forms, baa_links=baa_links, page=page,

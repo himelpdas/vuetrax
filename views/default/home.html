@@ -431,128 +431,14 @@
         </div>
     </div>
 {{pass}}
-{{for practice_info_form_id in practice_info_forms:}}
-{{practice_info_form = practice_info_forms[practice_info_form_id]}}
-    <div class="modal fade" id="practice_info_{{=practice_info_form_id}}" tabindex="-1" role="dialog"
+
+    <div class="modal fade" id="practice_info_modal" tabindex="-1" role="dialog"
          aria-labelledby="exampleModalLabel" aria-hidden="true" style="min-height:1000px;">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"> Provider Information</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            {{=practice_info_form.custom.begin}}
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <div class="row">
-                                <div class="col-sm-12"><i class='fa fa-fw fa-user-md'></i> Name</div>
-                                <div class="col-sm-12">{{=practice_info_form.custom.widget.providers}}</div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="row">
-                                <div class="col-sm-12"><i class='fa fa-fw fa-id-card-o'></i> NPI</div>
-                                <div class="col-sm-12">{{=practice_info_form.custom.widget.provider_npi}}</div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="row">
-                                <div class="col-sm-12"><i class='fa fa-fw fa-id-card'></i> License</div>
-                                <div class="col-sm-12">{{=practice_info_form.custom.widget.provider_license}}</div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="row">
-                                <div class="col-sm-12"><i class='fa fa-fw fa-birthday-cake'></i> DOB</div>
-                                <div class="col-sm-12">{{=practice_info_form.custom.widget.provider_dob}}</div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="row">
-                                <div class="col-sm-12"><i class='fa fa-fw fa-list-alt'></i> Board</div>
-                                <div class="col-sm-12">{{=practice_info_form.custom.widget.provider_board}}</div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="row">
-                                <div class="col-sm-12"><i class='fa fa-fw fa-id-badge'></i> Credential</div>
-                                <div class="col-sm-12">{{=practice_info_form.custom.widget.provider_credential}}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <h5>Days and Hours</h5>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-sm-12"><i class='fa fa-fw fa-calendar'></i> Days</div>
-                                <div class="col-sm-12">{{=practice_info_form.custom.widget.days}}</div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="row">
-                                <div class="col-sm-12"><i class='fa fa-fw fa-clock-o'></i> Open</div>
-                                <div class="col-sm-12">{{=practice_info_form.custom.widget.hours_from}}</div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="row">
-                                <div class="col-sm-12"><i class='fa fa-fw fa-clock-o'></i> Close</div>
-                                <div class="col-sm-12">{{=practice_info_form.custom.widget.hours_to}}</div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <hr>
-                    <h5>Practice Information</h5>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-hospital-o'></i> Practice Name</div>
-                        <div class="col-md-7 col-sm-12">{{=practice_info_form.custom.widget.practice_name}}</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-home'></i> Practice Specialty</div>
-                        <div class="col-md-7 col-sm-12">{{=practice_info_form.custom.widget.practice_specialty}}</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-map-marker'></i> Address</div>
-                        <div class="col-md-7 col-sm-12">{{=practice_info_form.custom.widget.address}}</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-phone'></i> Phone</div>
-                        <div class="col-md-7 col-sm-12">{{=practice_info_form.custom.widget.phone}}</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-fax'></i> Fax</div>
-                        <div class="col-md-7 col-sm-12">{{=practice_info_form.custom.widget.fax}}</div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-id-card'></i> Practice NPI</div>
-                        <div class="col-md-7 col-sm-12">{{=practice_info_form.custom.widget.practice_npi}}</div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-envelope'></i> Practice Email</div>
-                        <div class="col-md-7 col-sm-12">{{=practice_info_form.custom.widget.practice_email}}</div>
-                    </div>
-
-
-
-                </div>
-                <div class="modal-footer">
-                {{=practice_info_form.custom.submit}}
-
-                </div>
-            {{=practice_info_form.custom.end}}
-            </div>
+        <div id="practice_info_content" class="modal-dialog modal-lg" role="document">
+            loading...
         </div>
     </div>
-{{pass}}
+
     <!-- Card Body -->
     <div class="row" class="list">
     {{for i, each in enumerate(practices):}}
@@ -574,8 +460,9 @@
                 <div class="card-body">
                     <h5 class="card-title">
                         <a href="#" class="practice_name" data-placement="auto" data-toggle="modal"
-                           data-target="#practice_info_{{=each.id}}"
-                           title="Practice Information" data-html="true">
+                           data-target="#practice_info_modal"
+                           title="Practice Information" data-html="true"
+                        onclick="web2py_component('{{=URL('ajax', 'process_practice_info_form.load', args=[each.id])}}', 'practice_info_content');">
 
                         {{=each.practice_name}}
                         </a>
