@@ -121,6 +121,7 @@ db.define_table(
     Field('keywords', 'list:string', default=[]),
     Field('baa_file_name'),
     Field('baa_file_upload', 'upload'),
+    #Field('dashboard_modified_on', 'datetime')
     #auth.signature,
     *practice_form_fields
 )
