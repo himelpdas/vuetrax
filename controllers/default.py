@@ -662,6 +662,7 @@ def process_admin_form():
     )
 
     if admin_form.process(formname="admin_form_%s" % practice.id).accepted:
+        print admin_form.vars
         db(db.practice.id == practice.id).update(**db.practice._filter_fields(admin_form.vars))
         session.flash = "Admin Info Updated!"
         redirect(URL(args=request.args))

@@ -19,12 +19,11 @@
                         Switch Profile
                     </button>
                 {{usrs = db(db.auth_user.id>0).select()}}
-
+                {{usrs = filter(lambda e: db(db.role.owner_id==e.id).select(orderby=db.role.id).last() in ["admin", "trainer"], usrs)}}
                     <div style="position: relative;" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="#">All</a>
                         <div class="dropdown-divider"></div>
                     {{for usr in usrs:}}
-                        {{users = filter(lambda e: db(db.role.owner_id==e.id).select(orderby=db.role.id).last() in ["admin", "trainer"], usrs)}}
                         <a class="dropdown-item" href="{{=URL(vars=dict(tagout=usr.id))}}"> <img
                                 style="position: relative; right: 5px; width:30px; height:30px;" class="rounded"
                                 src="{{=get_gravatar(usr.email)}}">{{=usr.last_name}}, {{=usr.first_name}}</a>
