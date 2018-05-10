@@ -239,7 +239,7 @@ db.define_table("secure_messaging",
 db["secure_messaging"].id.readable = False
 db["secure_messaging"].practice.readable = False
 
-db.define_table("survey",
+db.define_table("survey_tc",
     Field("practice", db.practice),
     Field("tc01_comment"),
     Field("tc01_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
@@ -259,6 +259,9 @@ db.define_table("survey",
     Field("tc08_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
     Field("tc09_comment"),
     Field("tc09_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
+                )
+db.define_table("survey_km",
+    Field("practice", db.practice),
     Field("km01_comment"),
     Field("km01_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
     Field("km02_comment"),
@@ -315,6 +318,10 @@ db.define_table("survey",
     Field("km27_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
     Field("km28_comment"),
     Field("km28_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
+    )
+
+db.define_table("survey_ac",
+    Field("practice", db.practice),
     Field("ac01_comment"),
     Field("ac01_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
     Field("ac02_comment"),
@@ -343,6 +350,10 @@ db.define_table("survey",
     Field("ac13_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
     Field("ac14_comment"),
     Field("ac14_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
+    )
+
+db.define_table("survey_cm",
+    Field("practice", db.practice),
     Field("cm01_comment"),
     Field("cm01_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
     Field("cm02_comment"),
@@ -361,6 +372,10 @@ db.define_table("survey",
     Field("cm08_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
     Field("cm09_comment"),
     Field("cm09_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
+    )
+
+db.define_table("survey_cc",
+    Field("practice", db.practice),
     Field("cc01_comment"),
     Field("cc01_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
     Field("cc02_comment"),
@@ -403,6 +418,9 @@ db.define_table("survey",
     Field("cc20_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
     Field("cc21_comment"),
     Field("cc21_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
+                )         
+db.define_table("survey_qi",
+    Field("practice", db.practice),
     Field("qi01_comment"),
     Field("qi01_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
     Field("qi02_comment"),
@@ -441,5 +459,4 @@ db.define_table("survey",
     Field("qi18_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
     Field("qi19_comment"),
     Field("qi19_response", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"])))
-
                 )

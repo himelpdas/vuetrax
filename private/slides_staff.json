@@ -1,6 +1,6 @@
 {
    "t1": {
-    "type": "response",
+    "type": "yesNo",
     "inquire": "Does your practice have hours outside of standard business hours?"
   },
   "t2": {
