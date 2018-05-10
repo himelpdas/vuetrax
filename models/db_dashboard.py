@@ -126,6 +126,14 @@ db.define_table(
     *practice_form_fields
 )
 
+
+db.define_table("uploads",
+    Field("practice", db.practice),
+    Field('file_name'),
+    Field('file_upload', 'upload'),
+)
+
+
 db.practice._after_insert.append(lambda f, i: _keywords(db(db.practice.id==i)))
 db.practice._after_update.append(lambda s, f: _keywords(s))
 

@@ -460,18 +460,24 @@ def _process_cc_form(practice, cc_forms, cc_forms_meta):
 
 def _process_baa_form(practice, baa_forms, baa_links):
     baa_form = SQLFORM.factory(
-        Field('baa_file_name', requires=IS_NOT_EMPTY()),
-        Field('baa_file_upload', 'upload'),
+        Field('file_name', requires=IS_NOT_EMPTY()),
+        Field('file_upload', 'upload'),
     )
 
     if baa_form.process(formname="baa_form_%s" % practice.id).accepted:
-        db(db.practice.id == practice.id).update(**db.practice._filter_fields(baa_form.vars))
-        session.flash = "BAA Form Updated!"
+        print baa_form.vars
+        db.uploads.insert(practice=practice.id, **db.uploads._filter_fields(baa_form.vars))
+        session.flash = "Document uploaded!"
         _redirect_after_submit()
 
     baa_forms[practice.id] = baa_form
 
-    baa_links[practice.id] = dict(file_name = practice.baa_file_name, file_upload = practice.baa_file_upload)
+    baa_links[practice.id] = []
+
+    uploads = db(db.uploads.practice == practice.id).select()
+
+    for u in uploads:
+        baa_links[practice.id].append(dict(file_name=u.file_name, file_upload=u.file_upload))
 
 
 def _process_message_form(practice, message_forms, message_links):
@@ -569,7 +575,7 @@ def home():
 
 
 def _get_progress_by_practice(practice_id, section):
-    @cache("progress_by_practice_%s_%s" % (practice_id, section), time_expire=300, cache_model=cache.disk)
+    @cache("progress_by_practice_%s_%s" % (practice_id, section), time_expire=600, cache_model=cache.disk)
     def inner():
         slides = json.loads(_get_private_file('slides_%s.json' % section), object_pairs_hook=collections.OrderedDict)
         question_order = []

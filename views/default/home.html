@@ -414,12 +414,11 @@
 
                     <hr>
 
-                {{if baa_links[baa_form_id]["file_upload"] and baa_links[baa_form_id]["file_name"]:}}<i
-                        class="fa fa-file-o fa-fw"></i><a
-                        href="{{=URL(f='nt_download', args=baa_links[baa_form_id]["file_upload"])}}"><i>{{=baa_links[baa_form_id]["file_name"]}}</i></a><br><br>{{pass}}
-
-                {{=baa_form.custom.widget.baa_file_name}}
-                {{=baa_form.custom.widget.baa_file_upload}}
+                {{for baa_link in  baa_links[baa_form_id]:}}
+                    <br><i class="fa fa-file-o fa-fw"></i><a href="{{=URL(f='nt_download', args=baa_link["file_upload"])}}"><i>{{=baa_link["file_name"]}}</i></a><br><br>
+                {{pass}}
+                {{=baa_form.custom.widget.file_name}}
+                {{=baa_form.custom.widget.file_upload}}
 
 
                 </div>
@@ -496,7 +495,7 @@
                         </div>
                         <div class="col-sm-3">
                             <button type="button"
-                                    class="btn btn-sm btn-{{if baa_links[each.id]["file_upload"] and baa_links[each.id]["file_name"]:}}success{{else:}}danger{{pass}} faa-parent animated-hover"
+                                    class="btn btn-sm btn-{{if baa_links[each.id]:}}success{{else:}}danger{{pass}} faa-parent animated-hover"
                                     data-toggle="modal" title="BAA Agreement"
                                     data-target="#baa_form_{{=each.id}}"><i
                                     class="fa  faa-shake fa-fw fa-briefcase"></i></button>
