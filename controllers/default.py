@@ -125,7 +125,7 @@ def _get_tracking_table():
 
     return dict()
 
-
+@auth.requires_login()
 def dashboard():
 
     progress = 0.0
