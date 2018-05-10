@@ -67,7 +67,7 @@
   },
   "e17": {
     "type": "yesNo",
-    "inquire": "Do you work with patients to address their barriers?"
+    "inquire": "Do you work with patients to address their barriers to meeting treatment goals?"
   },
   "e18": {
     "type": "yesNo",
@@ -110,7 +110,7 @@
     "inquire": "Specifically, do you document gender identity?"
   },
   "e28": {
-    "type": "response",
+    "type": "yesNo",
     "inquire": "Do you ask patients about their family structure? (who they live with, education)"
   },
   "e29": {
