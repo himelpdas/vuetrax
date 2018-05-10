@@ -462,7 +462,7 @@
                         <a href="#" class="practice_name" data-placement="auto" data-toggle="modal"
                            data-target="#practice_info_modal"
                            title="Practice Information" data-html="true"
-                        onclick="web2py_component('{{=URL(a='viewtrax', c='ajax', f='process_practice_info_form.load', args=[each.id])}}', 'practice_info_content');">
+                        onclick="web2py_component('{{=URL(a='viewtrax', c='ajax', f='process_practice_info_form.load', args=[each.id], scheme=True)}}', 'practice_info_content');">
 
                         {{=each.practice_name}}
                         </a>
