@@ -92,6 +92,7 @@ def tracking():
     return dict()
 
 
+@auth.requires_login()
 def router():
     if my_role in ["admin", "trainer"]:
         redirect(URL("home"))
