@@ -196,15 +196,18 @@
 
        <hr>
                {{if is_survey_tc:}}
+               {{=survey_tc_form.custom.begin}}
               <div class="form-group">
                 <label for="exampleInputEmail1">TC-01 PCMH Transformation Leads <b>(CORE)</b></label>
                <div class="row">
-                    <div class="col-lg-1">
-                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"><p></p> Yes</div>
-               <div class="col-lg-1">
-                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"><p></p>N/A</div>
+                    <div class="col-lg-3">
+                      {{=survey_tc_form.custom.widget.tc01_response}}
+                    </div>
 
-                   <div class="col-lg-10"><input class="form-control" type="text" placeholder="Comment..."></div>
+                   <div class="col-lg-9">
+                       {{=survey_tc_form.custom.widget.tc01_comment}}
+                   </div>
+
 
               </div>
               </div>
@@ -318,7 +321,8 @@
               </div>
               </div>
                <hr>
-              <button type="submit" class="btn btn-primary center">Submit</button>
+               {{=survey_tc_form.custom.submit}}
+               {{=survey_tc_form.custom.end}}
                {{pass}}
 
               {{if is_survey_km:}}

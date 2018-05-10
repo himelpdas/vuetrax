@@ -246,7 +246,7 @@ db["secure_messaging"].practice.readable = False
 
 db.define_table("survey_tc",
     Field("practice", db.practice),
-    Field("tc01_comment", "text",),
+    Field("tc01_comment", "text", widget=SQLFORM.widgets.string.widget),
     Field("tc01_response", "text", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),
     Field("tc02_comment", "text", ),
     Field("tc02_response", "text", requires=IS_EMPTY_OR(IS_IN_SET(["Yes", "No", "N/A"]))),

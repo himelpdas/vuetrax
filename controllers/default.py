@@ -159,7 +159,59 @@ def dashboard():
         first_question = question_order[0]
 
     elif is_survey:
-        pass
+        survey_tc_form_row = db(db.survey_tc.practice == practice_id).select().last()
+        survey_tc_form = SQLFORM(db.survey_tc, survey_tc_form_row)
+        db.survey_tc.practice.default = practice_id
+        db.survey_tc.practice.readable = False
+        db.survey_tc.practice.writable = False
+        if survey_tc_form.process().accepted:
+            session.flash = "TC Form updated!"
+            _redirect_after_submit()
+
+        survey_tc_form_row = db(db.survey_tc.practice == practice_id).select().last()
+        survey_tc_form = SQLFORM(db.survey_tc, survey_tc_form_row)
+        db.survey_tc.practice.default = practice_id
+        db.survey_tc.practice.readable = False
+        db.survey_tc.practice.writable = False
+        if survey_tc_form.process().accepted:
+            session.flash = "TC Form updated!"
+            _redirect_after_submit()
+
+        survey_tc_form_row = db(db.survey_tc.practice == practice_id).select().last()
+        survey_tc_form = SQLFORM(db.survey_tc, survey_tc_form_row)
+        db.survey_tc.practice.default = practice_id
+        db.survey_tc.practice.readable = False
+        db.survey_tc.practice.writable = False
+        if survey_tc_form.process().accepted:
+            session.flash = "TC Form updated!"
+            _redirect_after_submit()
+
+        survey_tc_form_row = db(db.survey_tc.practice == practice_id).select().last()
+        survey_tc_form = SQLFORM(db.survey_tc, survey_tc_form_row)
+        db.survey_tc.practice.default = practice_id
+        db.survey_tc.practice.readable = False
+        db.survey_tc.practice.writable = False
+        if survey_tc_form.process().accepted:
+            session.flash = "TC Form updated!"
+            _redirect_after_submit()
+
+        survey_tc_form_row = db(db.survey_tc.practice == practice_id).select().last()
+        survey_tc_form = SQLFORM(db.survey_tc, survey_tc_form_row)
+        db.survey_tc.practice.default = practice_id
+        db.survey_tc.practice.readable = False
+        db.survey_tc.practice.writable = False
+        if survey_tc_form.process().accepted:
+            session.flash = "TC Form updated!"
+            _redirect_after_submit()
+
+        survey_tc_form_row = db(db.survey_tc.practice == practice_id).select().last()
+        survey_tc_form = SQLFORM(db.survey_tc, survey_tc_form_row)
+        db.survey_tc.practice.default = practice_id
+        db.survey_tc.practice.readable = False
+        db.survey_tc.practice.writable = False
+        if survey_tc_form.process().accepted:
+            session.flash = "TC Form updated!"
+            _redirect_after_submit()
 
     else:
         db[section].practice.default=practice_id
