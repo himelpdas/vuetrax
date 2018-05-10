@@ -1,0 +1,113 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Provider Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{=form.custom.begin}}
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-sm-12"><i class='fa fa-fw fa-user-md'></i> Name</div>
+                    <div class="col-sm-12">{{=form.custom.widget.providers}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-sm-12"><i class='fa fa-fw fa-id-card-o'></i> NPI</div>
+                    <div class="col-sm-12">{{=form.custom.widget.provider_npi}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-sm-12"><i class='fa fa-fw fa-id-card'></i> License</div>
+                    <div class="col-sm-12">{{=form.custom.widget.provider_license}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-sm-12"><i class='fa fa-fw fa-birthday-cake'></i> DOB</div>
+                    <div class="col-sm-12">{{=form.custom.widget.provider_dob}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-sm-12"><i class='fa fa-fw fa-list-alt'></i> Board</div>
+                    <div class="col-sm-12">{{=form.custom.widget.provider_board}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-sm-12"><i class='fa fa-fw fa-id-badge'></i> Credential</div>
+                    <div class="col-sm-12">{{=form.custom.widget.provider_credential}}</div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h5>Days and Hours</h5>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-sm-12"><i class='fa fa-fw fa-calendar'></i> Days</div>
+                    <div class="col-sm-12">{{=form.custom.widget.days}}</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-sm-12"><i class='fa fa-fw fa-clock-o'></i> Open</div>
+                    <div class="col-sm-12">{{=form.custom.widget.hours_from}}</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-sm-12"><i class='fa fa-fw fa-clock-o'></i> Close</div>
+                    <div class="col-sm-12">{{=form.custom.widget.hours_to}}</div>
+                </div>
+            </div>
+
+        </div>
+        <hr>
+        <h5>Practice Information</h5>
+        <hr>
+        <div class="row">
+            <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-hospital-o'></i> Practice Name</div>
+            <div class="col-md-7 col-sm-12">{{=form.custom.widget.practice_name}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-home'></i> Practice Specialty</div>
+            <div class="col-md-7 col-sm-12">{{=form.custom.widget.practice_specialty}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-map-marker'></i> Address</div>
+            <div class="col-md-7 col-sm-12">{{=form.custom.widget.address}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-phone'></i> Phone</div>
+            <div class="col-md-7 col-sm-12">{{=form.custom.widget.phone}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-fax'></i> Fax</div>
+            <div class="col-md-7 col-sm-12">{{=form.custom.widget.fax}}</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-id-card'></i> Practice NPI</div>
+            <div class="col-md-7 col-sm-12">{{=form.custom.widget.practice_npi}}</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-envelope'></i> Practice Email</div>
+            <div class="col-md-7 col-sm-12">{{=form.custom.widget.practice_email}}</div>
+        </div>
+
+
+    </div>
+    <div class="modal-footer">
+    {{=form.custom.submit}}
+
+    </div>
+{{=form.custom.end}}
+</div>
