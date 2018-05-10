@@ -155,90 +155,15 @@
         {{=practice_form.custom.end}}
         </div>
     </div>
-{{for admin_form_id in admin_forms:}}
-{{admin_form = admin_forms[admin_form_id]}}
-    <div class="modal fade" id="trainer_assign{{=admin_form_id}}" tabindex="-1" role="dialog"
+    <div class="modal fade" id="trainer_assign_modal" tabindex="-1" role="dialog"
          aria-labelledby="exampleModalLabel" aria-hidden="true"
          style="min-height:700px;">
-        <div class="modal-dialog modal-lg" role="document">
-        {{=admin_form.custom.begin}}
+        <div class="modal-dialog modal-lg" id="trainer_assign_content" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Admin</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12">
-                            <h5>Select Practice Member:</h5>
-                        </div>
-                        <div class="col-md-7 col-sm-12">
-                        {{=admin_form.custom.widget.trainer}}
-                        </div>
-                        <br>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12">
-                            <h5>Practice PPS:</h5>
-                        </div>
-                        <div class="col-md-5 col-sm-12">
-                        {{=admin_form.custom.widget.pps}}
-                        </div>
-                        <br>
-                    </div>
-                    <hr>
-                    <div class="col-md-12 col-sm-12 center">
-                        <h5>Insight Management Client:</h5>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12">
-                            <i class='fa fa-fw fa-user'></i> App Tool Username
-                        </div>
-                        <div class="col-md-7 col-sm-12">
-                        {{=admin_form.custom.widget.app_tool_username}}
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12">
-                            <i class='fa fa-fw fa-unlock-alt'></i> App Tool Password
-                        </div>
-                        <div class="col-md-7 col-sm-12">
-                        {{=admin_form.custom.widget.app_tool_password}}
-                        </div>
-
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12">
-                            <i class='fa fa-fw fa-id-card'></i> Survey Tool Username
-                        </div>
-                        <div class="col-md-7 col-sm-12">
-                        {{=admin_form.custom.widget.survey_tool_password}}
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12">
-                            <i class='fa fa-fw fa-id-card-o'></i> Survey Tool Password
-                        </div>
-                        <div class="col-md-7 col-sm-12">
-                        {{=admin_form.custom.widget.survey_tool_password}}
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                {{=admin_form.custom.submit}}
-                </div>
+                Loading...
             </div>
-        {{=admin_form.custom.end}}
         </div>
     </div>
-{{pass}}
 {{for emr_form_id in emr_forms:}}
 {{emr_form = emr_forms[emr_form_id]}}
     <div class="modal fade" id="emr_form_{{=emr_form_id}}" tabindex="-1" role="dialog"
@@ -475,8 +400,8 @@
                         <div class="col-sm-3">
                             <button type="button" class="btn btn-sm btn-success faa-parent animated-hover"
                                     data-toggle="modal" title="Administrator"
-                                    data-target="#trainer_assign{{=each.id}}"><i
-                                    class="fa  faa-bounce fa-fw fa-smile-o"></i>
+                                    data-target="#trainer_assign_modal" onclick="web2py_component('{{=URL(f='process_admin_form.load', args=[each.id], scheme=True)}}', 'trainer_assign_content');">
+                                <i class="fa  faa-bounce fa-fw fa-smile-o"></i>
                             </button>
                         </div>
 
@@ -737,7 +662,7 @@
 </script>
 <script type="text/javascript">
     //https://github.com/davidstutz/bootstrap-multiselect/issues/741
-    $(document).ready(function () {
+    $(document).ajaxComplete(function () {
         $('[multiple="multiple"]').multiselect({
             templates: {
                 li: '<li><a class="dropdown-item"><label class="m-0 pl-2 pr-0"></label></a></li>',
@@ -749,6 +674,7 @@
             buttonContainer: '<div class="dropdown" />',
             buttonClass: 'btn btn-secondary',
             enableFiltering: true,
+            maxHeight: 200,
             enableCaseInsensitiveFiltering: true
         });
     });

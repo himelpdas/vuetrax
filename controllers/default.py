@@ -374,23 +374,7 @@ def template_library():
     return dict()
     
 
-def _process_admin_form(practice, admin_forms):
-    admin_form = SQLFORM.factory(
-        Field('trainer', 'list:reference auth_user', default=practice.trainer,
-              requires=IS_IN_DB(db, 'auth_user.id', '%(first_name)s %(last_name)s (%(id)s)', multiple=True)),
-        Field("pps"),
-        Field("app_tool_username"),
-        Field("app_tool_password"),
-        Field("survey_tool_username"),
-        Field("survey_tool_password"),
-    )
 
-    if admin_form.process(formname="admin_form_%s" % practice.id).accepted:
-        db(db.practice.id == practice.id).update(**db.practice._filter_fields(admin_form.vars))
-        session.flash = "Admin Info Updated!"
-        _redirect_after_submit()
-
-    admin_forms[practice.id] = admin_form
     
 
 def _process_emr_form(practice, emr_forms, emr_forms_green):
@@ -557,7 +541,6 @@ def home():
 
     for practice in practices:
         _process_emr_form(practice, emr_forms, emr_forms_green)
-        _process_admin_form(practice, admin_forms)
         _process_cc_form(practice, cc_forms, cc_forms_meta)
         _process_baa_form(practice, baa_forms, baa_links)
         _process_message_form(practice, message_forms, message_links)
@@ -568,7 +551,7 @@ def home():
 
     return dict(practices=practices, practice_form=practice_form,
                 emr_forms=emr_forms, tagout=tagout, _get_progress_by_practice=_get_progress_by_practice,
-                admin_forms=admin_forms, emr_forms_green=emr_forms_green, cc_forms=cc_forms,
+                emr_forms_green=emr_forms_green, cc_forms=cc_forms,
                 cc_forms_meta=cc_forms_meta, baa_forms=baa_forms, baa_links=baa_links, page=page,
                 items_per_page=items_per_page, pages=pages, red_bells=red_bells, message_forms=message_forms,
                 message_links=message_links)
@@ -653,7 +636,6 @@ def process_practice_info_form():
         Field('practice_tax_id', default=practice.practice_tax_id),
     )
 
-
     if practice_info_form.process(formname="practice_info_form_%s" % practice.id).accepted:
         db(db.practice.id == practice.id).update(**db.practice._filter_fields(practice_info_form.vars))
         session.flash = "Practice Updated!"
@@ -661,3 +643,27 @@ def process_practice_info_form():
         #_redirect_after_submit()
 
     return dict(form=practice_info_form)
+
+
+def process_admin_form():
+
+    practice_id = request.args[0]
+
+    practice = db(db.practice.id == practice_id).select().last()
+
+    admin_form = SQLFORM.factory(
+        Field('trainer', 'list:reference auth_user', default=practice.trainer,
+              requires=IS_IN_DB(db, 'auth_user.id', '%(first_name)s %(last_name)s (%(id)s)', multiple=True)),
+        Field("pps", default = practice.pps),
+        Field("app_tool_username", default = practice.app_tool_username),
+        Field("app_tool_password", default = practice.app_tool_password),
+        Field("survey_tool_username", default = practice.survey_tool_username),
+        Field("survey_tool_password", default = practice.survey_tool_password),
+    )
+
+    if admin_form.process(formname="admin_form_%s" % practice.id).accepted:
+        db(db.practice.id == practice.id).update(**db.practice._filter_fields(admin_form.vars))
+        session.flash = "Admin Info Updated!"
+        redirect(URL(args=request.args))
+
+    return dict(form=admin_form)
