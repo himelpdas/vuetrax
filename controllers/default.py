@@ -92,6 +92,7 @@ def tracking():
     return dict()
 
 
+@auth.requires_login()
 def router():
     if my_role in ["admin", "trainer"]:
         redirect(URL("home"))
@@ -99,6 +100,7 @@ def router():
         practice = db(db.practice.trainer.contains(auth.user.id)).select().first()
         if practice:
             redirect(URL("dashboard", vars=dict(practice=practice.id, section="gap")))
+    session.flash = "Please request an admin to give privelages to your account."
     redirect(URL('default', 'user', args=['profile']))
 
 
@@ -203,19 +205,19 @@ def _recurse_questions(d, l, p=None, pt=None):
 
 
 def _get_question_progress(identifiers, pid):
-    @cache("question_progress_%s"%pid, time_expire=300, cache_model=cache.disk)
-    def inner():
-        denominator = len(identifiers)
-        answered = []
-        for identifier in identifiers:
-            answer = db((db.answer.practice==pid) & (db.answer.identifier == identifier)).select().last()
-            answered.append(bool(answer))
-        numerator = answered.count(True)
+    #@cache("question_progress_%s"%pid, time_expire=300, cache_model=cache.disk)
 
-        answered_by_id = OrderedDict(zip(identifiers, answered))
+    denominator = len(identifiers)
+    answered = []
+    for identifier in identifiers:
+        answer = db((db.answer.practice==pid) & (db.answer.identifier == identifier)).select().last()
+        answered.append(bool(answer))
+    numerator = answered.count(True)
 
-        return dict(percent = float(numerator) / float(denominator), answered_by_id = answered_by_id)
-    return inner()
+    answered_by_id = OrderedDict(zip(identifiers, answered))
+
+    return dict(percent = float(numerator) / float(denominator), answered_by_id = answered_by_id)
+
 
 
 def _set_question_navigation(d, identifiers, current_id, practice_id, section):
@@ -376,60 +378,9 @@ def nt_download():
 
 def template_library():
     return dict()
-
-
-def _process_practice_info_form(practice, practice_info_forms):
-    practice_info_form = SQLFORM.factory(
-        Field('practice_specialty',
-              requires=IS_IN_SET(['Internal Medicine', 'Pediatrics', 'Family']),
-              default=practice.practice_specialty
-              ),
-        Field('address', default=practice.address),
-        Field('practice_name', default=practice.practice_name),
-        Field('phone', default=practice.phone),
-        Field('fax', default=practice.fax),
-        Field('days', "list:string", default=practice.days),
-        Field("hours_from", "list:string", requires=IS_TIME(), default=practice.hours_from),
-        Field("hours_to", "list:string", requires=IS_TIME(), default=practice.hours_to),
-        Field('credentials', default=practice.credentials),
-        Field("practice_email", default=practice.practice_email, requires=IS_EMAIL()),
-        Field('dea_number', default=practice.dea_number),
-        Field('providers', "list:string", default=practice.providers),
-        Field('provider_license', "list:string", default=practice.provider_license),
-        Field('provider_npi', "list:string", default=practice.provider_npi),
-        Field('provider_dob', "list:string", default=practice.provider_dob),
-        Field('provider_board', "list:string", default=practice.provider_board),
-        Field('provider_credential', "list:string", default=practice.provider_credential),
-        Field('practice_npi', default=practice.practice_npi),
-        Field('practice_tax_id', default=practice.practice_tax_id),
-
-    )
-
-    if practice_info_form.process(formname="practice_info_form_%s" % practice.id).accepted:
-        db(db.practice.id == practice.id).update(**db.practice._filter_fields(practice_info_form.vars))
-        session.flash = "Practice Updated!"
-        _redirect_after_submit()
-
-    practice_info_forms[practice.id] = practice_info_form
     
 
-def _process_admin_form(practice, admin_forms):
-    admin_form = SQLFORM.factory(
-        Field('trainer', 'list:reference auth_user', default=practice.trainer,
-              requires=IS_IN_DB(db, 'auth_user.id', '%(first_name)s %(last_name)s (%(id)s)', multiple=True)),
-        Field("pps"),
-        Field("app_tool_username"),
-        Field("app_tool_password"),
-        Field("survey_tool_username"),
-        Field("survey_tool_password"),
-    )
 
-    if admin_form.process(formname="admin_form_%s" % practice.id).accepted:
-        db(db.practice.id == practice.id).update(**db.practice._filter_fields(admin_form.vars))
-        session.flash = "Admin Info Updated!"
-        _redirect_after_submit()
-
-    admin_forms[practice.id] = admin_form
     
 
 def _process_emr_form(practice, emr_forms, emr_forms_green):
@@ -499,18 +450,24 @@ def _process_cc_form(practice, cc_forms, cc_forms_meta):
 
 def _process_baa_form(practice, baa_forms, baa_links):
     baa_form = SQLFORM.factory(
-        Field('baa_file_name', requires=IS_NOT_EMPTY()),
-        Field('baa_file_upload', 'upload'),
+        Field('file_name', requires=IS_NOT_EMPTY()),
+        Field('file_upload', 'upload'),
     )
 
     if baa_form.process(formname="baa_form_%s" % practice.id).accepted:
-        db(db.practice.id == practice.id).update(**db.practice._filter_fields(baa_form.vars))
-        session.flash = "BAA Form Updated!"
+        print baa_form.vars
+        db.uploads.insert(practice=practice.id, **db.uploads._filter_fields(baa_form.vars))
+        session.flash = "Document uploaded!"
         _redirect_after_submit()
 
     baa_forms[practice.id] = baa_form
 
-    baa_links[practice.id] = dict(file_name = practice.baa_file_name, file_upload = practice.baa_file_upload)
+    baa_links[practice.id] = []
+
+    uploads = db(db.uploads.practice == practice.id).select()
+
+    for u in uploads:
+        baa_links[practice.id].append(dict(file_name=u.file_name, file_upload=u.file_upload))
 
 
 def _process_message_form(practice, message_forms, message_links):
@@ -533,8 +490,10 @@ def _redirect_after_submit():
     cache.ram.clear()
     redirect(URL(args=request.args, vars=request.get_vars))
 
+
 def _get_admin_ids():
     pass
+
 
 import math
 import datetime
@@ -575,7 +534,6 @@ def home():
         id = db.practice.insert(**db.practice._filter_fields(practice_form.vars))
         redirect(URL(vars=request.get_vars))
 
-    practice_info_forms = {}
     emr_forms = {}
     emr_forms_green = {}
     admin_forms = {}
@@ -588,9 +546,7 @@ def home():
     red_bells = {}
 
     for practice in practices:
-        _process_practice_info_form(practice, practice_info_forms)
         _process_emr_form(practice, emr_forms, emr_forms_green)
-        _process_admin_form(practice, admin_forms)
         _process_cc_form(practice, cc_forms, cc_forms_meta)
         _process_baa_form(practice, baa_forms, baa_links)
         _process_message_form(practice, message_forms, message_links)
@@ -599,20 +555,23 @@ def home():
 
     ###print request.post_vars
 
-    return dict(practices=practices, practice_form=practice_form, practice_info_forms=practice_info_forms,
+    return dict(practices=practices, practice_form=practice_form,
                 emr_forms=emr_forms, tagout=tagout, _get_progress_by_practice=_get_progress_by_practice,
-                admin_forms=admin_forms, emr_forms_green=emr_forms_green, cc_forms=cc_forms,
+                emr_forms_green=emr_forms_green, cc_forms=cc_forms,
                 cc_forms_meta=cc_forms_meta, baa_forms=baa_forms, baa_links=baa_links, page=page,
                 items_per_page=items_per_page, pages=pages, red_bells=red_bells, message_forms=message_forms,
                 message_links=message_links)
 
 
 def _get_progress_by_practice(practice_id, section):
-    slides = json.loads(_get_private_file('slides_%s.json' % section), object_pairs_hook=collections.OrderedDict)
-    question_order = []
-    _recurse_questions(slides, question_order)
-    progress = _get_question_progress(question_order, practice_id)
-    return progress
+    @cache("progress_by_practice_%s_%s" % (practice_id, section), time_expire=600, cache_model=cache.disk)
+    def inner():
+        slides = json.loads(_get_private_file('slides_%s.json' % section), object_pairs_hook=collections.OrderedDict)
+        question_order = []
+        _recurse_questions(slides, question_order)
+        progress = _get_question_progress(question_order, practice_id)
+        return progress
+    return inner()
 
 
 def user():
@@ -653,3 +612,65 @@ def call():
     return service()
 
 
+def process_practice_info_form():
+    practice_id = request.args[0]
+
+    practice = db(db.practice.id == practice_id).select().last()
+
+    practice_info_form = SQLFORM.factory(
+        Field('practice_specialty',
+              requires=IS_IN_SET(['Internal Medicine', 'Pediatrics', 'Family']),
+              default=practice.practice_specialty
+              ),
+        Field('address', default=practice.address),
+        Field('practice_name', default=practice.practice_name),
+        Field('phone', default=practice.phone),
+        Field('fax', default=practice.fax),
+        Field('days', "list:string", default=practice.days),
+        Field("hours_from", "list:string", requires=IS_TIME(), default=practice.hours_from),
+        Field("hours_to", "list:string", requires=IS_TIME(), default=practice.hours_to),
+        Field('credentials', default=practice.credentials),
+        Field("practice_email", default=practice.practice_email, requires=IS_EMAIL()),
+        Field('dea_number', default=practice.dea_number),
+        Field('providers', "list:string", default=practice.providers),
+        Field('provider_license', "list:string", default=practice.provider_license),
+        Field('provider_npi', "list:string", default=practice.provider_npi),
+        Field('provider_dob', "list:string", default=practice.provider_dob),
+        Field('provider_board', "list:string", default=practice.provider_board),
+        Field('provider_credential', "list:string", default=practice.provider_credential),
+        Field('practice_npi', default=practice.practice_npi),
+        Field('practice_tax_id', default=practice.practice_tax_id),
+    )
+
+    if practice_info_form.process(formname="practice_info_form_%s" % practice.id).accepted:
+        db(db.practice.id == practice.id).update(**db.practice._filter_fields(practice_info_form.vars))
+        session.flash = "Practice Updated!"
+        redirect(URL(args=request.args))
+        #_redirect_after_submit()
+
+    return dict(form=practice_info_form)
+
+
+def process_admin_form():
+
+    practice_id = request.args[0]
+
+    practice = db(db.practice.id == practice_id).select().last()
+
+    admin_form = SQLFORM.factory(
+        Field('trainer', 'list:reference auth_user', default=practice.trainer,
+              requires=IS_IN_DB(db, 'auth_user.id', '%(first_name)s %(last_name)s (%(id)s)', multiple=True)),
+        Field("pps", default = practice.pps),
+        Field("app_tool_username", default = practice.app_tool_username),
+        Field("app_tool_password", default = practice.app_tool_password),
+        Field("survey_tool_username", default = practice.survey_tool_username),
+        Field("survey_tool_password", default = practice.survey_tool_password),
+    )
+
+    if admin_form.process(formname="admin_form_%s" % practice.id).accepted:
+        print admin_form.vars
+        db(db.practice.id == practice.id).update(**db.practice._filter_fields(admin_form.vars))
+        session.flash = "Admin Info Updated!"
+        redirect(URL(args=request.args))
+
+    return dict(form=admin_form)

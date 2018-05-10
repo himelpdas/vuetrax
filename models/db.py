@@ -30,6 +30,8 @@ if not request.env.web2py_runtime_gae:
     # ---------------------------------------------------------------------
     from sys import platform
     if platform == "linux" or platform == "linux2":
+        response.optimize_css = 'concat,minify,inline'
+        response.optimize_js = 'concat,minify,inline'
         db = DAL('mysql://vuetrax:L3+$G0m3+$1357@localhost/vuetrax',
                  pool_size=myconf.get('db.pool_size'),
                  migrate_enabled=myconf.get('db.migrate'),

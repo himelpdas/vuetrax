@@ -1,0 +1,75 @@
+        {{=form.custom.begin}}
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <h5>Select Practice Member:</h5>
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                        {{=form.custom.widget.trainer}}
+                        </div>
+                        <br>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <h5>Practice PPS:</h5>
+                        </div>
+                        <div class="col-md-5 col-sm-12">
+                        {{=form.custom.widget.pps}}
+                        </div>
+                        <br>
+                    </div>
+                    <hr>
+                    <div class="col-md-12 col-sm-12 center">
+                        <h5>Insight Management Client:</h5>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <i class='fa fa-fw fa-user'></i> App Tool Username
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                        {{=form.custom.widget.app_tool_username}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <i class='fa fa-fw fa-unlock-alt'></i> App Tool Password
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                        {{=form.custom.widget.app_tool_password}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <i class='fa fa-fw fa-id-card'></i> Survey Tool Username
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                        {{=form.custom.widget.survey_tool_password}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <i class='fa fa-fw fa-id-card-o'></i> Survey Tool Password
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                        {{=form.custom.widget.survey_tool_password}}
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                {{=form.custom.submit}}
+                </div>
+            </div>
+        {{=form.custom.end}}
