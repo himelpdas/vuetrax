@@ -70,20 +70,16 @@ db.define_table(
 db.define_table(
     "practice",
     # Field("physician", 'list:string'),
-    Field("app_tool_username"),
-    Field("app_tool_password"),
+
     Field('providers', "list:string"),
-    Field("survey_tool_username"),
-    Field("survey_tool_password"),
+
     Field("practice_specialty"),
     Field("address", default=""),
     Field("phone"),
     Field('trainer', 'list:reference auth_user', default=[],
           requires=IS_IN_DB(db, 'auth_user.id', '%(first_name)s %(last_name)s (%(id)s)', multiple=True)),
-    Field("app_tool_username"),
-    Field("app_tool_password"),
-    Field("survey_tool_username"),
-    Field("survey_tool_password"),
+
+
     Field("fax"),
     Field("days", "list:string"),
     Field("hours_from", "list:string"),
@@ -98,6 +94,7 @@ db.define_table(
     Field("provider_board", "list:string"),
     Field("provider_credential", "list:string"),
     Field("practice_tax_id"),
+    Field("pps"),
     Field("emr"),
     Field("emr_email"),
     Field("emr_problem", "boolean"),
@@ -125,6 +122,14 @@ db.define_table(
     #auth.signature,
     *practice_form_fields
 )
+
+
+db.define_table("uploads",
+    Field("practice", db.practice),
+    Field('file_name'),
+    Field('file_upload', 'upload'),
+)
+
 
 db.practice._after_insert.append(lambda f, i: _keywords(db(db.practice.id==i)))
 db.practice._after_update.append(lambda s, f: _keywords(s))
