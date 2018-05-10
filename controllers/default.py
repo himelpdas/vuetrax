@@ -100,6 +100,7 @@ def router():
         practice = db(db.practice.trainer.contains(auth.user.id)).select().first()
         if practice:
             redirect(URL("dashboard", vars=dict(practice=practice.id, section="gap")))
+    session.flash = "Please request an admin to give privelages to your account."
     redirect(URL('default', 'user', args=['profile']))
 
 
