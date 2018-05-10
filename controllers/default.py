@@ -200,18 +200,18 @@ def _recurse_questions(d, l, p=None, pt=None):
 
 def _get_question_progress(identifiers, pid):
     #@cache("question_progress_%s"%pid, time_expire=300, cache_model=cache.disk)
-    def inner():
-        denominator = len(identifiers)
-        answered = []
-        for identifier in identifiers:
-            answer = db((db.answer.practice==pid) & (db.answer.identifier == identifier)).select().last()
-            answered.append(bool(answer))
-        numerator = answered.count(True)
 
-        answered_by_id = OrderedDict(zip(identifiers, answered))
+    denominator = len(identifiers)
+    answered = []
+    for identifier in identifiers:
+        answer = db((db.answer.practice==pid) & (db.answer.identifier == identifier)).select().last()
+        answered.append(bool(answer))
+    numerator = answered.count(True)
 
-        return dict(percent = float(numerator) / float(denominator), answered_by_id = answered_by_id)
-    return inner()
+    answered_by_id = OrderedDict(zip(identifiers, answered))
+
+    return dict(percent = float(numerator) / float(denominator), answered_by_id = answered_by_id)
+
 
 
 def _set_question_navigation(d, identifiers, current_id, practice_id, section):
@@ -494,8 +494,10 @@ def _redirect_after_submit():
     cache.ram.clear()
     redirect(URL(args=request.args, vars=request.get_vars))
 
+
 def _get_admin_ids():
     pass
+
 
 import math
 import datetime
@@ -567,11 +569,14 @@ def home():
 
 
 def _get_progress_by_practice(practice_id, section):
-    slides = json.loads(_get_private_file('slides_%s.json' % section), object_pairs_hook=collections.OrderedDict)
-    question_order = []
-    _recurse_questions(slides, question_order)
-    progress = _get_question_progress(question_order, practice_id)
-    return progress
+    @cache("progress_by_practice_%s_%s" % (practice_id, section), time_expire=300, cache_model=cache.disk)
+    def inner():
+        slides = json.loads(_get_private_file('slides_%s.json' % section), object_pairs_hook=collections.OrderedDict)
+        question_order = []
+        _recurse_questions(slides, question_order)
+        progress = _get_question_progress(question_order, practice_id)
+        return progress
+    return inner()
 
 
 def user():
