@@ -613,6 +613,7 @@ def call():
 
 
 def process_practice_info_form():
+    practice_id = request.args[0]
 
     practice = db(db.practice.id == practice_id).select().last()
 
