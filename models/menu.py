@@ -54,7 +54,7 @@ is_emr_training = section == "emr"
 
 is_training = any([is_provider, is_gap, is_front, is_staff_training, is_emr_training])
 
-is_survey = "survey" in section
+is_survey = "survey" in (section or "")
 
 is_survey_tc = section == "survey_tc"
 

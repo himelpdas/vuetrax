@@ -11,6 +11,14 @@
     "type": "yesNo",
     "inquire": "Does your team have daily huddle meetings?"
   },
+  "t3a": {
+    "type": "response",
+    "inquire": "Please list any ethnicity which represents greater than 5% of your patient population."
+  },
+  "t3b": {
+    "type": "response",
+    "inquire": "How frequently does your practice generate lists for missing services? (Monthly, quarterly, etc?)"
+  },
   "t4": {
     "type": "yesNo",
     "inquire": "Do you do Depression screenings?"

@@ -71,6 +71,18 @@
     "type": "response",
     "inquire": "What jobs does your practice have? - Please List Them Here:"
   },
+   "tc2aa": {
+    "type": "response",
+    "inquire": "Approximately what percent of your patients are Medicaid (Either Fee-For-Service or Managed Care.)"
+  },
+   "tc2aaa": {
+    "type": "response",
+    "inquire": "Please list any ethnicity which represents greater than 5% of your patient population."
+  },
+  "tc2aaaa": {
+    "type": "response",
+    "inquire": "How frequently does your practice generate lists for missing services? (Monthly, quarterly, etc?)"
+  },
     "tc2c": {
     "type": "yesNo",
     "inquire": "Are you in an IPA?",
