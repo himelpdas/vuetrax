@@ -159,58 +159,61 @@ def dashboard():
         first_question = question_order[0]
 
     elif is_survey:
+        def onvalidation(form):
+            form.vars.practice =practice_id
+
         survey_tc_form_row = db(db.survey_tc.practice == practice_id).select().last()
-        survey_tc_form = SQLFORM(db.survey_tc, survey_tc_form_row)
+        survey_tc_form = SQLFORM(db.survey_tc, survey_tc_form_row, keepvalues=True)
         db.survey_tc.practice.default = practice_id
         db.survey_tc.practice.readable = False
         db.survey_tc.practice.writable = False
-        if survey_tc_form.process().accepted:
+        if survey_tc_form.process(onvalidation = onvalidation).accepted:
             session.flash = "TC Form updated!"
             _redirect_after_submit()
 
-        survey_tc_form_row = db(db.survey_tc.practice == practice_id).select().last()
-        survey_tc_form = SQLFORM(db.survey_tc, survey_tc_form_row)
-        db.survey_tc.practice.default = practice_id
-        db.survey_tc.practice.readable = False
-        db.survey_tc.practice.writable = False
-        if survey_tc_form.process().accepted:
-            session.flash = "TC Form updated!"
+        survey_km_form_row = db(db.survey_km.practice == practice_id).select().last()
+        survey_km_form = SQLFORM(db.survey_km, survey_km_form_row, keepvalues=True)
+        db.survey_km.practice.default = practice_id
+        db.survey_km.practice.readable = False
+        db.survey_km.practice.writable = False
+        if survey_km_form.process(onvalidation = onvalidation).accepted:
+            session.flash = "KM Form updated!"
             _redirect_after_submit()
 
-        survey_tc_form_row = db(db.survey_tc.practice == practice_id).select().last()
-        survey_tc_form = SQLFORM(db.survey_tc, survey_tc_form_row)
-        db.survey_tc.practice.default = practice_id
-        db.survey_tc.practice.readable = False
-        db.survey_tc.practice.writable = False
-        if survey_tc_form.process().accepted:
-            session.flash = "TC Form updated!"
+        survey_ac_form_row = db(db.survey_ac.practice == practice_id).select().last()
+        survey_ac_form = SQLFORM(db.survey_ac, survey_ac_form_row, keepvalues=True)
+        db.survey_ac.practice.default = practice_id
+        db.survey_ac.practice.readable = False
+        db.survey_ac.practice.writable = False
+        if survey_ac_form.process(onvalidation = onvalidation).accepted:
+            session.flash = "AC Form updated!"
             _redirect_after_submit()
 
-        survey_tc_form_row = db(db.survey_tc.practice == practice_id).select().last()
-        survey_tc_form = SQLFORM(db.survey_tc, survey_tc_form_row)
-        db.survey_tc.practice.default = practice_id
-        db.survey_tc.practice.readable = False
-        db.survey_tc.practice.writable = False
-        if survey_tc_form.process().accepted:
-            session.flash = "TC Form updated!"
+        survey_cm_form_row = db(db.survey_cm.practice == practice_id).select().last()
+        survey_cm_form = SQLFORM(db.survey_cm, survey_cm_form_row, keepvalues=True)
+        db.survey_cm.practice.default = practice_id
+        db.survey_cm.practice.readable = False
+        db.survey_cm.practice.writable = False
+        if survey_cm_form.process(onvalidation = onvalidation).accepted:
+            session.flash = "CM Form updated!"
             _redirect_after_submit()
 
-        survey_tc_form_row = db(db.survey_tc.practice == practice_id).select().last()
-        survey_tc_form = SQLFORM(db.survey_tc, survey_tc_form_row)
-        db.survey_tc.practice.default = practice_id
-        db.survey_tc.practice.readable = False
-        db.survey_tc.practice.writable = False
-        if survey_tc_form.process().accepted:
-            session.flash = "TC Form updated!"
+        survey_cc_form_row = db(db.survey_cc.practice == practice_id).select().last()
+        survey_cc_form = SQLFORM(db.survey_cc, survey_cc_form_row, keepvalues=True)
+        db.survey_cc.practice.default = practice_id
+        db.survey_cc.practice.readable = False
+        db.survey_cc.practice.writable = False
+        if survey_cc_form.process(onvalidation = onvalidation).accepted:
+            session.flash = "CC Form updated!"
             _redirect_after_submit()
 
-        survey_tc_form_row = db(db.survey_tc.practice == practice_id).select().last()
-        survey_tc_form = SQLFORM(db.survey_tc, survey_tc_form_row)
-        db.survey_tc.practice.default = practice_id
-        db.survey_tc.practice.readable = False
-        db.survey_tc.practice.writable = False
-        if survey_tc_form.process().accepted:
-            session.flash = "TC Form updated!"
+        survey_qi_form_row = db(db.survey_qi.practice == practice_id).select().last()
+        survey_qi_form = SQLFORM(db.survey_qi, survey_qi_form_row, keepvalues=True)
+        db.survey_qi.practice.default = practice_id
+        db.survey_qi.practice.readable = False
+        db.survey_qi.practice.writable = False
+        if survey_qi_form.process(onvalidation = onvalidation).accepted:
+            session.flash = "QI Form updated!"
             _redirect_after_submit()
 
     else:
