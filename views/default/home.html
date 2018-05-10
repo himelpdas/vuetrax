@@ -19,7 +19,7 @@
                         Switch Profile
                     </button>
                 {{usrs = db(db.auth_user.id>0).select()}}
-                {{usrs = filter(lambda e: db(db.role.owner_id==e.id).select(orderby=db.role.id).last() in ["admin", "trainer"], usrs)}}
+                {{usrs = filter(lambda e: getattr(db(db.role.owner_id==e.id).select(orderby=db.role.id).last(), "role", None) in ["admin", "trainer"], usrs)}}
                     <div style="position: relative;" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="#">All</a>
                         <div class="dropdown-divider"></div>
