@@ -695,6 +695,7 @@ def process_practice_info_form():
         Field('provider_credential', "list:string", default=practice.provider_credential),
         Field('practice_npi', default=practice.practice_npi),
         Field('practice_tax_id', default=practice.practice_tax_id),
+
     )
 
     if practice_info_form.process(formname="practice_info_form_%s" % practice.id).accepted:

@@ -102,7 +102,10 @@
             <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-envelope'></i> Practice Email</div>
             <div class="col-md-7 col-sm-12">{{=form.custom.widget.practice_email}}</div>
         </div>
-
+        <div class="row">
+            <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-envelope'></i> Practice Tax ID</div>
+            <div class="col-md-7 col-sm-12">{{=form.custom.widget.practice_tax_id}}</div>
+        </div>
 
     </div>
     <div class="modal-footer">
