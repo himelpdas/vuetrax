@@ -70,7 +70,7 @@ db.define_table(
 db.define_table(
     "practice",
     # Field("physician", 'list:string'),
-
+    Field("last_updated", 'datetime'),
     Field('providers', "list:string"),
 
     Field("practice_specialty"),
