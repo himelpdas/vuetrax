@@ -80,3 +80,6 @@ if auth.is_logged_in():
         my_role = getattr(db(db.role.owner_id == auth.user.id).select().last(), "role", None) or "usr"
 else:
     my_role = "guest"
+
+
+search = request.vars["search"]
