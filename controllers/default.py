@@ -127,6 +127,8 @@ def _get_tracking_table():
 
 @auth.requires_login()
 def dashboard():
+    if search:
+        redirect(URL('home', vars=dict(search=search)))
 
     progress = 0.0
 
@@ -305,7 +307,9 @@ def _search_cards(search):
 
 
 def questions():
-    
+    if search:
+        redirect(URL('home', vars=dict(search=search)))
+
     is_upload = is_yes_no = is_response = is_download = None
 
     progress = 0.0
