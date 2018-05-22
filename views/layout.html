@@ -65,12 +65,13 @@
 						<a class="btn btn-secondary {{if request.function in ['home', "dashboard"]:}}active{{pass}}" href="{{=URL('router')}}">
 							Home
 						</a>
-
+					<!--
                     {{if my_role in ["admin"]:}}
 						<a class="btn btn-secondary disabled" {{if request.function=='tracking':}}active{{pass}}" href="{{=URL('tracking')}}">
 							Tracking
 						</a>
-                    {{pass}}
+                    {{pass}}-->
+
                     {{if my_role in ["admin", "trainer"]:}}
 						<a class="btn btn-secondary {{if request.function=='profiles':}}active{{pass}}" href="{{=URL('profiles')}}">
 							Profiles
