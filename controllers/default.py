@@ -129,6 +129,7 @@ def _get_tracking_table():
 def dashboard():
     if search:
         redirect(URL('home', vars=dict(search=search)))
+
     progress = 0.0
 
     form = None
