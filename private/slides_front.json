@@ -232,7 +232,7 @@
   },
   "cc6ee": {
     "type": "response",
-    "inquire": "Please list (3) Specialist patient's are referred to:"
+    "inquire": "Please list (5) Specialist patient's are referred to:"
   },
   "cc1b": {
     "type": "yesNo",
