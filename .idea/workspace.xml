@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="418b3e98-cfd8-4300-9883-6dc931d8b62a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/private/slides_front.json" beforeDir="false" afterPath="$PROJECT_DIR$/private/slides_front.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/private/slides_gap.json" beforeDir="false" afterPath="$PROJECT_DIR$/private/slides_gap.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,25 +40,38 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="slides_gap.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/private/slides_gap.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="177" column="122" lean-forward="true" selection-start-line="177" selection-start-column="122" selection-end-line="177" selection-end-column="122" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="slides_staff.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/private/slides_staff.json">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-915">
+              <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="slides_front.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/private/slides_front.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="42" column="42" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
+            <state relative-caret-position="80">
+              <caret line="181" column="12" selection-start-line="181" selection-start-column="12" selection-end-line="181" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slides_gap.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/private/slides_gap.json">
+      <file leaf-file-name="slides_provider.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/private/slides_provider.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
-              <caret line="225" column="22" selection-start-line="225" selection-start-column="22" selection-end-line="225" selection-end-column="22" />
+            <state relative-caret-position="403">
+              <caret line="73" column="4" lean-forward="true" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -67,15 +81,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2397">
               <caret line="141" column="26" selection-start-line="141" selection-start-column="26" selection-end-line="141" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/default.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12274">
-              <caret line="722" column="45" selection-start-line="722" selection-start-column="45" selection-end-line="722" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -111,10 +116,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this link</find>
-      <find>trainer</find>
-      <find>trainers</find>
-      <find>template</find>
       <find>credit</find>
       <find>pagination</find>
       <find>fa</find>
@@ -141,6 +142,10 @@
       <find>es for</find>
       <find>class=&quot;col-md-7 col-sm-12&quot;</find>
       <find>tracking</find>
+      <find>structure</find>
+      <find>staff</find>
+      <find>team</find>
+      <find>template</find>
     </findStrings>
   </component>
   <component name="HgUpdateConfigurationSettings">
@@ -160,6 +165,7 @@
         <option value="$PROJECT_DIR$/views/default/home.html" />
         <option value="$PROJECT_DIR$/views/default/process_practice_info_form.load" />
         <option value="$PROJECT_DIR$/views/layout.html" />
+        <option value="$PROJECT_DIR$/private/slides_front.json" />
         <option value="$PROJECT_DIR$/private/slides_gap.json" />
       </list>
     </option>
@@ -450,13 +456,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/models/db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2278">
-          <caret line="134" column="23" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/layout.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1224">
@@ -801,19 +800,30 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/private/slides_staff.json">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-915">
+          <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/private/slides_provider.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="73" column="4" lean-forward="true" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/private/slides_front.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="42" column="42" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
+        <state relative-caret-position="80">
+          <caret line="181" column="12" selection-start-line="181" selection-start-column="12" selection-end-line="181" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/private/slides_gap.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="225" column="22" selection-start-line="225" selection-start-column="22" selection-end-line="225" selection-end-column="22" />
+        <state relative-caret-position="377">
+          <caret line="177" column="122" lean-forward="true" selection-start-line="177" selection-start-column="122" selection-end-line="177" selection-end-column="122" />
         </state>
       </provider>
     </entry>

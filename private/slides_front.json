@@ -30,13 +30,8 @@
         "name": "telephone_encounter.doc",
         "url": "policy/1-TC-B/telephone_encounter.docx",
         "icon": "file-word-o"
-      },
-      {
-        "name": "quarr_hedis_guide.doc",
-        "url": "policy/1-TC-A/TC-02_Job_Descriptions_Policy.docx",
-        "icon": "file-word-o"
       }
-    ]
+      ]
   },
   "ac1a": {
     "type": "yesNo",

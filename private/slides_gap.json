@@ -172,6 +172,11 @@
       }
     }
   },
+   "p16": {
+    "type": "response",
+    "inquire": "What is the practice's Team Structure?",
+    "template": "<p>Here are some Examples: Add Fields or number of Staff that fill these roles.</p><ul><li>Doctor: </li><li><ul><li>Medical Assistant: </li></ul></li></ul><ul><li>Front Desk: </li></ul><ul><li>Nurse Practitioner: </li></ul>"
+   },
   "tc8a": {
     "type": "yesNo",
     "inquire": "Does the practice have a Medical Home Brochure?",
