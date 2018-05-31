@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="418b3e98-cfd8-4300-9883-6dc931d8b62a" name="Default" comment="" />
+    <list default="true" id="418b3e98-cfd8-4300-9883-6dc931d8b62a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/private/slides_emr.json" beforeDir="false" afterPath="$PROJECT_DIR$/private/slides_emr.json" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,11 +47,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="slides_emr.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/private/slides_emr.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="slides_staff.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/private/slides_staff.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-833">
-              <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+            <state relative-caret-position="-524">
+              <caret line="82" column="20" lean-forward="true" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -66,17 +77,17 @@
       <file leaf-file-name="slides_front.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/private/slides_front.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="181" column="12" selection-start-line="181" selection-start-column="12" selection-end-line="181" selection-end-column="12" />
+            <state relative-caret-position="292">
+              <caret line="240" column="16" lean-forward="true" selection-start-line="240" selection-start-column="16" selection-end-line="240" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slides_provider.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="slides_provider.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/private/slides_provider.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3156">
-              <caret line="73" column="4" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
+            <state relative-caret-position="250">
+              <caret line="226" column="182" selection-start-line="226" selection-start-column="177" selection-end-line="226" selection-end-column="182" />
             </state>
           </provider>
         </entry>
@@ -99,20 +110,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/db.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2278">
-              <caret line="134" column="23" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>credit</find>
       <find>pagination</find>
       <find>fa</find>
       <find>add</find>
@@ -140,6 +141,7 @@
       <find>tracking</find>
       <find>structure</find>
       <find>staff</find>
+      <find>refer</find>
       <find>team</find>
       <find>template</find>
     </findStrings>
@@ -160,9 +162,10 @@
         <option value="$PROJECT_DIR$/views/default/home.html" />
         <option value="$PROJECT_DIR$/views/default/process_practice_info_form.load" />
         <option value="$PROJECT_DIR$/views/layout.html" />
-        <option value="$PROJECT_DIR$/private/slides_front.json" />
         <option value="$PROJECT_DIR$/private/slides_gap.json" />
         <option value="$PROJECT_DIR$/views/default/template_library.html" />
+        <option value="$PROJECT_DIR$/private/slides_front.json" />
+        <option value="$PROJECT_DIR$/private/slides_emr.json" />
       </list>
     </option>
   </component>
@@ -172,9 +175,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1739" />
-    <option name="y" value="-15" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
     <option name="width" value="2762" />
     <option name="height" value="1850" />
   </component>
@@ -374,13 +377,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2728" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-6" y="-6" width="1381" height="885" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12539515" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17695168" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5052687" side_tool="true" visible="true" weight="0.100217864" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4947313" visible="true" weight="0.100217864" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5055762" side_tool="true" visible="true" weight="0.122666664" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4944238" visible="true" weight="0.122666664" />
       <window_info anchor="bottom" id="Python Console" order="8" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.23367427" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -452,17 +455,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
-          <folding>
-            <element signature="e#4297#4303#1" expanded="true" />
-            <element signature="e#4828#4834#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/default/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -788,13 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/private/slides_front.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="181" column="12" selection-start-line="181" selection-start-column="12" selection-end-line="181" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/default/template_library.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -802,10 +787,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/private/slides_provider.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="226" column="182" selection-start-line="226" selection-start-column="177" selection-end-line="226" selection-end-column="182" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/private/slides_staff.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-833">
-          <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+        <state relative-caret-position="-524">
+          <caret line="82" column="20" lean-forward="true" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/private/slides_front.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="240" column="16" lean-forward="true" selection-start-line="240" selection-start-column="16" selection-end-line="240" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -816,10 +815,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/private/slides_provider.json">
+    <entry file="file://$PROJECT_DIR$/private/slides_emr.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3156">
-          <caret line="73" column="4" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
+        <state relative-caret-position="357">
+          <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
         </state>
       </provider>
     </entry>

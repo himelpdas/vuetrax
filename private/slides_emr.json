@@ -16,7 +16,7 @@
     "inquire": "Do you document patient no-shows?"
   },
   "e5": {
-    "type": "response",
+    "type": "yesNo",
     "inquire": "Do you have a Same-Day appointment block on your schedule, EVERY DAY that the practice is open?"
   },
   "e6": {
