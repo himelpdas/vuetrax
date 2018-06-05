@@ -72,7 +72,7 @@ IS_MASTER = False
 
 if auth.is_logged_in():
     if auth.user.email.lower() in ["gdewey@insightmanagement.org", "himel@insightmanagement.org",
-                                   "jason@insightmanagement.org"
+                                   "jason@insightmanagement.org", "rbanks@insightmanagement.org", "sdurgapasad@insightmanagement.org",
                                    ]:
         my_role = "admin"
         IS_MASTER = True
