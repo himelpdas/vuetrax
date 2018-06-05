@@ -21,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/views/default/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#!!top" expanded="true" />
               </folding>
@@ -60,7 +60,20 @@
         <entry file="file://$PROJECT_DIR$/controllers/default.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="56">
-              <caret line="693" column="17" lean-forward="true" selection-start-line="693" selection-start-column="17" selection-end-line="693" selection-end-column="17" />
+              <caret line="693" column="17" selection-start-line="693" selection-start-column="17" selection-end-line="693" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template_library.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/default/template_library.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#b#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#520#526#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -74,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="menu.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/menu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="74" column="134" selection-start-line="74" selection-start-column="134" selection-end-line="74" selection-end-column="134" />
+            <state relative-caret-position="496">
+              <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -87,7 +100,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>add</find>
       <find>submit</find>
       <find>rowspracti</find>
       <find>=pg</find>
@@ -117,6 +129,7 @@
       <find>template</find>
       <find>please download this link, sign, and upload below</find>
       <find>gdewey</find>
+      <find>download</find>
     </findStrings>
   </component>
   <component name="HgUpdateConfigurationSettings">
@@ -134,11 +147,11 @@
         <option value="$PROJECT_DIR$/views/default/home.html" />
         <option value="$PROJECT_DIR$/views/default/process_practice_info_form.load" />
         <option value="$PROJECT_DIR$/views/layout.html" />
-        <option value="$PROJECT_DIR$/views/default/template_library.html" />
         <option value="$PROJECT_DIR$/private/slides_front.json" />
         <option value="$PROJECT_DIR$/private/slides_emr.json" />
         <option value="$PROJECT_DIR$/private/slides_gap.json" />
         <option value="$PROJECT_DIR$/models/menu.py" />
+        <option value="$PROJECT_DIR$/views/default/template_library.html" />
       </list>
     </option>
   </component>
@@ -149,10 +162,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
-    <option name="width" value="2762" />
-    <option name="height" value="1770" />
+    <option name="x" value="2450" />
+    <option name="y" value="-25" />
+    <option name="width" value="1938" />
+    <option name="height" value="1103" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -345,13 +358,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
+    <frame x="2728" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17695168" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12539515" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5063197" side_tool="true" visible="true" weight="0.122666664" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4936803" visible="true" weight="0.122666664" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50632244" side_tool="true" visible="true" weight="0.100217864" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49367756" visible="true" weight="0.100217864" />
       <window_info anchor="bottom" id="Python Console" order="8" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.23367427" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -689,13 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/default/template_library.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/private/slides_provider.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3842">
@@ -755,7 +761,7 @@
     <entry file="file://$PROJECT_DIR$/views/default/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#!!top" expanded="true" />
           </folding>
@@ -772,14 +778,25 @@
     <entry file="file://$PROJECT_DIR$/controllers/default.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
-          <caret line="693" column="17" lean-forward="true" selection-start-line="693" selection-start-column="17" selection-end-line="693" selection-end-column="17" />
+          <caret line="693" column="17" selection-start-line="693" selection-start-column="17" selection-end-line="693" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/menu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="74" column="134" selection-start-line="74" selection-start-column="134" selection-end-line="74" selection-end-column="134" />
+        <state relative-caret-position="496">
+          <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/default/template_library.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#b#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#520#526#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
