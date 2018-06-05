@@ -8,16 +8,9 @@
     "inquire": "What is the Clinician Lead Credentials"
   },
   "tc1a3": {
-    "type": "upload",
-    "inquire": "Please download this link, sign, and upload below.",
-    "assets": [
-          {
-            "name": "roles_and_responsibilities.doc",
-            "url": "policy/1-TC-A/roles_and_responsibilities.docx",
-            "icon": "file-word-o"
-          }
-        ]
-  },
+    "type": "response",
+            "inquire": "Roles and Responsibilities - To Support Implementation of PCMH NYS Model and Ensure All Providers and Staff are Trained and Continuously Provide Patient Centered Care. - Please Type Name (Signature) Below:",
+     },
   "tc1ba": {
     "type": "yesNo",
     "inquire": "Is the Staff Lead the same as the provider?",
