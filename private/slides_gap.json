@@ -9,7 +9,7 @@
   },
   "tc1a3": {
     "type": "response",
-            "inquire": "Roles and Responsibilities - To Support Implementation of PCMH NYS Model and Ensure All Providers and Staff are Trained and Continuously Provide Patient Centered Care. - Please Type Name (Signature) Below:",
+            "inquire": "Roles and Responsibilities - To Support Implementation of PCMH NYS Model and Ensure All Providers and Staff are Trained and Continuously Provide Patient Centered Care. - Please Type Name (Signature) Below:"
      },
   "tc1ba": {
     "type": "yesNo",
