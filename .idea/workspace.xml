@@ -38,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slides_gap.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="slides_gap.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/private/slides_gap.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" column="230" lean-forward="true" selection-start-line="11" selection-start-column="230" selection-end-line="11" selection-end-column="230" />
+              <caret line="11" column="230" selection-start-line="11" selection-start-column="230" selection-end-line="11" selection-end-column="230" />
             </state>
           </provider>
         </entry>
@@ -74,14 +74,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template_library.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="template_library.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/default/template_library.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="231">
+              <caret line="91" column="14" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#b#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#520#526#0" expanded="true" />
+                <element signature="e#2687#2693#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -159,8 +159,8 @@
         <option value="$PROJECT_DIR$/private/slides_front.json" />
         <option value="$PROJECT_DIR$/private/slides_emr.json" />
         <option value="$PROJECT_DIR$/models/menu.py" />
-        <option value="$PROJECT_DIR$/views/default/template_library.html" />
         <option value="$PROJECT_DIR$/private/slides_gap.json" />
+        <option value="$PROJECT_DIR$/views/default/template_library.html" />
       </list>
     </option>
   </component>
@@ -791,21 +791,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/default/template_library.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#b#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#520#526#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/private/slides_gap.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="230" lean-forward="true" selection-start-line="11" selection-start-column="230" selection-end-line="11" selection-end-column="230" />
+          <caret line="11" column="230" selection-start-line="11" selection-start-column="230" selection-end-line="11" selection-end-column="230" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/default/template_library.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="91" column="14" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#b#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#2687#2693#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
