@@ -71,6 +71,10 @@
     "type": "yesNo",
     "inquire": "Do you follow up on imaging results that are late coming back?"
   },
+  "e9": {
+    "type": "yesNo",
+    "inquire": "Do you follow up on lab results that are late coming back?"
+  },
   "t17": {
     "type": "yesNo",
     "inquire": "Does your front desk help patients make appointments for referrals?"

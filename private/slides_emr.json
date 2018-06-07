@@ -31,10 +31,7 @@
     "type": "yesNo",
     "inquire": "Do you keep track of labs that are sent out?"
   },
-  "e9": {
-    "type": "yesNo",
-    "inquire": "Do you follow up on lab results that are late coming back?"
-  },
+
   "e10": {
     "type": "yesNo",
     "inquire": "Do you keep track of imaging scripts that are sent out?"
