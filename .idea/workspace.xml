@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="418b3e98-cfd8-4300-9883-6dc931d8b62a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/private/slides_emr.json" beforeDir="false" afterPath="$PROJECT_DIR$/private/slides_emr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private/slides_staff.json" beforeDir="false" afterPath="$PROJECT_DIR$/private/slides_staff.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/default/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/default/home.html" afterDir="false" />
-    </list>
+    <list default="true" id="418b3e98-cfd8-4300-9883-6dc931d8b62a" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,8 +74,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/default/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="349" column="43" lean-forward="true" selection-start-line="349" selection-start-column="43" selection-end-line="349" selection-end-column="43" />
+            <state relative-caret-position="81">
+              <caret line="339" column="2" selection-start-line="339" selection-start-column="2" selection-end-line="339" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -110,7 +106,7 @@
         <entry file="file://$PROJECT_DIR$/models/menu.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="625">
-              <caret line="74" column="201" lean-forward="true" selection-start-line="74" selection-start-column="201" selection-end-line="74" selection-end-column="201" />
+              <caret line="74" column="201" selection-start-line="74" selection-start-column="201" selection-end-line="74" selection-end-column="201" />
             </state>
           </provider>
         </entry>
@@ -135,20 +131,15 @@
       <find>redirect_</find>
       <find>.role</find>
       <find>page</find>
-      <find />
-      <find />
-      <find />
-      <find />
-      <find />
       <find>tracking</find>
       <find>structure</find>
       <find>staff</find>
       <find>refer</find>
       <find>team</find>
       <find>template</find>
-      <find />
       <find>gdewey</find>
       <find>download</find>
+      <find>baa</find>
     </findStrings>
   </component>
   <component name="HgUpdateConfigurationSettings">
@@ -182,10 +173,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2728" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
+    <option name="width" value="2762" />
+    <option name="height" value="1770" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -373,13 +364,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2728" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08851422" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12490706" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5068493" side_tool="true" visible="true" weight="0.08169935" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49315068" visible="true" weight="0.08169935" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5070632" side_tool="true" visible="true" weight="0.1" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4929368" visible="true" weight="0.1" />
       <window_info anchor="bottom" id="Python Console" order="8" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.23367427" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -777,7 +767,7 @@
     <entry file="file://$PROJECT_DIR$/models/menu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="625">
-          <caret line="74" column="201" lean-forward="true" selection-start-line="74" selection-start-column="201" selection-end-line="74" selection-end-column="201" />
+          <caret line="74" column="201" selection-start-line="74" selection-start-column="201" selection-end-line="74" selection-end-column="201" />
         </state>
       </provider>
     </entry>
@@ -818,8 +808,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/default/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="349" column="43" lean-forward="true" selection-start-line="349" selection-start-column="43" selection-end-line="349" selection-end-column="43" />
+        <state relative-caret-position="81">
+          <caret line="339" column="2" selection-start-line="339" selection-start-column="2" selection-end-line="339" selection-end-column="2" />
         </state>
       </provider>
     </entry>
