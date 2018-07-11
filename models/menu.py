@@ -71,7 +71,7 @@ is_survey_qi = section == "survey_qi"
 IS_MASTER = False
 
 if auth.is_logged_in():
-    if auth.user.email.lower() in ["gdewey@insightmanagement.org", "himel@insightmanagement.org",
+    if auth.user.email.lower() in ["gdewey@insightmanagement.org", "himel@insightmanagement.org", "aspencer@insightmanagement.org",
                                    "jason@insightmanagement.org", "rbanks@insightmanagement.org", "sdurgapasad@insightmanagement.org", "oalvarez@insightmanagement.org", "rtorres@insightmanagement.org", "srachels@insightmanagement.org",
                                    ]:
         my_role = "admin"

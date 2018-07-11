@@ -15,6 +15,10 @@
     "type": "response",
     "inquire": "Please list any ethnicity which represents greater than 5% of your patient population."
   },
+  "t3aa": {
+    "type": "response",
+    "inquire": "Please list the percentage of Medicaid and Medicare patient's in your total patient population."
+  },
   "t3b": {
     "type": "response",
     "inquire": "How frequently does your practice generate lists for missing services? (Monthly, quarterly, etc?)"

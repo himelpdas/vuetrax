@@ -1,0 +1,56 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Staff Breakdown</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{=form.custom.begin}}
+    <div class="modal-body">
+        <div class="row">
+
+        <hr>
+        <h5>Practice Information</h5>
+        <hr>
+        <div class="row">
+            <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-hospital-o'></i> Practice Name</div>
+            <div class="col-md-7 col-sm-12">{{=form.custom.widget.practice_name}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-home'></i> Practice Specialty</div>
+            <div class="col-md-7 col-sm-12">{{=form.custom.widget.practice_specialty}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-map-marker'></i> Address</div>
+            <div class="col-md-7 col-sm-12">{{=form.custom.widget.address}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-phone'></i> Phone</div>
+            <div class="col-md-7 col-sm-12">{{=form.custom.widget.phone}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-fax'></i> Fax</div>
+            <div class="col-md-7 col-sm-12">{{=form.custom.widget.fax}}</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-id-card'></i> Practice NPI</div>
+            <div class="col-md-7 col-sm-12">{{=form.custom.widget.practice_npi}}</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-envelope'></i> Practice Email</div>
+            <div class="col-md-7 col-sm-12">{{=form.custom.widget.practice_email}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-sm-12"><i class='fa fa-fw fa-envelope'></i> Practice Tax ID</div>
+            <div class="col-md-7 col-sm-12">{{=form.custom.widget.practice_tax_id}}</div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+    {{=form.custom.submit}}
+
+    </div>
+{{=form.custom.end}}
+</div>

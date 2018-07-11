@@ -165,6 +165,16 @@
     </div>
 {{for emr_form_id in emr_forms:}}
 {{emr_form = emr_forms[emr_form_id]}}
+    <div class="modal fade" id="staff_management" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true"
+         style="min-height:700px;">
+        <div class="modal-dialog modal-lg" id="staff_management" role="document">
+            <div class="modal-content">
+                Loading...
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="emr_form_{{=emr_form_id}}" tabindex="-1" role="dialog"
          aria-labelledby="exampleModalLabel" aria-hidden="true"
          style="min-height:950px;">
@@ -393,33 +403,56 @@
                         </a>
                     </h5>
                     <hr>
+                     <h5 class="card-title">
+                        <a href="#" class="practice_name" data-placement="auto" data-toggle="modal"
+                           data-target="#practice_info_modal"
+                           title="Practice Information" data-html="true"
+                        onclick="web2py_component('{{=URL(f='process_practice_info_form.load', args=[each.id], scheme=True)}}', 'practice_info_content');">
+
+                        {{=each.practice_name}}
+                        </a>
+                    </h5>
+                    <hr>
                     <h6 class="card-title">
                         <span class="provider_names">{{=', '.join(each.providers or [])}}</span></h6>
                     <hr>
                     <div class="row" style="text-align: center;">
 
-                        <div class="col-sm-3">
+                        <div class="col-lg-6">
                             <button type="button" class="btn btn-sm btn-success faa-parent animated-hover"
                                     data-toggle="modal" title="Administrator"
                                     data-target="#trainer_assign_modal" onclick="web2py_component('{{=URL(f='process_admin_form.load', args=[each.id], scheme=True)}}', 'trainer_assign_content');">
                                 <i class="fa  faa-bounce fa-fw fa-smile-o"></i>
                             </button>
                         </div>
+                        <div class="col-lg-6">
+                            <button type="button" class="btn btn-sm btn-success faa-parent animated-hover"
+                                    data-toggle="modal" title="Staff Management"
+                                    data-target="#trainer_assign_modal" onclick="web2py_component('{{=URL(f='staff_management.load', args=[each.id], scheme=True)}}', 'trainer_assign_content');">
+                                <i class="fa  faa-bounce fa-fw fa-user-md"></i>
 
-                        <div class="col-sm-3">
+                            </button>
+
+                        </div>
+                        </div>
+                    <h2><hr></h2>
+                        <div class="row">
+                        <div class="col-sm-4">
                             <button type="button"
                                     class="btn btn-sm btn-{{if emr_forms_green[each.id]:}}success{{else:}}danger{{pass}} faa-parent animated-hover"
                                     data-toggle="modal" title="EMR Access"
                                     data-target="#emr_form_{{=each.id}}"><i class="fa faa-flash fa-fw fa-desktop"></i>
                             </button>
                         </div>
-                        <div class="col-sm-3">
+
+
+                        <div class="col-sm-4">
                             <button type="button" class="btn btn-sm btn-{{if cc_forms_meta[each.id]['green']:}}success{{else:}}danger{{pass}} faa-parent animated-hover"
                                     data-toggle="modal" title="Credit Card Info"
                                     data-target="#cc_form_{{=each.id}}"><i
                                     class="fa faa-horizontal fa-fw fa-credit-card"></i></button>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <button type="button"
                                     class="btn btn-sm btn-{{if baa_links[each.id]:}}success{{else:}}danger{{pass}} faa-parent animated-hover"
                                     data-toggle="modal" title="BAA Agreement"
@@ -505,8 +538,8 @@
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="col-lg-6"><a type="button" class="btn btn-sm btn-warning"
-                                                 href="{{=URL('dashboard', vars=dict(practice=each.id, section=("gap" if not each.is_renewal else "staff") or session.section))}}"><b>DASHBOARD</b></a>
+                        <div class="col-lg-6">
+                            <a type="button" class="btn btn-sm btn-warning" href="{{=URL('dashboard', vars=dict(practice=each.id, section=("gap" if not each.is_renewal else "staff") or session.section))}}"><b>DASHBOARD</b></a>
                         </div>
 
                         <div class="col-lg-6">
