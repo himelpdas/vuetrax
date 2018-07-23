@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="418b3e98-cfd8-4300-9883-6dc931d8b62a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/default/template_library.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/default/template_library.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,13 +59,14 @@
       <file leaf-file-name="template_library.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/default/template_library.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="853" column="35" selection-start-line="853" selection-start-column="35" selection-end-line="853" selection-end-column="35" />
+            <state relative-caret-position="361">
+              <caret line="879" column="27" selection-start-line="879" selection-start-column="27" selection-end-line="879" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#b#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="e#520#526#0" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#b#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="e#1682#1688#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="e#26928#26935#1" expanded="true" />
               </folding>
             </state>
@@ -810,13 +810,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/default/template_library.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="853" column="35" selection-start-line="853" selection-start-column="35" selection-end-line="853" selection-end-column="35" />
+        <state relative-caret-position="361">
+          <caret line="879" column="27" selection-start-line="879" selection-start-column="27" selection-end-line="879" selection-end-column="27" />
           <folding>
             <element signature="n#style#0;n#a#0;n#b#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="e#520#526#0" expanded="true" />
             <element signature="n#style#0;n#button#0;n#b#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="e#1682#1688#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="e#26928#26935#1" expanded="true" />
           </folding>
         </state>
