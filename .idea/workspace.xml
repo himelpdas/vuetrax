@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="418b3e98-cfd8-4300-9883-6dc931d8b62a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/views/ajax/staff_management.load" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/default.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private/slides_staff.json" beforeDir="false" afterPath="$PROJECT_DIR$/private/slides_staff.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/default/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/default/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/default/template_library.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/default/template_library.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,44 +35,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slides_emr.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/private/slides_emr.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="default.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/default.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
+            <state relative-caret-position="12665">
               <caret line="745" selection-start-line="745" selection-end-line="745" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/default/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="435" column="30" lean-forward="true" selection-start-line="435" selection-start-column="30" selection-end-line="435" selection-end-column="30" />
+            <state relative-caret-position="180">
+              <caret line="159" column="41" lean-forward="true" selection-start-line="159" selection-start-column="33" selection-end-line="159" selection-end-column="41" />
               <folding>
                 <element signature="e#444#450#0" expanded="true" />
                 <element signature="e#3763#3770#1" expanded="true" />
-                <element signature="e#8446#8453#1" expanded="true" />
-                <element signature="e#11321#11328#1" expanded="true" />
-                <element signature="e#16690#16697#1" expanded="true" />
-                <element signature="e#16874#16880#0" expanded="true" />
-                <element signature="e#17170#17176#0" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#28084#28091#1" expanded="true" />
-                <element signature="e#28610#28617#1" expanded="true" />
-                <element signature="e#29281#29288#1" expanded="true" />
-                <element signature="e#30807#30814#1" expanded="true" />
-                <element signature="e#31382#31388#0" expanded="true" />
-                <element signature="e#31483#31489#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template_library.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/default/template_library.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="143">
+              <caret line="853" column="35" selection-start-line="853" selection-start-column="35" selection-end-line="853" selection-end-column="35" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#b#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#520#526#0" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#b#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#1682#1688#0" expanded="true" />
+                <element signature="e#26928#26935#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,7 +85,7 @@
       <file leaf-file-name="process_practice_info_form.load" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/ajax/process_practice_info_form.load">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
+            <state relative-caret-position="1027">
               <caret line="109" column="7" selection-start-line="109" selection-start-column="7" selection-end-line="109" selection-end-column="7" />
             </state>
           </provider>
@@ -112,7 +103,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../../viewtrax_template/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
+            <state relative-caret-position="9231">
               <caret line="543" column="9" selection-start-line="543" selection-start-column="9" selection-end-line="543" selection-end-column="9" />
             </state>
           </provider>
@@ -121,7 +112,7 @@
       <file leaf-file-name="menu.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/menu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
+            <state relative-caret-position="1241">
               <caret line="73" column="131" selection-start-line="73" selection-start-column="131" selection-end-line="73" selection-end-column="131" />
             </state>
           </provider>
@@ -158,9 +149,9 @@
       <find>population</find>
       <find>gdewey</find>
       <find>trainer_assign_modal</find>
-      <find>provider information</find>
-      <find>practice information</find>
       <find>process_practice</find>
+      <find>download all</find>
+      <find>modal-lg</find>
     </findStrings>
   </component>
   <component name="HgUpdateConfigurationSettings">
@@ -178,13 +169,13 @@
         <option value="$PROJECT_DIR$/views/layout.html" />
         <option value="$PROJECT_DIR$/private/slides_front.json" />
         <option value="$PROJECT_DIR$/private/slides_gap.json" />
-        <option value="$PROJECT_DIR$/views/default/template_library.html" />
         <option value="$PROJECT_DIR$/private/slides_emr.json" />
         <option value="$PROJECT_DIR$/private/slides_staff.json" />
         <option value="$PROJECT_DIR$/models/menu.py" />
         <option value="$PROJECT_DIR$/controllers/default.py" />
         <option value="$PROJECT_DIR$/views/ajax/staff_management.load" />
         <option value="$PROJECT_DIR$/views/default/home.html" />
+        <option value="$PROJECT_DIR$/views/default/template_library.html" />
       </list>
     </option>
   </component>
@@ -195,16 +186,17 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
-    <option name="width" value="2762" />
-    <option name="height" value="1770" />
+    <option name="x" value="2728" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -253,7 +245,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -391,19 +382,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
+    <frame x="2728" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17620818" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17597471" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5092937" side_tool="true" visible="true" weight="0.0" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23367427" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49070632" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.51001054" side_tool="true" visible="true" weight="0.32897604" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.48998946" visible="true" weight="0.32897604" />
       <window_info anchor="bottom" id="Python Console" order="8" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23367427" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -729,17 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/default/template_library.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#b#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#1682#1688#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/private/slides_front.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2312">
@@ -751,9 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1292">
           <caret line="76" column="23" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -780,14 +757,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/menu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
+        <state relative-caret-position="1241">
           <caret line="73" column="131" selection-start-line="73" selection-start-column="131" selection-end-line="73" selection-end-column="131" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../viewtrax_template/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
+        <state relative-caret-position="9231">
           <caret line="543" column="9" selection-start-line="543" selection-start-column="9" selection-end-line="543" selection-end-column="9" />
         </state>
       </provider>
@@ -801,15 +778,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/default.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
+        <state relative-caret-position="12665">
           <caret line="745" selection-start-line="745" selection-end-line="745" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/ajax/process_practice_info_form.load">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="109" column="7" selection-start-line="109" selection-start-column="7" selection-end-line="109" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -820,25 +790,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/ajax/process_practice_info_form.load">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1027">
+          <caret line="109" column="7" selection-start-line="109" selection-start-column="7" selection-end-line="109" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/default/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="435" column="30" lean-forward="true" selection-start-line="435" selection-start-column="30" selection-end-line="435" selection-end-column="30" />
+        <state relative-caret-position="180">
+          <caret line="159" column="41" lean-forward="true" selection-start-line="159" selection-start-column="33" selection-end-line="159" selection-end-column="41" />
           <folding>
             <element signature="e#444#450#0" expanded="true" />
             <element signature="e#3763#3770#1" expanded="true" />
-            <element signature="e#8446#8453#1" expanded="true" />
-            <element signature="e#11321#11328#1" expanded="true" />
-            <element signature="e#16690#16697#1" expanded="true" />
-            <element signature="e#16874#16880#0" expanded="true" />
-            <element signature="e#17170#17176#0" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#7;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#28084#28091#1" expanded="true" />
-            <element signature="e#28610#28617#1" expanded="true" />
-            <element signature="e#29281#29288#1" expanded="true" />
-            <element signature="e#30807#30814#1" expanded="true" />
-            <element signature="e#31382#31388#0" expanded="true" />
-            <element signature="e#31483#31489#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/default/template_library.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="853" column="35" selection-start-line="853" selection-start-column="35" selection-end-line="853" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#b#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#520#526#0" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#b#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#1682#1688#0" expanded="true" />
+            <element signature="e#26928#26935#1" expanded="true" />
           </folding>
         </state>
       </provider>
